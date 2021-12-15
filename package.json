@@ -1,0 +1,19 @@
+{
+  "name": "studioalex",
+  "version": "1.0.0",
+  "description": "Homepage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "homepage",
+    "11th",
+    "static"
+  ],
+  "author": "Alexander Vu <alexander.vu.tuyet@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
