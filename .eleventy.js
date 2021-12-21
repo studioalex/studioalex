@@ -1,4 +1,4 @@
-const extendDirs = ['./src/css/', './src/js/']
+const extendDirs = ['./src/css/', './src/js/', './src/fonts/', './src/images/']
 
 module.exports = function (eleventyconfig) {
 

@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'Open Sans Hebrew';
+  src:
+    local('Open Sans Hebrew'),
+    url('/fonts/OpenSansHebrew-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans Hebrew';
+  src:
+    local('Open Sans Hebrew'),
+    url('/fonts/OpenSansHebrew-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans Hebrew';
+  src:
+    local('Open Sans Hebrew'),
+    url('/fonts/OpenSansHebrew-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --color-signal: rgb(255, 138, 0);
+  --color-dark: rgb(71, 71, 71);
+  --color-base: rgb(115, 115, 115);
+  --color-bright: rgb(247, 247, 247);
+}
+
+html {
+  font-size: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-bright);
+  font-family: 'Open Sans Hebrew';
+  font-weight: 400;
+  min-height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.page__header {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  text-align: center;
+}
+
+.page__content {
+  order: 1;
+  flex: 1 1 auto;
+}
+
+.page__footer {
+  order: 2;
+  flex: 0 1 auto;
+  align-self: auto;
+  text-align: right;
+  color: var(--color-base);
+  font-size: 0.8rem;
+}
+
+.page__logo {
+  display: inline-block;
+  margin: 3rem auto;
+  width: 9.25rem;
+}
+
+.page__logo-text {
+  font-size: 1.75rem;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0.75rem 0 1rem -0.05rem;
+}
+
+.page__context {
+  text-align: center;
+  font-size: 1.75rem;
+  color: var(--color-dark);
+  font-weight: 300;
+}
+
+.page__social {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page__social-link {
+  text-decoration: none;
+  margin: 1rem;
+}
+
+.page__social-link:hover svg path {
+   fill: var(--color-signal);
+}
+
+.page__project-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+  max-width: 400px;
+  margin: 5rem auto 1rem auto;
+}
+
+.page__project {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.page__project:hover {
+  background-color: white;
+}
+
+.page__project-link {
+  margin: 0;
+  color: var(--color-dark);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.page__project:hover .page__project-link {
+  color: var(--color-signal);
+}
+
+.page__project-text {
+  color: var(--color-base);
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
