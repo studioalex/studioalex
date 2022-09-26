@@ -1,0 +1,20 @@
+{
+  "name": "studioalex",
+  "version": "1.0.0",
+  "description": "Homepage",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [
+    "homepage",
+    "11th",
+    "static"
+  ],
+  "author": "Alexander Vu <alexander.vu.tuyet@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
