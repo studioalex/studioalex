@@ -1,8 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import Headline from '../components/Headline.astro'
+import Paragraph from '../components/Paragraph.astro'
 ---
-<Layout title="Welcome to Astro.">
-  <div>
-    uses
-  </div>
+<Layout title="Studio Alex - uses" styles="center">
+  <Headline title="Uses" />
+  <Paragraph>
+    There are times where people ask me about what software or gear I am using.
+    <br />This page will serve as a living document for people to always know the latest and greatest.
+  </Paragraph>
 </Layout>

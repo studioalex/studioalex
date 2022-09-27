@@ -4,13 +4,13 @@ import Footer from '../components/Footer.astro'
 import '../styles/global.css'
 export interface Props {
 	title?: string;
-	center?: boolean;
+	styles?: string;
 }
 
-const { title = 'Studio Alex', center = false } = Astro.props
+const { title = 'Studio Alex', styles = false } = Astro.props
 const contentClass = ['sa-content']
-if (center === true) {
-	contentClass.push('center')
+if (styles) {
+	contentClass.push(styles)
 }
 ---
 
@@ -73,11 +73,20 @@ if (center === true) {
   max-width: 1440px;
   margin: 0 auto;
   
-  &.center {
+  &.distribute {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-around;
+    align-content: stretch;
+    align-items: stretch;
+  }
+
+	&.center {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
     align-content: stretch;
     align-items: stretch;
   }
