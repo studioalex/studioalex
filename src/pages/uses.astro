@@ -2,11 +2,17 @@
 import Layout from '../layouts/Layout.astro'
 import Headline from '../components/Headline.astro'
 import Paragraph from '../components/Paragraph.astro'
+import Uses from '../components/Uses.astro'
+
+import products from '../data/products.json'
 ---
-<Layout title="Studio Alex - uses" styles="center">
+<Layout title="Studio Alex - uses" styles="small">
   <Headline title="Uses" />
   <Paragraph>
     There are times where people ask me about what software or gear I am using.
     <br />This page will serve as a living document for people to always know the latest and greatest.
   </Paragraph>
+  {products.map(product => (
+    <Uses title={product.title} data={product.items} />
+  ))}
 </Layout>

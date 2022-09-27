@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Applications",
+    "description": "",
+    "items": [
+      {
+        "title": "Visual Studio Code",
+        "description": "Visual Studio Code is a lightweight but powerful source code editor.",
+        "link": "",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/768px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519"
+      },
+      {
+        "title": "Affinity Photo",
+        "description": "Powerful photo editing software used by professionals worldwide.",
+        "link": "",
+        "image": "https://upload.wikimedia.org/wikipedia/en/f/fb/Affinity_Photo_logo_new.png"
+      },
+      {
+        "title": "Affinity Designer",
+        "description": "Affinity Designer is a vector graphics editor.",
+        "link": "",
+        "image": "https://upload.wikimedia.org/wikipedia/en/6/6d/Affinity_Designer_logo_new.png"
+      }
+    ]
+  },
+  {
+    "title": "Libraries",
+    "description": "",
+    "items": [
+      {
+        "title": "Vue",
+        "description": "Is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications.",
+        "link": "",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+      },
+      {
+        "title": "Vite",
+        "description": "Is a new breed of frontend build tooling that significantly improves the frontend development.",
+        "link": "",
+        "image": "https://vitejs.dev/logo-with-shadow.png"
+      }
+    ]
+  },
+  {
+    "title": "Services",
+    "description": "",
+    "items": [
+      {
+        "title": "Heroku",
+        "description": "Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.",
+        "link": "",
+        "image": "https://brand.heroku.com/static/media/heroku-logo-stroke-white.e83b4856.svg"
+      },
+      {
+        "title": "Digital Ocean",
+        "description": "DigitalOcean, Inc. is an American cloud infrastructure provider.",
+        "link": "",
+        "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--XB78W4kG--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/64516/a0c9989b-6d18-46c7-bc66-4c2c1580534e.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Databases",
+    "description": "",
+    "items": [
+      {
+        "title": "Mongo DB",
+        "description": "MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need.",
+        "link": "",
+        "image": "https://www.svgrepo.com/show/331488/mongodb.svg"
+      },
+      {
+        "title": "Neo4J",
+        "description": "Neo4j is an open-source, NoSQL, native graph database that provides an ACID-compliant transactional backend for your applications.",
+        "link": "",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Neo4j-logo_color.png"
+      }
+    ]
+  }
+]

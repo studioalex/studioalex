@@ -1,0 +1,57 @@
+---
+import Product from './Product.astro';
+
+export interface Items {
+  title: string;
+  description: string;
+  link?: string;
+  image?: string;
+}
+export interface Props {
+	title: string;
+  data: Items[];
+}
+
+const { title, data } = Astro.props
+---
+
+<section class="sa-uses__block">
+  <h2 class="sa-uses__title">{title}</h2>
+  <div class="sa-uses__list">
+    { data.map(product => (
+      <Product title={product.title} description={product.description} image={product.image} />
+    ))}
+  </div>
+</section>
+
+<style lang="postcss">
+.sa-uses {
+  &__block {
+    margin: 4rem 0;
+    transition: margin 1s;
+  }
+  
+  &__list {
+    margin-left: 5rem;
+    transition: margin 1s;
+  }
+
+  &__title {
+    color: var(--color-text-dark);
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .sa-uses {
+    &__block {
+      margin: 2rem 0;
+    }
+
+    &__list {
+      margin-left: 0;
+    }
+  }
+}
+</style>
