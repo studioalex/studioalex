@@ -24,6 +24,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
     align-content: stretch;
     align-items: flex-start;
     padding: 1.25rem var(--margin-sides);
+    transition: padding 1s;
 
     &__left {
       order: 0;
@@ -48,6 +49,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
       line-height: 2rem;
       color: var(--color-text);
       transition: color 0.3s;
+      white-space: nowrap;
       
       &:hover {
         color: var(--color-text-highlight);

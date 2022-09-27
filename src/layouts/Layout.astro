@@ -4,9 +4,14 @@ import Footer from '../components/Footer.astro'
 import '../styles/global.css'
 export interface Props {
 	title?: string;
+	center?: boolean;
 }
 
-const { title = 'Studio Alex' } = Astro.props;
+const { title = 'Studio Alex', center = false } = Astro.props
+const contentClass = ['sa-content']
+if (center === true) {
+	contentClass.push('center')
+}
 ---
 
 <!DOCTYPE html>
@@ -38,7 +43,9 @@ const { title = 'Studio Alex' } = Astro.props;
 	<body>
 		<div class="sa">
 			<Header />
-		  <slot />
+			<main class={contentClass.join(' ')}>
+		    <slot />
+		  </main>
 			<Footer />
 		</div>
 	</body>
@@ -58,5 +65,21 @@ const { title = 'Studio Alex' } = Astro.props;
   color: var(--color-text);
   overflow: auto;
   font-family: 'Montserrat', sans-serif;
+}
+
+.sa-content {
+  flex: 1 1 auto;
+  align-self: auto;
+  max-width: 1440px;
+  margin: 0 auto;
+  
+  &.center {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: stretch;
+  }
 }
 </style>
