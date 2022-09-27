@@ -8,10 +8,16 @@ import products from '../data/products.json'
 ---
 <Layout title="Studio Alex - uses" styles="small">
   <Headline title="Uses" />
+
   <Paragraph>
     There are times where people ask me about what software or gear I am using.
     <br />This page will serve as a living document for people to always know the latest and greatest.
   </Paragraph>
+
+  <Paragraph>
+    This page is inspired from <a href="https://wesbos.com/uses" target="_blank">Wes Bos' Uses page</a>.
+  </Paragraph>
+  
   {products.map(product => (
     <Uses title={product.title} data={product.items} />
   ))}
