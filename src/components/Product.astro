@@ -1,0 +1,75 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image: string;
+  link?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  link
+} = Astro.props as Props
+---
+<a href={link} target="_blank" class="sa-uses__link">
+  <div class="sa-uses__product">
+    <div class="sa-uses__product--left">
+      <img src={image} />
+    </div>
+    <div class="sa-uses__product--right">
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
+  </div>
+</a>
+
+<style>
+.sa-uses {
+  &__link {
+    .sa-uses__product:hover {
+      background-color: var(--color-background-light);
+      border-radius: 6px;
+    }
+  }
+  &__product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-background-light);
+    
+    &--left {
+      flex: 0 0 auto;
+      align-self: auto;
+      padding: 0 1rem;
+      width: 50px;
+      
+      img {
+        width: 50px;
+      }
+    }
+    
+    &--right {
+      flex: 1 1 auto;
+      align-self: auto;
+      padding: 0 2rem;
+    }
+    
+    h3 {
+      color: var(--color-text-highlight);
+      font-weight: 500;
+    }
+    
+    p {
+      line-height: 1.6rem;
+      font-weight: 200;
+      color: var(--color-text);
+    }
+  }
+}
+</style>

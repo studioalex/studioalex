@@ -1,0 +1,16 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props
+---
+<h1 class="sa-headline">{title}</h1>
+
+<style lang="postcss">
+.sa-headline {
+  margin: 0;
+  color: var(--color-text-highlight);
+  font-weight: 600;
+}
+</style>

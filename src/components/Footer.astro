@@ -1,0 +1,67 @@
+---
+import Icon from './Icon.astro'
+---
+
+<footer class="sa-footer">
+  <div class="sa-footer__copyright">All materials © Alexander Sedeke 2022</div>
+  <div class="sa-footer__social-links">
+    <a
+      href="https://twitter.com/alexsedeke"
+      class="sa-footer__social-link"
+      id="twitter">
+      <Icon
+        class="sa-footer__social-svg"
+        icon="twitter" />
+    </a>
+    <a
+      href="https://github.com/studioalex"
+      class="sa-footer__social-link"
+      id="github">
+      <Icon
+        class="sa-footer__social-svg"
+        icon="github" />
+    </a>
+    <a 
+      href="https://codepen.io/alexandersedeke/"
+      class="sa-footer__social-link"
+      id="codepen">
+      <Icon
+        class="sa-footer__social-svg"
+        icon="codepen" />    
+    </a>
+  </div>
+</footer>
+
+<style lang="postcss">
+  .sa-footer {
+    background-color: var(--color-background);
+    padding: 2rem var(--margin-sides);
+    text-align: center;
+    transition: padding 1s;
+    
+    &__social-links {
+      padding-top: 1rem;
+    }
+      
+    &__social-link {
+      display: inline-block;
+      padding-right: 15px;
+      color: var(--color-text-highlight);
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+        
+    &__social-svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+</style>

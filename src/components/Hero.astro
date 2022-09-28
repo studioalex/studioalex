@@ -1,0 +1,97 @@
+---
+import Icon from './Icon.astro'
+---
+<div class="sa-hero">
+  <div class="sa-hero__left">
+    <div class="sa-hero__circle">
+      <div class="sa-hero__logo"></div>
+    </div>
+  </div>
+  <div class="sa-hero__right">
+    <div>
+      <div class="sa-hero__headline">Alexander Sedeke</div>
+      <div class="sa-indicator"></div>
+      <p class="sa-hero__text">
+        A freelancer who provides<br>services for digital programming<br>
+        and design content needs, for<br>all businesses with more than<br>
+        15 years experience
+      </p>
+    </div>
+  </div>
+  <Icon icon="alex-clippingpath"></Icon>
+</div>
+
+<style lang="postcss">
+.sa-hero {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  padding: 2rem var(--margin-sides);
+  
+  &__circle {
+    display: inline-block;
+    background-color: var(--color-background);
+    padding: 2rem;
+    border-radius: 999em;
+  }
+  
+  &__logo {
+    display: inline-block;
+    background-image: linear-gradient(45deg, rgb(246,46,36), rgb(255,133,27), rgb(255,221,0), rgb(46,204,64), rgb(0,116,217), rgb(176,13,201));
+    background-size: 800% 800%;
+    clip-path: url(#alex-clippath);
+    height:300px;
+    width: 300px;
+    animation: rainbow 15s ease alternate infinite;
+  }
+  
+  &__left {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    text-align: left;
+    padding: 2rem;
+  }
+  
+  &__right {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: flex-end;
+    text-align: right;
+    max-width: 500px;
+    padding: 2rem;
+  }
+  
+  &__text {
+    line-height: 2rem;
+  }
+  
+  &__headline {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--color-text-highlight);
+  }
+}
+
+.sa-indicator {
+  display: block;
+  height: 3px;
+  margin: 1.5rem 0 1.5rem 50%;
+  background-color: var(--color-brand);
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 1% 80%;
+  }
+  50% {
+    background-position: 99% 20%;
+  }
+  100% {
+    background-position: 1% 80%;
+  }
+}
+</style>

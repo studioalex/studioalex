@@ -1,0 +1,8 @@
+<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="36" height="36" fill="black"/>
+  <path d="M18.3914 6.09035C18.3396 5.96988 18.1901 5.96988 18.1499 6.09035C18.1096 6.21082 14.9297 14.0816 14.9297 14.0816L15.2517 14.2422L16.2178 11.8729L22.9802 29.2207H20.404V29.542H29.9842V29.2207H27.6495C27.6495 29.2207 18.4432 6.21082 18.3914 6.09035Z" fill="white" stroke="white"/>
+  <path d="M17.8417 20.0857V19.7644C8.28495 18.3188 11.3768 28.9602 7 29.3216V29.6429C16.5568 31.209 13.7861 19.7243 17.8417 20.0857Z" fill="white" stroke="white"/>
+	<style>
+    @media (prefers-color-scheme:light){:root{filter:invert(100%)}}
+  </style>
+</svg>

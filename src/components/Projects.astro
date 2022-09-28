@@ -1,0 +1,127 @@
+---
+import Ruler from './Ruler.astro'
+import Headline from './Headline.astro'
+---
+<div class="sa-projects">
+  <Ruler />
+  <Headline title="Projects" />
+  <div class="sa-projects__list">
+    <div class="sa-projects__item">
+      <div class="sa-projects__logo">
+         <svg class="sa-projects__logo-background" viewBox="0 0 432 375" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_405_2)">
+            <path d="M0 360L216 0L432 360H0Z" fill="#46BA84"/>
+            <path d="M215.5 18.5L296.5 153.5L215.5 76.36L134.5 153.5L215.5 18.5Z" fill="white"/>
+            <path d="M107.92 374.85L215.71 189.5L323.5 374.85H107.92Z" fill="#35485D"/>
+            <path d="M215.5 216.5L251.5 270.5L224.5 252.5L215.5 270.5L206.5 252.5L179.5 270.5" fill="white"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_405_2">
+              <rect width="432" height="374.85" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <h3 class="sa-projects__title">
+        Hora Grid
+      </h3>
+      <p class="sa-projects__description">
+        Vue 3 Grid component based on CSS Grid.
+        Optimized for large amounts of data and data API's.
+        <a href="https://hora.studioalex.one/" target="_blank" class="sa-projects__jump">Visit</a>
+      </p>
+    </div>
+    <div class="sa-projects__item wip">
+      <div class="sa-projects__logo">
+      
+      </div>
+      <h3 class="sa-projects__title">
+        Kyiv Form
+      </h3>
+      <p class="sa-projects__description">
+        WIP: Vue 3 Form component.
+      </p>
+    </div>
+    <div class="sa-projects__item wip">
+      <div class="sa-projects__logo">
+      
+      </div>
+      <h3 class="sa-projects__title">
+        Aikon
+      </h3>
+      <p class="sa-projects__description">
+        WIP: Project is in progress.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style lang="postcss">
+.sa-projects {
+  padding: 2rem var(--margin-sides);
+  
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-content: stretch;
+    align-items: stretch;
+    margin: 2rem -1rem;
+  }
+  
+  &__item {
+    position: relative;
+    flex: 1 1 auto;
+    align-self: auto;
+    min-height: 200px;
+    min-width: 300px;
+    width: 30%;
+    padding: 1rem 1rem 2rem 1rem;
+    background-color: var(--color-background-light);
+    margin: 1rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+    &.wip {
+      opacity: 0.5;
+    }
+  }
+  
+  &__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-text-highlight);
+  }
+  
+  &__description {
+    line-height: 1.6rem;
+  }
+  
+  &__logo {
+    height: 40px;
+  }
+  
+  &__logo-background {
+    position: absolute;
+    height: 80px;
+    top: 1.6rem;
+    right: 2rem;
+    z-index: 0;
+    opacity: 0.8;
+  }
+  
+  &__jump {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    border: 1px solid var(--color-brand);
+    border-radius: 999em;
+    padding: 0.1rem 1rem;
+    &:hover {
+      background-color: var(--color-brand);
+      color: var(--color-background-light);
+    }
+  }
+}
+</style>

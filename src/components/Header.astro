@@ -1,0 +1,63 @@
+---
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1) // remove the first "/"
+---
+<header class="sa-nav">
+  <div class="sa-nav__left">
+    <a href="/" class="sa-nav__brandname">
+      StudioAlex
+    </a>
+  </div>
+  <div class="sa-nav__right">
+    <a href="/" class={currentPath === "" ? "sa-nav__link active" : "sa-nav__link"}>Home</a>
+    <a href="/uses" class={currentPath === "uses" ? "sa-nav__link active" : "sa-nav__link"}>Uses</a>
+    <!--a href="/about" class={currentPath === "about" ? "sa-nav__link active" : "sa-nav__link"}>About me</a -->
+  </div>
+</header>
+
+<style>
+  .sa-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    padding: 1.25rem var(--margin-sides);
+    transition: padding 1s;
+
+    &__left {
+      order: 0;
+      flex: 1 1 auto;
+      align-self: auto;
+    }
+
+    &__right {
+      order: 1;
+      flex: 0 1 auto;
+      align-self: auto;
+    }
+    
+    &__brandname {
+      color: var(--color-text-highlight);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    &__link {
+      padding: 0 0 0 2rem;
+      line-height: 2rem;
+      color: var(--color-text);
+      transition: color 0.3s;
+      white-space: nowrap;
+      
+      &:hover {
+        color: var(--color-text-highlight);
+      }
+      
+      &.active {
+        color: var(--color-text-highlight);
+      }
+    }
+  }
+</style>
