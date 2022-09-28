@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import Headline from '../components/Headline.astro'
 import Paragraph from '../components/Paragraph.astro'
 import Uses from '../components/Uses.astro'
+import Infoblock from '../components/Infoblock.astro'
 
 import products from '../data/products.json'
 ---
@@ -18,6 +19,8 @@ import products from '../data/products.json'
     This page is inspired from <a href="https://wesbos.com/uses" target="_blank">Wes Bos' Uses page</a>.
   </Paragraph>
   
+  <Infoblock />
+
   {products.map(product => (
     <Uses title={product.title} data={product.items} />
   ))}
