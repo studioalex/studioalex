@@ -5,39 +5,93 @@
     "items": [
       {
         "title": "Visual Studio Code",
-        "description": "Visual Studio Code is a lightweight but powerful source code editor.",
-        "link": "",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/768px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519"
+        "description": "is my source code editor. I use it now for near everything.",
+        "link": "https://code.visualstudio.com",
+        "image": "/images/vsc.png"
+      },
+      {
+        "title": "Sketch",
+        "description": "is one of my first design tools for XD and UI.",
+        "link": "https://www.sketch.com",
+        "image": "/images/sketch.png"
+      },
+      {
+        "title": "Figma",
+        "description": "is now my primary and first choice UI and XD tool. The advantage of Figma over XD is that the drafts take place in the browser. XD uses its own renderer, which means there are differences to the browser.",
+        "link": "https://www.figma.com/",
+        "image": "/images/figma.png"
       },
       {
         "title": "Affinity Photo",
         "description": "Powerful photo editing software used by professionals worldwide.",
         "link": "",
-        "image": "https://upload.wikimedia.org/wikipedia/en/f/fb/Affinity_Photo_logo_new.png"
+        "image": "/images/affinity_photo.png"
       },
       {
         "title": "Affinity Designer",
-        "description": "Affinity Designer is a vector graphics editor.",
+        "description": "Affinity Designer is a vector graphics editor. It's not bad but a little awkward.",
         "link": "",
-        "image": "https://upload.wikimedia.org/wikipedia/en/6/6d/Affinity_Designer_logo_new.png"
+        "image": "/images/affinity_designer.png"
+      },
+      {
+        "title": "Adobe XD",
+        "description": "is a powerful and but not easy-to-use vector-based experience design platform. Most of my customers use it, but I still prefer Figma.",
+        "link": "https://www.adobe.com/",
+        "image": "/images/adobe_xd.png"
+      },
+      {
+        "title": "Adobe Photoshop",
+        "description": "I know Photoshop now since the version 5. It is still a powerful photo editing software and most used at my customers.",
+        "link": "https://www.adobe.com/",
+        "image": "/images/adobe_photoshop.png"
+      },
+      {
+        "title": "Adobe Illustrator",
+        "description": "is a vector graphics editor. It is powerful and reliable. For me, his greatest strength lies in creating icons.",
+        "link": "https://www.adobe.com/",
+        "image": "/images/adobe_illustrator.png"
       }
     ]
   },
   {
-    "title": "Libraries",
+    "title": "Tools",
     "description": "",
     "items": [
       {
-        "title": "Vue",
-        "description": "Is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications.",
-        "link": "",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+        "title": "Fork",
+        "description": "Fork is free git client application for MacOs, Windows and Linux.",
+        "link": "https://git-fork.com/",
+        "image": "/images/fork.png"
       },
       {
-        "title": "Vite",
-        "description": "Is a new breed of frontend build tooling that significantly improves the frontend development.",
-        "link": "",
-        "image": "https://vitejs.dev/logo-with-shadow.png"
+        "title": "Sublime",
+        "description": "Text Editing, Done Right",
+        "link": "https://www.sublimetext.com/",
+        "image": "/images/sublime.png"
+      },
+      {
+        "title": "1Password",
+        "description": "A password manager, digital vault, form filler and secure digital wallet. 1Password remembers all your passwords for you to help keep account information.",
+        "link": "https://1password.com/",
+        "image": "/images/1password.png"
+      },
+      {
+        "title": "Discord",
+        "description": "is my choice of instant messaging social platform.",
+        "link": "https://discord.com",
+        "image": "/images/discord.png"
+      },
+      {
+        "title": "Alfred",
+        "description": "is my Spotlight replacement on MacOS and I love it for all the cool things you can do with it. The power packs in particular are a great feature.",
+        "link": "https://www.alfredapp.com",
+        "image": "/images/alfred.png"
+      },
+      {
+        "title": "Dropbox",
+        "description": "is my cloud sync tool of choice. I tried other ones from Amazon and Microsoft, but the user experience on them were pretty bad. It support also restoring files I have accidentally deleted.",
+        "link": "https://www.dropbox.com",
+        "image": "/images/dropbox.png"
       }
     ]
   },
@@ -46,34 +100,22 @@
     "description": "",
     "items": [
       {
-        "title": "Heroku",
-        "description": "Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.",
-        "link": "",
-        "image": "https://brand.heroku.com/static/media/heroku-logo-stroke-white.e83b4856.svg"
+        "title": "Atlassian Jira",
+        "description": "also for my private projects I use Jira, to plan and document my projects.",
+        "link": "https://www.atlassian.com/de/software/jira",
+        "image": "/images/atlassian_jira.png"
+      },
+      {
+        "title": "GitHub",
+        "description": "I prefer GitHub still over GitLab or Bitbucket.",
+        "link": "https://github.com",
+        "image": "/images/github.png"
       },
       {
         "title": "Digital Ocean",
-        "description": "DigitalOcean, Inc. is an American cloud infrastructure provider.",
-        "link": "",
-        "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--XB78W4kG--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/64516/a0c9989b-6d18-46c7-bc66-4c2c1580534e.jpg"
-      }
-    ]
-  },
-  {
-    "title": "Databases",
-    "description": "",
-    "items": [
-      {
-        "title": "Mongo DB",
-        "description": "MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need.",
-        "link": "",
-        "image": "https://www.svgrepo.com/show/331488/mongodb.svg"
-      },
-      {
-        "title": "Neo4J",
-        "description": "Neo4j is an open-source, NoSQL, native graph database that provides an ACID-compliant transactional backend for your applications.",
-        "link": "",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Neo4j-logo_color.png"
+        "description": "using DigitalOcean as my primary cloud infrastructure provider. It is more flexible, cheaper and much easier to manage.",
+        "link": "https://www.digitalocean.com",
+        "image": "/images/digitalocean.png"
       }
     ]
   }

@@ -1,6 +1,5 @@
 ---
-import Product from './Product.astro';
-
+import Product from './Product.astro'
 export interface Items {
   title: string;
   description: string;
@@ -19,7 +18,7 @@ const { title, data } = Astro.props
   <h2 class="sa-uses__title">{title}</h2>
   <div class="sa-uses__list">
     { data.map(product => (
-      <Product title={product.title} description={product.description} image={product.image} />
+      <Product title={product.title} description={product.description} image={product.image} link={product.link} />
     ))}
   </div>
 </section>

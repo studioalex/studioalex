@@ -13,19 +13,26 @@ const {
   link
 } = Astro.props as Props
 ---
-
-<li class="sa-uses__product">
-  <div class="sa-uses__product--left">
-    <img src={image} />
+<a href={link} target="_blank" class="sa-uses__link">
+  <div class="sa-uses__product">
+    <div class="sa-uses__product--left">
+      <img src={image} />
+    </div>
+    <div class="sa-uses__product--right">
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
   </div>
-  <div class="sa-uses__product--right">
-    <h3>{title}</h3>
-    <p>{description}</p>
-  </div>
-</li>
+</a>
 
 <style>
 .sa-uses {
+  &__link {
+    .sa-uses__product:hover {
+      background-color: var(--color-background-light);
+      border-radius: 6px;
+    }
+  }
   &__product {
     display: flex;
     flex-direction: row;
@@ -39,7 +46,7 @@ const {
     &--left {
       flex: 0 0 auto;
       align-self: auto;
-      padding-right: 1rem;
+      padding: 0 1rem;
       width: 50px;
       
       img {
@@ -61,6 +68,7 @@ const {
     p {
       line-height: 1.6rem;
       font-weight: 200;
+      color: var(--color-text);
     }
   }
 }
