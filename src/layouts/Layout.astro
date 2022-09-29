@@ -5,12 +5,23 @@ import '../styles/global.css'
 export interface Props {
 	title?: string;
 	styles?: string;
+	background?: string;
 }
 
-const { title = 'Studio Alex', styles = false } = Astro.props
+const {
+	title = 'Studio Alex',
+	styles = false,
+	background = false
+} = Astro.props
+
 const contentClass = ['sa-content']
 if (styles) {
 	contentClass.push(styles)
+}
+
+const backgroundClass = ['sa']
+if (background) {
+	backgroundClass.push(background)
 }
 ---
 
@@ -41,7 +52,7 @@ if (styles) {
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div class="sa">
+		<div class={backgroundClass.join(' ')}>
 			<Header />
 			<main class={contentClass.join(' ')}>
 		    <slot />
@@ -65,6 +76,14 @@ if (styles) {
   color: var(--color-text);
   overflow: auto;
   font-family: 'Montserrat', sans-serif;
+
+	&.praha {
+		background-image: url("/images/praha1.jpg");
+		background-repeat: repeat;
+		background-position: center;
+		background-size: cover;
+		opacity: 0.6;
+	}
 }
 
 .sa-content {
