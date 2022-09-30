@@ -82,10 +82,10 @@
         "image": "/images/discord.png"
       },
       {
-        "title": "Alfred",
-        "description": "is my Spotlight replacement on MacOS and I love it for all the cool things you can do with it. The power packs in particular are a great feature.",
-        "link": "https://www.alfredapp.com",
-        "image": "/images/alfred.png"
+        "title": "Raycast",
+        "description": "I've always been a huge Alfred fan and have many workflows but have recently switched over to Raycast which is even better!",
+        "link": "https://www.raycast.com/",
+        "image": "/images/raycast.png"
       },
       {
         "title": "Dropbox",
