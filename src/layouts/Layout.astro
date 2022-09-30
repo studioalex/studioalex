@@ -64,7 +64,8 @@ if (background) {
 
 <style>
 .sa {
-  width: 100vw;
+	position: relative;
+	width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -72,17 +73,16 @@ if (background) {
   justify-content: flex-start;
   align-content: stretch;
   align-items: stretch;
-  background-color: var(--color-background-dark);
   color: var(--color-text);
   overflow: auto;
   font-family: 'Montserrat', sans-serif;
+	z-index: 0;
 
 	&.praha {
 		background-image: url("/images/praha1.jpg");
-		background-repeat: repeat;
+		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
-		opacity: 0.6;
 	}
 }
 

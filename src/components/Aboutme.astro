@@ -1,0 +1,117 @@
+<div class="sa-about">
+  <div class="sa-about__left">
+    <div class="sa-about__circle">
+      <div class="sa-about__person"></div>
+    </div>
+  </div>
+  <div class="sa-about__right">
+    <div>
+      <div class="sa-about__headline">Alexander Sedeke</div>
+      <div class="sa-indicator"></div>
+      <p class="sa-about__text">
+        I am a full stack developer from Prague with more than 22 years of experience.
+        During these years I have worked for companies such as Lufthansa, ABB, Alstom, Vodafone, GfK and Deutsche Bahn.<br/>
+        I love building things for the web and learning about new ideas and techniques for productivity and workflows.<br/><br/>
+        I use HTML, CSS and JavaScript. Though constantly changing, my focus right now is Vue, Node, Fastify, Lambda, Astro and Neo4J.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style lang="postcss">
+.sa-about {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  padding: 2rem var(--margin-sides);
+  
+  &__circle {
+    display: inline-block;
+    background-color: var(--color-background);
+    padding: 2rem;
+    border-radius: 999em;
+  }
+  
+  &__person {
+    position: relative;
+    height: 50vw;
+    width: 50vw;
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 300px;
+    max-height: 300px;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 50vw;
+      width: 30vw;
+      min-width: 250px;
+      min-height: 300px;
+      max-width: 450px;
+      max-height: 350px;
+      background-image: url("/images/me.png");
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: contain;
+    }
+  }
+  
+  &__left {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    text-align: left;
+    padding: 2rem;
+  }
+  
+  &__right {
+    order: 1;
+    flex: 0 1 auto;
+    align-self: flex-end;
+    text-align: left;
+    max-width: 800px;
+    width: 40%;
+    min-width: 300px;
+    padding: 2rem 2rem;
+    color: var(--color-text);
+    background-color: hsl(245 10.9% 19.8% / 0.8);
+    border-radius: 0.5rem;
+  }
+  
+  &__text {
+    line-height: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+  }
+  
+  &__headline {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--color-text-highlight);
+  }
+}
+
+.sa-indicator {
+  display: block;
+  height: 3px;
+  margin: 1.5rem 50% 1.5rem 0;
+  background-color: var(--color-brand);
+}
+
+@media only screen and (max-width: 500px) {
+  .sa-about {
+    &__left {
+      padding: 0;
+    }
+
+    &__right {
+      box-sizing: border-box;
+    }
+  }
+}
+
+</style>
