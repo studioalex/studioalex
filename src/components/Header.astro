@@ -191,9 +191,9 @@ const currentPath = pathname.slice(1) // remove the first "/"
     right: 0;
     height: 0;
     width: 0;
-    overflow: scroll;
+    overflow: hidden;
     transition: all 0.1s;
-    display: none;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
@@ -201,6 +201,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
     align-items: stretch;
     padding: 2rem var(--margin-sides);
     box-sizing: border-box;
+    opacity: 0;
 
     &__items {
       order: 0;
@@ -253,10 +254,12 @@ const currentPath = pathname.slice(1) // remove the first "/"
       transform: translate3d(50vh, 50vh, 0) scale(5);
       transition-duration: 1s;
     }
+
     &:checked ~ .sa-menu-navigation {
-      display: flex;
       height: 100vh;
       width: 100vw;
+      opacity: 1;
+      overflow: scroll;
       transition: all 1s;
     }
 
