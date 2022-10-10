@@ -1,0 +1,54 @@
+---
+export interface Props {
+  prelude?: string;
+	name: string;
+  description: string;
+}
+
+const { prelude = 'I’m', name, description } = Astro.props
+---
+<div class="sa-profile">
+  <div class="sa-profile__block">
+    <span class="sa-profile__prelude">{prelude}</span>
+    <span class="sa-profile__name">{name}</span>
+    <span class="sa-profile__description" set:html={description}></span>
+  </div>
+  <slot />
+</div>
+
+<style>
+  .sa-profile {
+    flex: 1 1 auto;
+    align-self: auto;
+    padding: 2rem var(--margin-sides);
+    background-color: var(--color-background-dark);
+
+    &__block {
+      max-width: var(--screen-small);
+      margin: 0 auto;
+      padding-top: 6rem;
+      text-align: center;
+      color: var(--color-text-highlight);
+    }
+
+    &__prelude {
+      display: block;
+      font-size: 2.25rem
+    }
+
+    &__name {
+      display: block;
+      font-size: 3rem;
+      font-weight: 500;
+      padding: 2rem 0;
+    }
+
+    &__description {
+      display: block;
+      font-size: var(--font-size);
+      font-weight: 300;
+      line-height: 1.8;
+      letter-spacing: 0.05rem;
+    }
+  }
+</style>

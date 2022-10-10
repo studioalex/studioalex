@@ -11,10 +11,19 @@ body {
   font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
   background-color: var(--color-background-dark);
-  overflow: hidden;
 }
 
 a {
   color: var(--color-brand);
   text-decoration: none;
+}
+
+.sa-link--strong {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.sa-link--light {
+  text-transform: lowercase;
+  font-weight: 300;
 }

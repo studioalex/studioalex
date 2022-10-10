@@ -1,17 +1,59 @@
 ---
+import Icon from './Icon.astro'
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props
 const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1) // remove the first "/"
 ---
 <header class="sa-nav">
   <div class="sa-nav__left">
     <a href="/" class="sa-nav__brandname">
-      StudioAlex
+      {title}
     </a>
   </div>
   <div class="sa-nav__right">
     <a href="/" class={currentPath === "" ? "sa-nav__link active" : "sa-nav__link"}>Home</a>
-    <a href="/uses" class={currentPath === "uses/" ? "sa-nav__link active" : "sa-nav__link"}>Uses</a>
-    <a href="/about" class={currentPath === "about" ? "sa-nav__link active" : "sa-nav__link"}>About me</a>
+    <a href="/alexander" class={currentPath.includes("alexander") ? "sa-nav__link active" : "sa-nav__link"}>Alexander</a>
+    <a href="/lea" class={currentPath.includes("lea") ? "sa-nav__link active" : "sa-nav__link"}>Lea</a>
+    <a
+      href="https://github.com/studioalex"
+      class="sa-nav__social-link"
+      id="github">
+      <Icon
+        class="sa-nav__social-svg"
+        icon="github" />
+    </a>
+    <input type="checkbox" class="sa-menu-checked" id="menu-checked">
+    <label class="sa-menu-icon" for="menu-checked">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div class="sa-menu-navigation">
+      <div class="sa-menu-navigation__items">
+        <nav class="sa-menu-navigation__list">
+          <a href="/" class={currentPath === "" ? "active" : ""}>Home</a>
+          <a href="/alexander" class={currentPath === "alexander" ? "active" : ""}>Alexander</a>
+          <a href="/lea" class={currentPath === "lea" ? "active" : ""}>Lea</a>
+          <a href="/alexander/uses" class={currentPath === "alexander/uses" ? "active" : ""}><span>Alexander /</span> uses</a>
+          <a href="/lea/uses" class={currentPath === "lea/uses" ? "active" : ""}><span>Lea /</span> uses</a>
+          <div class="sa-menu-navigation__social">
+            <a
+              href="https://github.com/studioalex"
+              class="sa-nav__social-link"
+              id="github">
+              <Icon
+                class="sa-nav__social-svg"
+                icon="github" />
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="sa-menu-background"></div>
   </div>
 </header>
 
@@ -22,9 +64,10 @@ const currentPath = pathname.slice(1) // remove the first "/"
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-content: stretch;
-    align-items: flex-start;
+    align-items: center;
+
     padding: 1.25rem var(--margin-sides);
-    transition: padding 1s;
+    transition: padding 0.6s;
 
     &__left {
       order: 0;
@@ -36,17 +79,25 @@ const currentPath = pathname.slice(1) // remove the first "/"
       order: 1;
       flex: 0 1 auto;
       align-self: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      align-content: stretch;
+      align-items: center;
     }
     
     &__brandname {
       color: var(--color-text-highlight);
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 600;
+      white-space: nowrap;
+      word-break: keep-all;
     }
     
     &__link {
-      padding: 0 0 0 2rem;
-      line-height: 2rem;
+      margin-left: 2rem;
+      font-size: 1.2rem;
       color: var(--color-text);
       transition: color 0.3s;
       white-space: nowrap;
@@ -58,6 +109,178 @@ const currentPath = pathname.slice(1) // remove the first "/"
       &.active {
         color: var(--color-text-highlight);
       }
+    }
+
+    &__social-link {
+      display: inline-block;
+      margin-left: 2rem;
+      color: var(--color-text);
+
+      &:hover {
+        color: var(--color-text-highlight);
+      }
+
+      svg {
+        width: 32px;
+        height: 32px;
+        vertical-align: bottom;
+      }
+    }
+        
+    &__social-svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .sa-menu-icon {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    font-size: 10px;
+    width: 3.5em;
+    height: 3.5em;
+    cursor: pointer;
+    position: relative;
+    margin-left: 2rem;
+    z-index: 920;
+
+    span {
+      background: var(--color-text);
+      border-radius: 999em;
+      height: 0.35em;
+      margin: 0.33em 0;
+      transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+
+    span:nth-of-type(1){
+      width: 50%;
+    }
+
+    span:nth-of-type(2){
+      width: 100%;
+    }
+
+    span:nth-of-type(3){
+      width: 75%;
+    }
+
+    &:hover span {
+      background: var(--color-text-highlight);
+    }
+  }
+
+  .sa-menu-background {
+    position: fixed;
+    z-index: 900;
+    width: 0px;
+    height: 0px;
+    right: 0;
+    top: 0;
+    background-color: var(--color-background-dark);
+    border-color: 3px solid white;
+    border-radius: 50%;
+    transition: transform .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
+                width .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
+                height .25s cubic-bezier(0.04, -0.1, 0.29, 0.98);
+  }
+
+  .sa-menu-navigation {
+    position: absolute;
+    z-index: 910;
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 0;
+    overflow: scroll;
+    transition: all 0.1s;
+    display: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-content: stretch;
+    align-items: stretch;
+    padding: 2rem var(--margin-sides);
+    box-sizing: border-box;
+
+    &__items {
+      order: 0;
+      flex: 1 1 auto;
+      align-self: auto;
+      min-width: 300px;
+      max-width: 450px;
+      padding: 5rem 0 0 0;
+    }
+
+    &__list {
+      font-size: 1rem;
+
+      a {
+        display: block;
+        font-size: 1.3em;
+        color: var(--color-text);
+        padding: 0.6em 1em;
+        &:hover {
+          background-color: var(--color-background);
+        }
+
+        &.active {
+          color: var(--color-text-highlight);
+        }
+
+        span {
+          color: var(--color-text-dark);
+        }
+      }
+    }
+
+    &__social {
+      margin: 2rem 0 0 2rem;
+
+      a {
+        display: inline-block;
+        padding: 0;
+        margin: 0 0.5em;
+      }
+    }
+  }
+
+  .sa-menu-checked {
+    display: none;
+
+    &:checked ~ .sa-menu-background {
+      width: 100vmax;
+      height: 100vmax;
+      transform: translate3d(50vh, 50vh, 0) scale(5);
+      transition-duration: 1s;
+    }
+    &:checked ~ .sa-menu-navigation {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      transition: all 1s;
+    }
+
+    &:checked ~ .sa-menu-icon span:nth-of-type(1) {
+      transform-origin: bottom;
+      transform: rotatez(45deg) translate(0.4em, 0px);
+    }
+
+    &:checked ~ .sa-menu-icon span:nth-of-type(2) {
+      transform-origin: top;
+      transform: rotatez(-45deg)
+    }
+
+    &:checked ~ .sa-menu-icon span:nth-of-type(3) {
+      transform-origin: bottom;
+      width: 50%;
+      transform: translate(1.5em, -0.55em) rotatez(45deg);
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .sa-nav__link, #github {
+      display: none;
     }
   }
 </style>

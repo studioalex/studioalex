@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Headline from '../../components/Headline.astro'
+import Paragraph from '../../components/Paragraph.astro'
+import Uses from '../../components/Uses.astro'
+import Hardware from '../../components/Hardware.astro'
+import ButtonGradient from '../../components/ButtonGradient.astro'
+import usesList from './uses.json'
+import hardwareList from './hardware.json'
+---
+<Layout title="Studio Alex - Alexander uses" styles="size-small">
+  <div class="sa-uses__toolbar">
+    <ButtonGradient color="orange" link="/alexander"><span class="sa-link--light">alexander / </span><span class="sa-link--strong">Profile</span></ButtonGradient>
+  </div>
+  <Headline title="Alexander uses" />
+
+  <Paragraph>
+    There are times where people ask me about what software or gear I am using.
+    <br />This page will serve as a living document for people to always know the latest and greatest.
+  </Paragraph>
+  
+  <Hardware list={hardwareList} />
+
+  {usesList.map(item => (
+    <Uses title={item.title} data={item.items} />
+  ))}
+
+  <Paragraph>
+    This page is inspired from <a href="https://wesbos.com/uses" target="_blank">Wes Bos' Uses page</a>.
+  </Paragraph>
+</Layout>

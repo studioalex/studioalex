@@ -1,0 +1,66 @@
+---
+import Icon from './Icon.astro'
+import ButtonUses from './ButtonUses.astro'
+
+export interface Social {
+  icon: string;
+  url: string;
+}
+
+export interface Props {
+	list: Social[],
+  uses?: string,
+  usesLink?: string
+}
+
+const { list, uses, usesLink } = Astro.props;
+---
+<div class="sa-social">
+  {list.map(social => (
+    <a
+      href={social.url}
+      class="sa-social__link"
+      id="github">
+      <Icon
+        class="sa-social__svg"
+        icon={social.icon} />    
+    </a>
+  ))}
+</div>
+<div class="sa-social">
+  {(uses && usesLink) && <ButtonUses link={usesLink} name={uses} /> }
+</div>
+
+<style>
+.sa-social {
+  padding: 2rem var(--margin-sides);
+  text-align: center;
+      
+  &__link {
+    display: inline-block;
+    padding: 0.6rem;
+    margin-right: 1rem;
+    color: var(--color-text);
+    border-radius: 6px;
+    
+    &:hover {
+      color: var(--color-text-highlight);
+    }
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+      
+  &__svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+</style>

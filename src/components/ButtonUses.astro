@@ -1,0 +1,60 @@
+---
+export interface Props {
+	link: string;
+  name: string;
+}
+
+const { link, name } = Astro.props
+---
+<a href={link} class="sa-btn">
+  <span class="sa-btn--light">{name} / </span><span class="sa-btn--strong">uses</span>
+</a>
+
+<style>
+.sa-btn {
+  position: relative;
+  display: inline-block;
+  padding: .6em 1em;
+  border: none;
+  color: rgb(233 76 36);
+  font-size: 1.3em;
+  vertical-align: text-bottom;
+
+  &--strong {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &--light {
+    text-transform: lowercase;
+    font-weight: 300;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.6em; 
+    padding: 3px; 
+    background: linear-gradient(-45deg, rgb(233 76 36), rgb(222 107 37), rgb(232 134 41), rgb(247 206 61));
+    background-size: 400% 400%;
+    animation: ButtonGradientAnimation 6s ease infinite;
+    -webkit-mask: 
+      linear-gradient(#FFFFFF 0 0) content-box, 
+      linear-gradient(#FFFFFF 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+  }
+}
+@keyframes ButtonGradientAnimation {
+    0% {
+      background-position: 0% 37%;
+    }
+    50% {
+      background-position: 100% 64%;
+    }
+    100% {
+      background-position: 0% 37%;
+    }
+}
+</style>

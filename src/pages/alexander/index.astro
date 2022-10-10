@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Aboutme from '../../components/Aboutme.astro'
+import Profile from '../../components/Profile.astro'
+import Social from '../../components/Social.astro'
+import Introduce from './Introduce.astro'
+
+import socialsList from './socials.json'
+
+const person = 'Alexander Sedeke'
+const description = 'I’m a  creative Full-Stack Developer<br /> from Prag, Czech Republic'
+
+// const description2 = `I am a full stack developer from Prague with more than 22 years of experience.<br/>
+// During these years I have worked for companies such as Lufthansa, ABB, Alstom, Vodafone, GfK and Deutsche Bahn.<br/>
+// I love building things for the web and learning about new ideas and techniques for productivity and workflows.<br/><br/>
+// I use HTML, CSS and JavaScript. Though constantly changing, my focus right now is Vue, Node, Fastify, Lambda, Astro and Neo4J.`
+---
+<Layout title="Studio Alex - Alexander" background="praha" styles="flex">
+  <Aboutme image="/images/alex.png" />
+  <Profile name={person} description={description}>
+    <Social list={socialsList}  uses="alexander" usesLink="/alexander/uses"/>
+    <Introduce />
+  </Profile>
+</Layout>

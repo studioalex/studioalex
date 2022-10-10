@@ -1,0 +1,65 @@
+---
+export interface Props {
+	link: string;
+  color?: string
+}
+
+const { link, color } = Astro.props
+
+const classes = ['sa-btn']
+if (color) {
+  classes.push(`sa-btn--${color.toLocaleLowerCase()}`)
+}
+---
+<a href={link} class={classes.join(' ')}>
+  <slot/>
+</a>
+
+<style>
+.sa-btn {
+  position: relative;
+  display: inline-block;
+  padding: .6em 1em;
+  border: none;
+  color: rgb(255 255 255);
+  font-size: 1em;
+  vertical-align: text-bottom;
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.6em; 
+    padding: 3px; 
+    background: rgb(255 255 255);
+    background-size: 400% 400%;
+    animation: sa-button-animation 2s ease infinite;
+    -webkit-mask: 
+      linear-gradient(#FFFFFF 0 0) content-box, 
+      linear-gradient(#FFFFFF 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+  }
+
+  &--orange {
+    font-size: 1rem;
+    color: rgb(222 107 37);
+
+    &::before {
+      background: linear-gradient(-45deg, rgb(233 76 36), rgb(222 107 37), rgb(232 134 41), rgb(247 206 61));
+    }
+  }
+
+  @keyframes sa-button-animation {
+    0% {
+      background-position: 0% 37%;
+    }
+    50% {
+      background-position: 100% 64%;
+    }
+    100% {
+      background-position: 0% 37%;
+    }
+  }
+}
+</style>

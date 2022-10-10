@@ -1,0 +1,51 @@
+---
+
+export interface Hardware {
+  title: string;
+  content: string;
+}
+export interface Props {
+  list: Hardware[];
+}
+
+const { list } = Astro.props as Props
+---
+<div class="sa-uses__block">
+  <h2 class="sa-uses__title">Hardware</h2>
+  <div class="sa-uses__item">
+    <div class="sa-uses__grid">
+      {list.map(item => (
+        <div class="sa-uses__subtitle">{item.title}:</div>
+        <div class="sa-uses__info">{item.content}</div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+.sa-uses {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+  }
+  
+  &__subtitle {
+    color: var(--color-text-highlight);
+  }
+  
+  &__info {
+    color: var(--color-text);
+  }
+  
+  &__block {
+    margin: 4rem 0;
+  }
+
+  &__title {
+    color: var(--color-text-dark);
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}
+</style>

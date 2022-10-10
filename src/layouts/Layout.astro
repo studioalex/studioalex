@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import '../styles/global.css'
+
 export interface Props {
 	title?: string;
 	styles?: string;
@@ -37,8 +38,8 @@ if (background) {
 
 		<meta property="og:title" content="studioalex">
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://www.studioalex.one">
-		<meta property="og:image" content="">
+		<meta property="og:url" content="https://www.studioalex.dev">
+		<meta property="og:image" content="https://www.studioalex.dev/images/screen_studioalex.png">
 
 		<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -51,9 +52,45 @@ if (background) {
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	</head>
+	<!--
+                                           ,,╓,
+                                        ╓████████▄
+                             ,╓▄▄▄xæ▄▄▄▓██████████▌
+                       ,æ▀▀╙─            └╙▀▀██████
+                   ,Æ▀└                        ╙▀█▌
+                 ▄▀                               └▀▄
+        ▄▓███▓▄Æ└                                    ▀▄
+      ▓███████╙                           ▄▄▓▓▄▄▄,     ▀
+     ▐██████▀                           ▄███████████▄   ╙µ    ▄▓██▓▄,
+     └█████▀                           j██████████████   ╟  ▄██'▐▌.███
+      ╙███▀                            ▐█▌ '██████████▌   █▓█ ╫█▀▀█▌ █▌
+        ╙▌        ,▄██▓▄,               ██▓▓██████████▌   ╟███▀    ╙███
+        ╫       ▄█████████▄              ▀███████████▀    ▐███▌    ▄███
+        █      ████████╙ ▐█▌     ██▀       ╙▀▀██▀▀▀╙      █████████████
+        █     █████████▄▄███                    ░░ '     ▄████████████▌
+        ╟     ██████████████          ▄^                ▓█████████████
+         ▌    ╟████████████      ▀══▀╙                ▄██████████████
+         ╙▌    ╙████████▀└                         ╓▓█████████████▀─
+           ▌     ─╙▀▀╙─  '░                    ▄▄██████████████▀▀
+            ╙▄         ''                 ▄æ▀╙─ └╙╙▀▀▀▀▀█▀▀▀╙─
+              ╙¼,                   ╓▄ª▀╙─              ╙µ
+                 ╙▀╗▄╓,,,,,,▄▄▄M▀▀╙─                     █
+                    ╟█████████▌                          ▐▄▄,
+                    ██████████▌                          [████▄
+      Hi there      ███████████▌                         '█████▌  ╓▄▄▄,
+                 ▄▄██████████████▄                      ,▐█████████▀█▀███µ
+              ,███▀████████████████▓,                   ░█████████ ▐▌,█^╟█µ
+             ]█▌╙█'╟▌█████████████████▄               ;░█████████▀╙╙╙██▓▀█▌
+             ▐██▄██▀▀▀██████████████████▄           ;░╓█████████'     █▒╓█
+              █.╙█    ╙██████████████████▌      ,≤░',▓█████████▒     .███¬
+              └███      ╟█████████████████░░░│''',▄▀╙╙╙╙╙███████,  ,▄██▀
+                ▀██▄    ▓████████████████▀,▄▄▄╧▀╙        ╙███████████▀
+                  ▀███████████▀╙▀▀▀▀▀▀▀╙└└─                 ╙▀▀▀▀▀└
+                    ─╙▀▀▀▀▀▀╙
+	 -->
 	<body>
 		<div class={backgroundClass.join(' ')}>
-			<Header />
+			<Header title="&lt;studio-alex-dev/&gt;" />
 			<main class={contentClass.join(' ')}>
 		    <slot />
 		  </main>
@@ -64,9 +101,8 @@ if (background) {
 
 <style>
 .sa {
-	position: relative;
-	width: 100vw;
-  height: 100vh;
+	min-width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -74,25 +110,66 @@ if (background) {
   align-content: stretch;
   align-items: stretch;
   color: var(--color-text);
-  overflow: auto;
+	overflow-x: hidden;
+  overflow-y: auto;
   font-family: 'Montserrat', sans-serif;
 	z-index: 0;
 
 	&.praha {
 		background-image: url("/images/praha1.jpg");
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: center -50vh;
 		background-size: cover;
+		transition: background 0.6s;
 	}
+}
+
+@media only screen and (max-width: 2400px) {
+  .sa {
+    &.praha {
+		  background-position: center -40vh;
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .sa {
+    &.praha {
+		  background-position: left -20vh;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sa {
+    &.praha {
+		  background-position: -250px -450px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sa {
+    &.praha {
+		  background-position: -550px -850px;
+    }
+  }
 }
 
 .sa-content {
   flex: 1 1 auto;
   align-self: auto;
-  max-width: 1440px;
-  margin: 0 auto;
+
+	&.flex {
+		display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+	}
   
-  &.distribute {
+  &.flex-distribute {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -101,7 +178,7 @@ if (background) {
     align-items: stretch;
   }
 
-	&.center {
+	&.flex-center {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -110,9 +187,16 @@ if (background) {
     align-items: stretch;
   }
 
-	&.small {
+
+  &.size-full {
+		max-width: 1440px;
+    margin: 0 auto;
+	}
+
+	&.size-small {
     max-width: 768px;
 		padding: 0 2rem;
+    margin: 0 auto;
   }
 }
 </style>

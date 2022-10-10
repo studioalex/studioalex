@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Aboutme from '../../components/Aboutme.astro'
+import Profile from '../../components/Profile.astro'
+import Social from '../../components/Social.astro'
+import Introduce from './Introduce.astro'
+
+import socialsList from './socials.json'
+
+const person = 'Lea Vu'
+const description = 'Product designer specialising in UX and UI design<br />and design systems from Prag, Czech Republic.'
+---
+<Layout title="Studio Alex - Lea" background="praha" styles="flex">
+  <Aboutme image="/images/lea.png" />
+  <Profile name={person} description={description}>
+    <Social list={socialsList} uses="lea" usesLink="/lea/uses"/>
+    <Introduce />
+  </Profile>
+</Layout>
