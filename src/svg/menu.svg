@@ -1,6 +1,0 @@
-<svg width="512" height="512" viewBox="0 0 512 512" aria-labelledby="mneu" role="presentation" xmlns="http://www.w3.org/2000/svg">
-  <title id="menu" lang="en">menu</title>
-  <line x1="146" y1="155" x2="365" y2="155" stroke="currentColor" stroke-width="50" stroke-linecap="round"/>
-  <line x1="146" y1="355" x2="330" y2="355" stroke="currentColor" stroke-width="50" stroke-linecap="round"/>
-  <line x1="146" y1="255" x2="261" y2="255" stroke="currentColor" stroke-width="50" stroke-linecap="round"/>
-</svg>
