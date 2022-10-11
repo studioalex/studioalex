@@ -16,7 +16,7 @@ const { link, name } = Astro.props
   display: inline-block;
   padding: .6em 1em;
   border: none;
-  color: rgb(233 76 36);
+  color: var(--color-brand);
   font-size: 1.3em;
   vertical-align: text-bottom;
 
@@ -36,7 +36,7 @@ const { link, name } = Astro.props
     inset: 0;
     border-radius: 0.6em; 
     padding: 3px; 
-    background: linear-gradient(-45deg, rgb(233 76 36), rgb(222 107 37), rgb(232 134 41), rgb(247 206 61));
+    background: linear-gradient(-45deg, hsl(116 32.2% 22.5%), hsl(116 32.2% 32.5%), hsl(116 32.2% 42.5%), hsl(116 32.2% 52.5%));
     background-size: 400% 400%;
     animation: ButtonGradientAnimation 6s ease infinite;
     -webkit-mask: 

@@ -50,6 +50,15 @@ if (color) {
     }
   }
 
+  &--green {
+    font-size: 1rem;
+    color: hsl(116 32.2% 42.5%);
+
+    &::before {
+      background: linear-gradient(-45deg, hsl(116 32.2% 22.5%), hsl(116 32.2% 32.5%), hsl(116 32.2% 42.5%), hsl(116 32.2% 52.5%));
+    }
+  }
+
   @keyframes sa-button-animation {
     0% {
       background-position: 0% 37%;
