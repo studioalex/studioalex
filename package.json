@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.4.7",
-    "autoprefixer": "^10.4.12",
-    "cssnano": "^5.1.13",
-    "node-html-parser": "^6.1.1",
+    "astro": "^1.6.11",
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.14",
+    "node-html-parser": "^6.1.4",
     "postcss-nested": "^6.0.0"
   }
 }
