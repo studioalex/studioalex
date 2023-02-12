@@ -6,6 +6,8 @@ on:
       - main
   repository_dispatch:
     types: [publish-event]
+    branches:
+      - main
 
 jobs:
   deploy:
