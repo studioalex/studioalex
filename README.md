@@ -1,4 +1,4 @@
-# Welcome to [StudioAlex](https://www.studioalex.one/)
+# Welcome to [StudioAlex](https://www.studioalex.dev/)
 
 This this my profile page, build with [Astro](https://astro.build).
 

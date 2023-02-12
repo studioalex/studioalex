@@ -1,6 +1,8 @@
 ---
+import { site } from '../lib/getSiteInfo'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+
 import '../styles/global.css'
 
 export interface Props {
@@ -10,7 +12,7 @@ export interface Props {
 }
 
 const {
-	title = 'Studio Alex',
+	title = site.fields.title,
 	styles = false,
 	background = false
 } = Astro.props

@@ -1,9 +1,10 @@
 ---
+import { site } from '../lib/getSiteInfo'
 import Icon from './Icon.astro'
 ---
 
 <footer class="sa-footer">
-  <div class="sa-footer__copyright">All materials © Studio Alex 2022</div>
+  <div class="sa-footer__copyright">{site.fields.copyright}</div>
   <div class="sa-footer__social-links"> 
     <a
       href="https://astro.build"
