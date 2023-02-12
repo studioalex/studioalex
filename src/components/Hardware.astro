@@ -1,11 +1,11 @@
 ---
 
-export interface Hardware {
+export interface HardwareType {
   title: string;
   content: string;
 }
 export interface Props {
-  list: Hardware[];
+  list: HardwareType[];
 }
 
 const { list } = Astro.props as Props

@@ -2,13 +2,13 @@
 import Icon from './Icon.astro'
 import ButtonUses from './ButtonUses.astro'
 
-export interface Social {
+export interface SocialType {
   icon: string;
   url: string;
 }
 
 export interface Props {
-	list: Social[],
+	list: SocialType[],
   uses?: string,
   usesLink?: string
 }

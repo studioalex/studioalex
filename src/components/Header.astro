@@ -16,8 +16,8 @@ const currentPath = pathname.slice(1) // remove the first "/"
   </div>
   <div class="sa-nav__right">
     <a href="/" class={currentPath === "" ? "sa-nav__link active" : "sa-nav__link"}>Home</a>
-    <a href="/alexander" class={currentPath.includes("alexander") ? "sa-nav__link active" : "sa-nav__link"}>Alexander</a>
-    <a href="/lea" class={currentPath.includes("lea") ? "sa-nav__link active" : "sa-nav__link"}>Lea</a>
+    <a href="/alexander/about" class={currentPath.includes("alexander") ? "sa-nav__link active" : "sa-nav__link"}>Alexander</a>
+    <a href="/lea/about" class={currentPath.includes("lea") ? "sa-nav__link active" : "sa-nav__link"}>Lea</a>
     <a
       href="https://github.com/studioalex"
       class="sa-nav__social-link"
@@ -37,8 +37,8 @@ const currentPath = pathname.slice(1) // remove the first "/"
       <div class="sa-menu-navigation__items">
         <nav class="sa-menu-navigation__list">
           <a href="/" class={currentPath === "" ? "active" : ""}>Home</a>
-          <a href="/alexander" class={currentPath === "alexander" ? "active" : ""}>Alexander</a>
-          <a href="/lea" class={currentPath === "lea" ? "active" : ""}>Lea</a>
+          <a href="/alexander/about" class={currentPath === "alexander" ? "active" : ""}>Alexander</a>
+          <a href="/lea/about" class={currentPath === "lea" ? "active" : ""}>Lea</a>
           <a href="/alexander/uses" class={currentPath === "alexander/uses" ? "active" : ""}><span>Alexander /</span> uses</a>
           <a href="/lea/uses" class={currentPath === "lea/uses" ? "active" : ""}><span>Lea /</span> uses</a>
           <div class="sa-menu-navigation__social">

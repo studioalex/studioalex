@@ -1,0 +1,53 @@
+---
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
+import { contentfulClient } from "../../lib/contentful"
+import Layout from '../../layouts/Layout.astro'
+import Aboutme from '../../components/Aboutme.astro'
+import Profile from '../../components/Profile.astro'
+import Social from '../../components/Social.astro'
+import Introduce from '../../components/Introduce.astro'
+
+import type { Document } from "@contentful/rich-text-types"
+import type { ServiceType } from '../../components/Introduce.astro'
+import type { SocialType } from '../../components/Social.astro'
+
+interface StudioAlexUsers {
+  name: string,
+  nickname: string,
+  about: Document,
+  profile: Document,
+  email: string,
+  social: SocialType[]
+  services: ServiceType[]
+}
+
+export function getStaticPaths() {
+  return [
+    {params: { user: 'alexander' }},
+    {params: { user: 'lea' }}
+  ]
+}
+
+const { user } = Astro.params
+const idList = {
+  'alexander': '3oRoJvys6PoWW6Hwv17Hdf',
+  'lea': '41b8LHFCinwNB0cgTCA70U'
+}
+const person = await contentfulClient.getEntry<StudioAlexUsers>(idList[user])
+---
+<Layout title={`Studio Alex - ${person.fields.nickname}`} background="praha" styles="flex">
+  <Aboutme image={`/images/person/${person.fields.nickname.toLowerCase()}.png`} />
+  <Profile
+    name={person.fields.name}
+    description={documentToHtmlString(person.fields.about)}>
+    <Social
+      list={person.fields.social}
+      uses={person.fields.nickname.toLowerCase()}
+      usesLink={`/${person.fields.nickname.toLowerCase()}/uses`} />
+    <Introduce
+      email={person.fields.email}
+      profile={documentToHtmlString(person.fields.profile)} 
+      services={person.fields.services}
+      usesPath={`/${person.fields.nickname.toLowerCase()}/uses`}/>
+  </Profile>
+</Layout>

@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^1.0.1",
+    "@contentful/rich-text-html-renderer": "^16.0.2",
     "astro": "^2.0.9",
     "autoprefixer": "^10.4.13",
+    "contentful": "^9.3.2",
     "cssnano": "^5.1.14",
     "node-html-parser": "^6.1.4",
     "postcss-nested": "^6.0.0"
