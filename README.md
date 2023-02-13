@@ -1,6 +1,6 @@
 # Welcome to [StudioAlex](https://www.studioalex.dev/)
 
-This this my profile page, build with [Astro](https://astro.build).
+This this my profile page, build with [Astro](https://astro.build) and [Contentful](https://www.contenful.com) as content management.
 
 ## 🚀 Project Structure
 
