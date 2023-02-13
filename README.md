@@ -1,43 +1,13 @@
 # Welcome to [StudioAlex](https://www.studioalex.dev/)
 
-This this my profile page, build with [Astro](https://astro.build) and [Contentful](https://www.contenful.com) as content management.
+This is the code base for our web presence based on [Astro](https://astro.build) and [Contentful](https://www.contenful.com). While Astro is one of the best decisions we've made, Contentful is still in the testing phase. We are always open to suggestions.
+You are also welcome to use this project as a basis for your presentation.
 
-## 🚀 Project Structure
+## 🚀 Why
 
-Inside of your Astro project, you'll see the following folders and files:
+We wanted to have a simpler approach to our web presence than current frameworks such as 11ty or Hugo have. Astro JS offers exactly that. In the second step we separate the content to facilitate adjustments. These should also be easily adaptable by everyone in the team. With Contentful, we have achieved this. As soon as new content is published in Contentful, the application is rebuilt via a webhook. On our website we describe how such a webhook is set up in Contetnful.
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
+![screenshot](./assets/Screenshot.png)
 
 ## 👀 Want to learn more?
 
