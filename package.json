@@ -19,5 +19,10 @@
     "cssnano": "^5.1.14",
     "node-html-parser": "^6.1.4",
     "postcss-nested": "^6.0.0"
+  },
+  "devDependencies": {
+    "postcss-discard-comments": "^5.1.2",
+    "postcss-each": "^1.1.0",
+    "postcss-import": "^15.1.0"
   }
 }

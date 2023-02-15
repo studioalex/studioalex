@@ -48,19 +48,19 @@ const { email, profile, services, usesPath } = Astro.props;
 
 <style is:global>
 .sa-introduce {
-  max-width: var(--screen-small);
+  max-width: var(--screen-size--small);
   margin: 2rem auto;
-  color: var(--color-text-highlight);
+  color: var(--theme-color-text--highlight);
 
   p {
-    font-size: var(--font-size);
+    font-size: var(--font-size--h5);
     font-weight: 300;
     margin: 0 0 1.5rem;
     line-height: 1.5;
   }
 
   ul {
-    font-size: var(--font-size);
+    font-size: var(--font-size--h5);
     font-weight: 300;
     padding: 1rem 0;
 
@@ -68,12 +68,12 @@ const { email, profile, services, usesPath } = Astro.props;
       margin-bottom: 1rem;
       margin-left: 1rem;
       line-height: 1.5;
-      color: var(--color-text);
+      color: var(--theme-color-text);
     }
 
     strong {
       font-weight: 400;
-      color: var(--color-text-highlight);
+      color: var(--theme-color-text--highlight);
     }
   }
 }

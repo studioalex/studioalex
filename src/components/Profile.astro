@@ -21,14 +21,14 @@ const { prelude = 'I’m', name, description } = Astro.props
     flex: 1 1 auto;
     align-self: auto;
     padding: 2rem var(--margin-sides);
-    background-color: var(--color-background-dark);
+    background-color: var(--theme-color-background--dark);
 
     &__block {
-      max-width: var(--screen-small);
+      max-width: var(--screen-size--small);
       margin: 0 auto;
       padding-top: 6rem;
       text-align: center;
-      color: var(--color-text-highlight);
+      color: var(--theme-color-text--highlight);
     }
 
     &__prelude {
@@ -45,7 +45,7 @@ const { prelude = 'I’m', name, description } = Astro.props
 
     &__description {
       display: block;
-      font-size: var(--font-size);
+      font-size: var(--font-size--h5);
       font-weight: 300;
       line-height: 1.8;
       letter-spacing: 0.05rem;

@@ -17,7 +17,6 @@ const currentPath = pathname.slice(1) // remove the first "/"
   </div>
   <div class="sa-nav__right">
     <a href="/" class={currentPath === "" ? "sa-nav__link active" : "sa-nav__link"}>Home</a>
-    <a href="/tips" class={currentPath.includes("tips") ? "sa-nav__link active" : "sa-nav__link"}>Tips</a>
     <a href="/alexander/about" class={currentPath.includes("alexander") ? "sa-nav__link active" : "sa-nav__link"}>Alexander</a>
     <a href="/lea/about" class={currentPath.includes("lea") ? "sa-nav__link active" : "sa-nav__link"}>Lea</a>
     <a
@@ -71,7 +70,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
 
     padding: 1.25rem var(--margin-sides);
     transition: padding 0.6s;
-    background-color: var(--color-nav-background);
+    background-color: var(--theme-color-background--transparent);
 
     &__left {
       order: 0;
@@ -94,7 +93,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
     &__brandname {
       position: relative;
       z-index: 910;
-      color: var(--color-text-highlight);
+      color: var(--theme-color-text--highlight);
       font-size: 1.3rem;
       font-weight: 600;
       white-space: nowrap;
@@ -104,26 +103,26 @@ const currentPath = pathname.slice(1) // remove the first "/"
     &__link {
       margin-left: 2rem;
       font-size: 1.2rem;
-      color: var(--color-link);
+      color: var(--theme-color-link);
       transition: color 0.3s;
       white-space: nowrap;
       
       &:hover {
-        color: var(--color-link-highlight);
+        color: var(--theme-color-link--highlight);
       }
       
       &.active {
-        color: var(--color-link-highlight);
+        color: var(--theme-color-link--highlight);
       }
     }
 
     &__social-link {
       display: inline-block;
       margin-left: 2rem;
-      color: var(--color-link);
+      color: var(--theme-color-link);
 
       &:hover {
-        color: var(--color-link-highlight);
+        color: var(--theme-color-link--highlight);
       }
 
       svg {
@@ -152,7 +151,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
     z-index: 920;
 
     span {
-      background: var(--color-link);
+      background: var(--theme-color-link);
       border-radius: 999em;
       height: 0.35em;
       margin: 0.33em 0;
@@ -172,7 +171,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
     }
 
     &:hover span {
-      background: var(--color-link-highlight);
+      background: var(--theme-color-link--highlight);
     }
   }
 
@@ -183,7 +182,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
     height: 0px;
     right: 0;
     top: 0;
-    background-color: var(--color-background-dark);
+    background-color: var(--theme-color-background--dark);
     border-color: 3px solid white;
     border-radius: 50%;
     transition: transform .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
@@ -225,18 +224,18 @@ const currentPath = pathname.slice(1) // remove the first "/"
       a {
         display: block;
         font-size: 1.3em;
-        color: var(--color-link);
+        color: var(--theme-color-link);
         padding: 0.6em 1em;
         &:hover {
-          background-color: var(--color-background);
+          background-color: var(--theme-color-background);
         }
 
         &.active {
-          color: var(--color-link-highlight);
+          color: var(--theme-color-link--highlight);
         }
 
         span {
-          color: var(--color-text-dark);
+          color: var(--theme-color-text--dark);
         }
       }
     }

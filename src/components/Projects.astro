@@ -78,7 +78,7 @@ import Headline from './Headline.astro'
     min-width: 300px;
     width: 30%;
     padding: 1rem 1rem 2rem 1rem;
-    background-color: var(--color-background-light);
+    background-color: var(--theme-color-background--light);
     margin: 1rem;
     border-radius: 4px;
     box-sizing: border-box;
@@ -91,7 +91,7 @@ import Headline from './Headline.astro'
   &__title {
     font-size: 1.3rem;
     font-weight: 500;
-    color: var(--color-text-highlight);
+    color: var(--theme-color-text--highlight);
   }
   
   &__description {
@@ -115,12 +115,12 @@ import Headline from './Headline.astro'
     position: absolute;
     bottom: 1rem;
     right: 1rem;
-    border: 1px solid var(--color-brand);
+    border: 1px solid var(--theme-color-brand);
     border-radius: 999em;
     padding: 0.1rem 1rem;
     &:hover {
-      background-color: var(--color-brand);
-      color: var(--color-background-light);
+      background-color: var(--theme-color-brand);
+      color: var(--theme-color-background--light);
     }
   }
 }
