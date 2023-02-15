@@ -47,7 +47,7 @@ const person = await contentfulClient.getEntry<StudioAlexUsers>(idList[user])
   <div class="sa-uses__toolbar">
     <ButtonGradient color="green" link={`/${person.fields.nickname.toLowerCase()}/about`}><span class="sa-link--light">{person.fields.nickname} / </span><span class="sa-link--strong">Profile</span></ButtonGradient>
   </div>
-  <Headline title={`${person.fields.nickname} uses`} />
+  <Headline>{`${person.fields.nickname} uses`}</Headline>
 
   <Paragraph>
     There are times where people ask me about what software or gear I am using.

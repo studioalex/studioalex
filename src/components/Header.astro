@@ -17,6 +17,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
   </div>
   <div class="sa-nav__right">
     <a href="/" class={currentPath === "" ? "sa-nav__link active" : "sa-nav__link"}>Home</a>
+    <a href="/tips" class={currentPath.includes("tips") ? "sa-nav__link active" : "sa-nav__link"}>Tips</a>
     <a href="/alexander/about" class={currentPath.includes("alexander") ? "sa-nav__link active" : "sa-nav__link"}>Alexander</a>
     <a href="/lea/about" class={currentPath.includes("lea") ? "sa-nav__link active" : "sa-nav__link"}>Lea</a>
     <a

@@ -1,16 +1,41 @@
 ---
 export interface Props {
-  title: string;
+  level?: 1|2|3|4|5|6|'1'|'2'|'3'|'4'|'5'|'6'
 }
 
-const { title } = Astro.props as Props
+const { level = '1' } = Astro.props as Props
+const Element = `h${level}`
+const props = {
+  class: `sa-headline level--${level}`
+}
 ---
-<h1 class="sa-headline">{title}</h1>
+<Element {...props}>
+  <slot />
+</Element>
 
 <style lang="postcss">
 .sa-headline {
-  margin: 2rem 0;
+  margin: 1em 0;
   color: var(--color-text-highlight);
   font-weight: 600;
+
+  &.level--1 {
+    font-size: 2.5rem;
+  }
+  &.level--2 {
+    font-size: 2rem;
+  }
+  &.level--3 {
+    font-size: 1.75rem;
+  }
+  &.level--4 {
+    font-size: 1.5rem;
+  }
+  &.level--5 {
+    font-size: 1.25rem;
+  }
+  &.level--6 {
+    font-size: 1rem;
+  }
 }
 </style>
