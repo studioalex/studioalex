@@ -45,7 +45,10 @@ const person = await contentfulClient.getEntry<StudioAlexUsers>(idList[user])
 ---
 <Layout title={`Studio Alex - ${person.fields.nickname} uses`} styles="size-small">
   <div class="sa-uses__toolbar">
-    <ButtonGradient color="green" link={`/${person.fields.nickname.toLowerCase()}/about`}><span class="sa-link--light">{person.fields.nickname} / </span><span class="sa-link--strong">Profile</span></ButtonGradient>
+    <ButtonGradient color="green" link={`/${person.fields.nickname.toLowerCase()}/about`}>
+      <span class="sa-link--light">{person.fields.nickname} / </span>
+      <span class="sa-link--strong">Profile</span>
+    </ButtonGradient>
   </div>
   <Headline>{`${person.fields.nickname} uses`}</Headline>
 
@@ -64,3 +67,15 @@ const person = await contentfulClient.getEntry<StudioAlexUsers>(idList[user])
     This page is inspired from <a href="https://wesbos.com/uses" target="_blank">Wes Bos' Uses page</a>.
   </Paragraph>
 </Layout>
+
+<style>
+  .sa-link--strong {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .sa-link--light {
+    text-transform: lowercase;
+    font-weight: 300;
+  }
+</style>

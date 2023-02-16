@@ -1,6 +1,5 @@
 ---
 import Headline from "./Headline.astro"
-import Ruler from "./Ruler.astro"
 
 export interface ServiceType {
   title: string,
@@ -17,7 +16,7 @@ export interface Props {
 const { email, profile, services, usesPath } = Astro.props;
 ---
 <div class="sa-introduce">
-  <Ruler />
+  <hr class="abc" />
   <div set:html={profile}></div>
   <p>
     I can help your team with:
@@ -34,7 +33,7 @@ const { email, profile, services, usesPath } = Astro.props;
     <a href={`mailto:${email}`}>email</a>!
   </p>
 
-  <Ruler />
+  <hr class="abc" />
   <Headline>Uses</Headline>
   <p>
     I am often asked about the specifics of some piece of software or hardware I use,

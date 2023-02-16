@@ -3,12 +3,20 @@ import { site } from '../lib/getSiteInfo'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
-import '../styles/global.css'
+import '../styles/styles.postcss'
 
 export interface Props {
 	title?: string;
 	styles?: string;
 	background?: string;
+}
+
+const meta = {
+  url: 'https://www.studioalex.dev',
+  domain: 'studioalex.dev',
+  title: 'Studio Alex dev',
+  description: 'Alex Studio provides custom software development services backed by proven expertise in IT and considerable portfolio of successfully completed international projects. Our projects range from single-purpose tasks for small businesses to highly complex, multi-platform systems for large corporate clients.',
+  image: 'https://www.studioalex.dev/images/screen_studioalex.png'
 }
 
 const {
@@ -36,22 +44,22 @@ if (background) {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-    <meta name="description" content="Alex Studio provides custom software development services backed by proven expertise in IT and considerable portfolio of successfully completed international projects. Our projects range from single-purpose tasks for small businesses to highly complex, multi-platform systems for large corporate clients.">
+    <meta name="description" content={meta.description}>
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://www.studioalex.dev">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Studio Alex dev">
-    <meta property="og:description" content="Alex Studio provides custom software development services backed by proven expertise in IT and considerable portfolio of successfully completed international projects. Our projects range from single-purpose tasks for small businesses to highly complex, multi-platform systems for large corporate clients.">
-    <meta property="og:image" content="https://www.studioalex.dev/images/screen_studioalex.png">
+    <meta property="og:title" content={meta.title}>
+    <meta property="og:description" content={meta.description}>
+    <meta property="og:image" content={meta.image}>
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="studioalex.dev">
-    <meta property="twitter:url" content="https://www.studioalex.dev">
-    <meta name="twitter:title" content="Studio Alex dev">
-    <meta name="twitter:description" content="Alex Studio provides custom software development services backed by proven expertise in IT and considerable portfolio of successfully completed international projects. Our projects range from single-purpose tasks for small businesses to highly complex, multi-platform systems for large corporate clients.">
-    <meta name="twitter:image" content="https://www.studioalex.dev/images/screen_studioalex.png">
+    <meta property="twitter:domain" content={meta.domain}>
+    <meta property="twitter:url" content={meta.url}>
+    <meta name="twitter:title" content={meta.title}>
+    <meta name="twitter:description" content={meta.description}>
+    <meta name="twitter:image" content={meta.image}>
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -63,6 +71,7 @@ if (background) {
 		<meta name="theme-color" content="#489442">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	</head>
   <!-- Google tag (gtag.js) -->
@@ -131,9 +140,9 @@ if (background) {
   justify-content: flex-start;
   align-content: stretch;
   align-items: stretch;
-  color: var(--theme-color-text);
 	overflow-x: hidden;
   overflow-y: auto;
+  color: var(--theme-color-text);
   font-family: 'Montserrat', sans-serif;
 	z-index: 0;
 
