@@ -35,7 +35,7 @@ const idList = {
 }
 const person = await contentfulClient.getEntry<StudioAlexUsers>(idList[user])
 ---
-<Layout title={`Studio Alex - ${person.fields.nickname}`} background="praha" styles="flex">
+<Layout title={`Studio Alex - ${person.fields.nickname}`} backgroundClass="background--praha" styles="flex">
   <Aboutme image={`/images/person/${person.fields.nickname.toLowerCase()}.png`} />
   <Profile
     name={person.fields.name}

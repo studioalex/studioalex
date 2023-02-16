@@ -8,7 +8,7 @@ import '../styles/styles.postcss'
 export interface Props {
 	title?: string;
 	styles?: string;
-	background?: string;
+	backgroundClass?: string;
 }
 
 const meta = {
@@ -22,17 +22,18 @@ const meta = {
 const {
 	title = site.fields.title,
 	styles = false,
-	background = false
+	backgroundClass = false
 } = Astro.props
 
-const contentClass = ['sa-content']
+const contentClass = ['abc-layout-content']
+const backgroundClasses = ['abc-layout']
+
 if (styles) {
 	contentClass.push(styles)
 }
 
-const backgroundClass = ['sa']
-if (background) {
-	backgroundClass.push(background)
+if (backgroundClass) {
+	backgroundClasses.push(backgroundClass)
 }
 ---
 
@@ -80,47 +81,46 @@ if (background) {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-2SF5PBDTJ3');
   </script>
-	<!--
-                                           ,,╓,
-                                        ╓████████▄
-                             ,╓▄▄▄xæ▄▄▄▓██████████▌
-                       ,æ▀▀╙─            └╙▀▀██████
-                   ,Æ▀└                        ╙▀█▌
-                 ▄▀                               └▀▄
-        ▄▓███▓▄Æ└                                    ▀▄
-      ▓███████╙                           ▄▄▓▓▄▄▄,     ▀
-     ▐██████▀                           ▄███████████▄   ╙µ    ▄▓██▓▄,
-     └█████▀                           j██████████████   ╟  ▄██'▐▌.███
-      ╙███▀                            ▐█▌ '██████████▌   █▓█ ╫█▀▀█▌ █▌
-        ╙▌        ,▄██▓▄,               ██▓▓██████████▌   ╟███▀    ╙███
-        ╫       ▄█████████▄              ▀███████████▀    ▐███▌    ▄███
-        █      ████████╙ ▐█▌     ██▀       ╙▀▀██▀▀▀╙      █████████████
-        █     █████████▄▄███                    ░░ '     ▄████████████▌
-        ╟     ██████████████          ▄^                ▓█████████████
-         ▌    ╟████████████      ▀══▀╙                ▄██████████████
-         ╙▌    ╙████████▀└                         ╓▓█████████████▀─
-           ▌     ─╙▀▀╙─  '░                    ▄▄██████████████▀▀
-            ╙▄         ''                 ▄æ▀╙─ └╙╙▀▀▀▀▀█▀▀▀╙─
-              ╙¼,                   ╓▄ª▀╙─              ╙µ
-                 ╙▀╗▄╓,,,,,,▄▄▄M▀▀╙─                     █
-                    ╟█████████▌                          ▐▄▄,
-                    ██████████▌                          [████▄
-      Hi there      ███████████▌                         '█████▌  ╓▄▄▄,
-                 ▄▄██████████████▄                      ,▐█████████▀█▀███µ
-              ,███▀████████████████▓,                   ░█████████ ▐▌,█^╟█µ
-             ]█▌╙█'╟▌█████████████████▄               ;░█████████▀╙╙╙██▓▀█▌
-             ▐██▄██▀▀▀██████████████████▄           ;░╓█████████'     █▒╓█
-              █.╙█    ╙██████████████████▌      ,≤░',▓█████████▒     .███¬
-              └███      ╟█████████████████░░░│''',▄▀╙╙╙╙╙███████,  ,▄██▀
-                ▀██▄    ▓████████████████▀,▄▄▄╧▀╙        ╙███████████▀
-                  ▀███████████▀╙▀▀▀▀▀▀▀╙└└─                 ╙▀▀▀▀▀└
-                    ─╙▀▀▀▀▀▀╙
-	 -->
+  <!--
+                                            ,,╓,
+                                          ╓████████▄
+                              ,╓▄▄▄xæ▄▄▄▓██████████▌
+                        ,æ▀▀╙─            └╙▀▀██████
+                    ,Æ▀└                        ╙▀█▌
+                  ▄▀                               └▀▄
+          ▄▓███▓▄Æ└                                    ▀▄
+        ▓███████╙                           ▄▄▓▓▄▄▄,     ▀
+      ▐██████▀                           ▄███████████▄   ╙µ    ▄▓██▓▄,
+      └█████▀                           j██████████████   ╟  ▄██'▐▌.███
+        ╙███▀                            ▐█▌ '██████████▌   █▓█ ╫█▀▀█▌ █▌
+          ╙▌        ,▄██▓▄,               ██▓▓██████████▌   ╟███▀    ╙███
+          ╫       ▄█████████▄              ▀███████████▀    ▐███▌    ▄███
+          █      ████████╙ ▐█▌     ██▀       ╙▀▀██▀▀▀╙      █████████████
+          █     █████████▄▄███                    ░░ '     ▄████████████▌
+          ╟     ██████████████          ▄^                ▓█████████████
+          ▌    ╟████████████      ▀══▀╙                ▄██████████████
+          ╙▌    ╙████████▀└                         ╓▓█████████████▀─
+            ▌     ─╙▀▀╙─  '░                    ▄▄██████████████▀▀
+              ╙▄         ''                 ▄æ▀╙─ └╙╙▀▀▀▀▀█▀▀▀╙─
+                ╙¼,                   ╓▄ª▀╙─              ╙µ
+                  ╙▀╗▄╓,,,,,,▄▄▄M▀▀╙─                     █
+                      ╟█████████▌                          ▐▄▄,
+                      ██████████▌                          [████▄
+        Hi there      ███████████▌                         '█████▌  ╓▄▄▄,
+                  ▄▄██████████████▄                      ,▐█████████▀█▀███µ
+                ,███▀████████████████▓,                   ░█████████ ▐▌,█^╟█µ
+              ]█▌╙█'╟▌█████████████████▄               ;░█████████▀╙╙╙██▓▀█▌
+              ▐██▄██▀▀▀██████████████████▄           ;░╓█████████'     █▒╓█
+                █.╙█    ╙██████████████████▌      ,≤░',▓█████████▒     .███¬
+                └███      ╟█████████████████░░░│''',▄▀╙╙╙╙╙███████,  ,▄██▀
+                  ▀██▄    ▓████████████████▀,▄▄▄╧▀╙        ╙███████████▀
+                    ▀███████████▀╙▀▀▀▀▀▀▀╙└└─                 ╙▀▀▀▀▀└
+                      ─╙▀▀▀▀▀▀╙
+  -->
 	<body>
-		<div class={backgroundClass.join(' ')}>
+		<div class={backgroundClasses.join(' ')}>
 			<Header title="&lt;studio-alex/&gt;" />
 			<main class={contentClass.join(' ')}>
 		    <slot />
@@ -129,81 +129,3 @@ if (background) {
 		</div>
 	</body>
 </html>
-
-<style>
-.sa {
-	min-width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-content: stretch;
-  align-items: stretch;
-	overflow-x: hidden;
-  overflow-y: auto;
-  color: var(--theme-color-text);
-  font-family: 'Montserrat', sans-serif;
-	z-index: 0;
-
-	&.praha {
-		background-image: url("/images/karluvmost.jpg");
-		background-repeat: no-repeat;
-		background-position: 0 -40vh;
-		background-size: 100vmax;
-		transition: background 1s;
-	}
-}
-
-@media only screen and (max-width: 2400px) {
-  .sa {
-    &.praha {
-		  background-position: 0 -20vh;
-    }
-  }
-}
-
-.sa-content {
-  flex: 1 1 auto;
-  align-self: auto;
-
-	&.flex {
-		display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: stretch;
-    align-items: stretch;
-	}
-  
-  &.flex-distribute {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-content: stretch;
-    align-items: stretch;
-  }
-
-	&.flex-center {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: stretch;
-    align-items: stretch;
-  }
-
-
-  &.size-full {
-		max-width: 1440px;
-    margin: 0 auto;
-	}
-
-	&.size-small {
-    max-width: 768px;
-		padding: 0 2rem;
-    margin: 0 auto;
-  }
-}
-</style>
