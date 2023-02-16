@@ -2,6 +2,7 @@
 import { site } from '../lib/getSiteInfo'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import metaData from '../data/meta.json'
 
 import '../styles/styles.postcss'
 
@@ -9,14 +10,6 @@ export interface Props {
 	title?: string;
 	styles?: string;
 	backgroundClass?: string;
-}
-
-const meta = {
-  url: 'https://www.studioalex.dev',
-  domain: 'studioalex.dev',
-  title: 'Studio Alex dev',
-  description: 'Alex Studio provides custom software development services backed by proven expertise in IT and considerable portfolio of successfully completed international projects. Our projects range from single-purpose tasks for small businesses to highly complex, multi-platform systems for large corporate clients.',
-  image: 'https://www.studioalex.dev/images/screen_studioalex.png'
 }
 
 const {
@@ -45,22 +38,22 @@ if (backgroundClass) {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-    <meta name="description" content={meta.description}>
+    <meta name="description" content={metaData.description}>
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://www.studioalex.dev">
     <meta property="og:type" content="website">
-    <meta property="og:title" content={meta.title}>
-    <meta property="og:description" content={meta.description}>
-    <meta property="og:image" content={meta.image}>
+    <meta property="og:title" content={metaData.title}>
+    <meta property="og:description" content={metaData.description}>
+    <meta property="og:image" content={metaData.image}>
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content={meta.domain}>
-    <meta property="twitter:url" content={meta.url}>
-    <meta name="twitter:title" content={meta.title}>
-    <meta name="twitter:description" content={meta.description}>
-    <meta name="twitter:image" content={meta.image}>
+    <meta property="twitter:domain" content={metaData.domain}>
+    <meta property="twitter:url" content={metaData.url}>
+    <meta name="twitter:title" content={metaData.title}>
+    <meta name="twitter:description" content={metaData.description}>
+    <meta name="twitter:image" content={metaData.image}>
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -72,9 +65,7 @@ if (backgroundClass) {
 		<meta name="theme-color" content="#489442">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	</head>
+  </head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SF5PBDTJ3"></script>
   <script>
