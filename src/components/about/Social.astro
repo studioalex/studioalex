@@ -1,6 +1,6 @@
 ---
-import Icon from './Icon.astro'
-import ButtonUses from './ButtonUses.astro'
+import Icon from '../atoms/Icon.astro'
+import ButtonUses from '../ButtonUses.astro'
 
 export interface SocialType {
   icon: string;
@@ -15,28 +15,28 @@ export interface Props {
 
 const { list, uses, usesLink } = Astro.props;
 ---
-<div class="sa-social">
+<div class="abc-social">
   {list.map(social => (
     <a
       href={social.url}
-      class="sa-social__link"
+      class="abc-social-link"
       target="_blank">
       <Icon
-        class="sa-social__svg"
+        class="abc-social-svg"
         icon={social.icon} />    
     </a>
   ))}
 </div>
-<div class="sa-social">
+<div class="abc-social">
   {(uses && usesLink) && <ButtonUses link={usesLink} name={uses} /> }
 </div>
 
 <style>
-.sa-social {
+.abc-social {
   padding: 2rem var(--margin-sides);
   text-align: center;
       
-  &__link {
+  &-link {
     display: inline-block;
     padding: 0.6rem;
     margin-right: 1rem;
@@ -53,7 +53,7 @@ const { list, uses, usesLink } = Astro.props;
     }
   }
       
-  &__svg {
+  &-svg {
     width: 40px;
     height: 40px;
   }

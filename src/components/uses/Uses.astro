@@ -1,0 +1,57 @@
+---
+import Product from './Product.astro'
+
+export interface Items {
+  title: string
+  description: string
+  link?: string
+  image?: string
+}
+export interface Props {
+	title: string
+  data: Items[]
+}
+
+const { title, data } = Astro.props
+---
+
+<section class="abc-uses">
+  <h2 class="abc-uses-title">{title}</h2>
+  <div class="abc-uses-list">
+    { data.map(product => (
+      <Product
+        title={product.title}
+        description={product.description}
+        image={product.image}
+        link={product.link} />
+    ))}
+  </div>
+</section>
+
+<style lang="postcss">
+.abc-uses {
+  margin: 4rem 0;
+  transition: margin 1s;
+  
+  &-list {
+    margin-left: 5rem;
+    transition: margin 1s;
+  }
+
+  &-title {
+    color: var(--theme-color-text--dark:);
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .abc-uses {
+    margin: 2rem 0;
+
+    &-list {
+      margin-left: 0;
+    }
+  }
+}
+</style>

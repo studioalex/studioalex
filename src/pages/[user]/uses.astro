@@ -1,13 +1,14 @@
 ---
 import { contentfulClient } from "../../lib/contentful"
 import Layout from '../../layouts/Layout.astro'
-import Headline from '../../components/Headline.astro'
+import Headline from '../../components/atoms/Headline.astro'
 import Paragraph from '../../components/Paragraph.astro'
-import Uses from '../../components/Uses.astro'
+import Uses from '../../components/uses/Uses.astro'
 import Hardware from '../../components/Hardware.astro'
 import ButtonGradient from '../../components/ButtonGradient.astro'
 
 import type { HardwareType } from '../../components/Hardware.astro'
+import metaData from '../../data/meta.json'
 
 interface UsesItemsType {
   title: string,
@@ -30,33 +31,28 @@ interface StudioAlexUsers {
 }
 
 export function getStaticPaths() {
-  return [
-    {params: { user: 'alexander' }},
-    {params: { user: 'lea' }}
-  ]
+  return metaData.persons.staticPaths
 }
 
 const { user } = Astro.params
-const idList = {
-  'alexander': '3oRoJvys6PoWW6Hwv17Hdf',
-  'lea': '41b8LHFCinwNB0cgTCA70U'
-}
-const person = await contentfulClient.getEntry<StudioAlexUsers>(idList[user])
+const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons.idlist[user])
 ---
 <Layout title={`Studio Alex - ${person.fields.nickname} uses`} styles="size-small">
-  <div class="sa-uses__toolbar">
-    <ButtonGradient color="green" link={`/${person.fields.nickname.toLowerCase()}/about`}>
-      <span class="sa-link--light">{person.fields.nickname} / </span>
-      <span class="sa-link--strong">Profile</span>
-    </ButtonGradient>
-  </div>
+
   <Headline>{`${person.fields.nickname} uses`}</Headline>
 
   <Paragraph>
     There are times where people ask me about what software or gear I am using.
     <br />This page will serve as a living document for people to always know the latest and greatest.
   </Paragraph>
-  
+
+  <div class="text-center m-4">
+    <ButtonGradient color="green" link={`/${person.fields.nickname.toLowerCase()}/about`}>
+      <span class="sa-link--light">{person.fields.nickname} / </span>
+      <span class="sa-link--strong">Profile</span>
+    </ButtonGradient>
+  </div>
+
   <Hardware list={person.fields.hardware} />
 
   {person.fields.uses.map(item => (

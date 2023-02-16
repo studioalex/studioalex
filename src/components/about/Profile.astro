@@ -7,23 +7,23 @@ export interface Props {
 
 const { prelude = 'I’m', name, description } = Astro.props
 ---
-<div class="sa-profile">
-  <div class="sa-profile__block">
-    <span class="sa-profile__prelude">{prelude}</span>
-    <span class="sa-profile__name">{name}</span>
-    <span class="sa-profile__description" set:html={description}></span>
+<div class="abc-profile">
+  <div class="abc-profile-block">
+    <span class="abc-profile-prelude">{prelude}</span>
+    <span class="abc-profile-name">{name}</span>
+    <span class="abc-profile-description" set:html={description}></span>
   </div>
   <slot />
 </div>
 
 <style>
-  .sa-profile {
+  .abc-profile {
     flex: 1 1 auto;
     align-self: auto;
     padding: 2rem var(--margin-sides);
     background-color: var(--theme-color-background--dark);
 
-    &__block {
+    &-block {
       max-width: var(--screen-size--small);
       margin: 0 auto;
       padding-top: 6rem;
@@ -31,19 +31,19 @@ const { prelude = 'I’m', name, description } = Astro.props
       color: var(--theme-color-text--highlight);
     }
 
-    &__prelude {
+    &-prelude {
       display: block;
       font-size: 2.25rem
     }
 
-    &__name {
+    &-name {
       display: block;
       font-size: 3rem;
       font-weight: 500;
       padding: 2rem 0;
     }
 
-    &__description {
+    &-description {
       display: block;
       font-size: var(--font-size--h5);
       font-weight: 300;

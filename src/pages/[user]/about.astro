@@ -3,13 +3,15 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 import { contentfulClient } from "../../lib/contentful"
 import Layout from '../../layouts/Layout.astro'
 import Aboutme from '../../components/Aboutme.astro'
-import Profile from '../../components/Profile.astro'
-import Social from '../../components/Social.astro'
-import Introduce from '../../components/Introduce.astro'
+import Profile from '../../components/about/Profile.astro'
+import Social from '../../components/about/Social.astro'
+import Introduce from '../../components/about/Introduce.astro'
 
 import type { Document } from "@contentful/rich-text-types"
-import type { ServiceType } from '../../components/Introduce.astro'
-import type { SocialType } from '../../components/Social.astro'
+import type { ServiceType } from '../../components/about/Introduce.astro'
+import type { SocialType } from '../../components/about/Social.astro'
+
+import metaData from '../../data/meta.json'
 
 interface StudioAlexUsers {
   name: string,
@@ -22,21 +24,18 @@ interface StudioAlexUsers {
 }
 
 export function getStaticPaths() {
-  return [
-    {params: { user: 'alexander' }},
-    {params: { user: 'lea' }}
-  ]
+  return metaData.persons.staticPaths
 }
 
 const { user } = Astro.params
-const idList = {
-  'alexander': '3oRoJvys6PoWW6Hwv17Hdf',
-  'lea': '41b8LHFCinwNB0cgTCA70U'
-}
-const person = await contentfulClient.getEntry<StudioAlexUsers>(idList[user])
+const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons.idlist[user])
 ---
-<Layout title={`Studio Alex - ${person.fields.nickname}`} backgroundClass="background--praha" styles="flex">
-  <Aboutme image={`/images/person/${person.fields.nickname.toLowerCase()}.png`} />
+<Layout
+  title={`${metaData.title} - ${person.fields.nickname}`}
+  styles="flex"
+  backgroundClass="background--praha">
+  <Aboutme
+    image={`/images/person/${person.fields.nickname.toLowerCase()}.png`} />
   <Profile
     name={person.fields.name}
     description={documentToHtmlString(person.fields.about)}>
