@@ -2,10 +2,11 @@
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 import { contentfulClient } from "../../lib/contentful"
 import Layout from '../../layouts/Layout.astro'
-import Aboutme from '../../components/Aboutme.astro'
+import Aboutme from '../../components/about/Aboutme.astro'
 import Profile from '../../components/about/Profile.astro'
 import Social from '../../components/about/Social.astro'
 import Introduce from '../../components/about/Introduce.astro'
+import ButtonLink from '../../components/atoms/ButtonLink.astro'
 
 import type { Document } from "@contentful/rich-text-types"
 import type { ServiceType } from '../../components/about/Introduce.astro'
@@ -29,6 +30,7 @@ export function getStaticPaths() {
 
 const { user } = Astro.params
 const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons.idlist[user])
+const path = `/${person.fields.nickname.toLowerCase()}/uses`
 ---
 <Layout
   title={`${metaData.title} - ${person.fields.nickname}`}
@@ -39,14 +41,14 @@ const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons
   <Profile
     name={person.fields.name}
     description={documentToHtmlString(person.fields.about)}>
-    <Social
-      list={person.fields.social}
-      uses={person.fields.nickname.toLowerCase()}
-      usesLink={`/${person.fields.nickname.toLowerCase()}/uses`} />
+    <Social list={person.fields.social} />
+    <div class="text-center">
+      <ButtonLink path={path} />
+    </div>
     <Introduce
       email={person.fields.email}
       profile={documentToHtmlString(person.fields.profile)} 
       services={person.fields.services}
-      usesPath={`/${person.fields.nickname.toLowerCase()}/uses`}/>
+      usesPath={path}/>
   </Profile>
 </Layout>

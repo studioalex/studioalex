@@ -2,12 +2,13 @@
 import { contentfulClient } from "../../lib/contentful"
 import Layout from '../../layouts/Layout.astro'
 import Headline from '../../components/atoms/Headline.astro'
-import Paragraph from '../../components/Paragraph.astro'
+import Paragraph from '../../components/atoms/Paragraph.astro'
 import Uses from '../../components/uses/Uses.astro'
-import Hardware from '../../components/Hardware.astro'
-import ButtonGradient from '../../components/ButtonGradient.astro'
+import Hardware from '../../components/uses/Hardware.astro'
+import ButtonLink from '../../components/atoms/ButtonLink.astro'
+import Ruler from '../../components/atoms/Ruler.astro'
 
-import type { HardwareType } from '../../components/Hardware.astro'
+import type { HardwareType } from '../../components/uses/Hardware.astro'
 import metaData from '../../data/meta.json'
 
 interface UsesItemsType {
@@ -37,7 +38,7 @@ export function getStaticPaths() {
 const { user } = Astro.params
 const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons.idlist[user])
 ---
-<Layout title={`Studio Alex - ${person.fields.nickname} uses`} styles="size-small">
+<Layout title={`${metaData.title} - ${person.fields.nickname} uses`} styles="size-small">
 
   <Headline>{`${person.fields.nickname} uses`}</Headline>
 
@@ -46,12 +47,11 @@ const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons
     <br />This page will serve as a living document for people to always know the latest and greatest.
   </Paragraph>
 
-  <div class="text-center m-4">
-    <ButtonGradient color="green" link={`/${person.fields.nickname.toLowerCase()}/about`}>
-      <span class="sa-link--light">{person.fields.nickname} / </span>
-      <span class="sa-link--strong">Profile</span>
-    </ButtonGradient>
+  <div class="text-center m-10">
+    <ButtonLink path={`/${person.fields.nickname.toLowerCase()}/about`} />
   </div>
+
+  <Ruler />
 
   <Hardware list={person.fields.hardware} />
 
@@ -63,15 +63,3 @@ const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons
     This page is inspired from <a href="https://wesbos.com/uses" target="_blank">Wes Bos' Uses page</a>.
   </Paragraph>
 </Layout>
-
-<style>
-  .sa-link--strong {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  .sa-link--light {
-    text-transform: lowercase;
-    font-weight: 300;
-  }
-</style>

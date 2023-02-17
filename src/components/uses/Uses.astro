@@ -1,5 +1,5 @@
 ---
-import Product from './Product.astro'
+import Application from './Application.astro'
 
 export interface Items {
   title: string
@@ -15,11 +15,11 @@ export interface Props {
 const { title, data } = Astro.props
 ---
 
-<section class="abc-uses">
-  <h2 class="abc-uses-title">{title}</h2>
-  <div class="abc-uses-list">
+<section class="uses">
+  <h2 class="uses-title">{title}</h2>
+  <div class="uses-list">
     { data.map(product => (
-      <Product
+      <Application
         title={product.title}
         description={product.description}
         image={product.image}
@@ -28,30 +28,31 @@ const { title, data } = Astro.props
   </div>
 </section>
 
-<style lang="postcss">
-.abc-uses {
-  margin: 4rem 0;
-  transition: margin 1s;
-  
-  &-list {
-    margin-left: 5rem;
+<style>
+  .uses {
+    margin: 4rem 0;
     transition: margin 1s;
-  }
-
-  &-title {
-    color: var(--theme-color-text--dark:);
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .abc-uses {
-    margin: 2rem 0;
-
+    
     &-list {
-      margin-left: 0;
+      margin-left: 5rem;
+      transition: margin 1s;
+    }
+
+    &-title {
+      color: var(--theme-color-text--dark);
+      font-size: var(--font-size--h4);
+      font-weight: 500;
+      margin: 1rem 0;
     }
   }
-}
+
+  @media only screen and (max-width: 1200px) {
+    .uses {
+      margin: 2rem 0;
+
+      &-list {
+        margin-left: 0;
+      }
+    }
+  }
 </style>

@@ -6,7 +6,7 @@ export interface Props {
 const { level = '1' } = Astro.props as Props
 const Element = `h${level}`
 const props = {
-  class: `sa-headline level--${level}`
+  'data-headline': level
 }
 ---
 <Element {...props}>
@@ -14,28 +14,27 @@ const props = {
 </Element>
 
 <style lang="postcss">
-.sa-headline {
-  margin: 1em 0;
-  color: var(--theme-color-text--highlight);
-  font-weight: 600;
-
-  &.level--1 {
+  [data-headline] {
+    margin: 1em 0;
+    color: var(--theme-color-text--highlight);
+    font-weight: 600;
+  }
+  [data-headline="1"] {
     font-size: var(--font-size--h1);
   }
-  &.level--2 {
+  [data-headline="2"] {
     font-size: var(--font-size--h2);
   }
-  &.level--3 {
+  [data-headline="3"] {
     font-size: var(--font-size--h3);
   }
-  &.level--4 {
+  [data-headline="4"] {
     font-size: var(--font-size--h4);
   }
-  &.level--5 {
+  [data-headline="5"] {
     font-size: var(--font-size--h5);
   }
-  &.level--6 {
+  [data-headline="6"] {
     font-size: var(--font-size--h6);
   }
-}
 </style>

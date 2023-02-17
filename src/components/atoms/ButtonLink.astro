@@ -1,17 +1,20 @@
 ---
 export interface Props {
-	link: string;
-  name: string;
+	path: string
 }
 
-const { link, name } = Astro.props
+const { path } = Astro.props
+
+const parts = path.slice(1).split('/') // remove the first "/"
 ---
-<a href={link} class="sa-btn">
-  <span class="sa-btn--light">{name} / </span><span class="sa-btn--strong">uses</span>
+<a href={path} class="link">
+  {parts.map((part, index) => (
+    <span>{part}{(index !== (parts.length-1)) && ' / '}</span>
+  ))}
 </a>
 
 <style>
-.sa-btn {
+.link {
   position: relative;
   display: inline-block;
   padding: .6em 1em;
@@ -20,14 +23,14 @@ const { link, name } = Astro.props
   font-size: 1.3em;
   vertical-align: text-bottom;
 
-  &--strong {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  &--light {
+  span {
     text-transform: lowercase;
     font-weight: 300;
+
+    &:first-child {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
   }
 
   &::before {

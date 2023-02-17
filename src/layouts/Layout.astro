@@ -18,8 +18,8 @@ const {
 	backgroundClass = false
 } = Astro.props
 
-const contentClass = ['abc-layout-content']
-const backgroundClasses = ['abc-layout']
+const contentClass = ['layout-content']
+const backgroundClasses = ['layout']
 
 if (styles) {
 	contentClass.push(styles)
@@ -120,3 +120,77 @@ if (backgroundClass) {
 		</div>
 	</body>
 </html>
+
+<style>
+  .layout {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: var(--theme-color-text);
+    font-family: 'Montserrat', sans-serif;
+    z-index: 0;
+
+    &.background--praha {
+      background-image: url("/images/karluvmost.jpg");
+      background-repeat: no-repeat;
+      background-position: 0 -40vh;
+      background-size: 100vmax;
+      transition: background 1s;
+
+      @media only screen and (max-width: 2400px) {
+        background-position: 0 -20vh;
+      }
+    }
+
+    &-content {
+      flex: 1 1 auto;
+      align-self: auto;
+
+      &.flex {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: stretch;
+      }
+      
+      &.flex-distribute {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-content: stretch;
+        align-items: stretch;
+      }
+
+      &.flex-center {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: stretch;
+      }
+
+
+      &.size-full {
+        max-width: var(--screen-size--bright);
+        margin: 0 auto;
+      }
+
+      &.size-small {
+        max-width: var(--screen-size--small);
+        padding: 0 2rem;
+        margin: 0 auto;
+      }
+    }
+  }
+</style>

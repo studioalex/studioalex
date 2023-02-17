@@ -13,12 +13,12 @@ const {
   link
 } = Astro.props as Props
 ---
-<a href={link} target="_blank" class="sa-uses__link">
-  <div class="sa-uses__product">
-    <div class="sa-uses__product--left">
+<a href={link} target="_blank" class="application-link">
+  <div class="application">
+    <div class="application-icon">
       <img src={image} />
     </div>
-    <div class="sa-uses__product--right">
+    <div class="application-description">
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
@@ -26,14 +26,7 @@ const {
 </a>
 
 <style>
-.sa-uses {
-  &__link {
-    .sa-uses__product:hover {
-      background-color: var(--theme-color-background--light);
-      border-radius: 6px;
-    }
-  }
-  &__product {
+  .application {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -42,34 +35,42 @@ const {
     align-items: center;
     padding: 1rem 0;
     border-bottom: 1px solid var(--theme-color-background--light);
-    
-    &--left {
+
+    &-icon {
       flex: 0 0 auto;
       align-self: auto;
       padding: 0 1rem;
-      width: 50px;
       
       img {
         width: 50px;
       }
     }
-    
-    &--right {
+
+    &-description {
       flex: 1 1 auto;
       align-self: auto;
       padding: 0 2rem;
+
+      h3 {
+        color: var(--theme-color-text--highlight);
+        font-size: var(--font-size--h5);
+        font-weight: 500;
+        margin: 0 0 1rem 0;
+      }
+      
+      p {
+        line-height: 1.6rem;
+        font-weight: 400;
+        color: var(--theme-color-text);
+        margin: 1rem 0;
+      }
     }
-    
-    h3 {
-      color: var(--theme-color-text--highlight);
-      font-weight: 500;
-    }
-    
-    p {
-      line-height: 1.6rem;
-      font-weight: 200;
-      color: var(--theme-color-text);
+
+    &-link:hover {
+      .application {
+        background-color: var(--theme-color-background--light);
+        border-radius: 6px;
+      }
     }
   }
-}
 </style>

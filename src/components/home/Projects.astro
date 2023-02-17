@@ -1,13 +1,13 @@
 ---
-import Headline from './atoms/Headline.astro'
+import Headline from '../atoms/Headline.astro'
 ---
-<div class="sa-projects">
+<div class="projects">
   <hr class="abc" />
   <Headline>Projects</Headline>
-  <div class="sa-projects__list">
-    <div class="sa-projects__item">
-      <div class="sa-projects__logo">
-         <svg class="sa-projects__logo-background" viewBox="0 0 432 375" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div class="projects-list">
+    <div class="projects-item">
+      <div class="projects-logo">
+         <svg class="projects-logo-background" viewBox="0 0 432 375" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_405_2)">
             <path d="M0 360L216 0L432 360H0Z" fill="#46BA84"/>
             <path d="M215.5 18.5L296.5 153.5L215.5 76.36L134.5 153.5L215.5 18.5Z" fill="white"/>
@@ -21,34 +21,34 @@ import Headline from './atoms/Headline.astro'
           </defs>
         </svg>
       </div>
-      <h3 class="sa-projects__title">
+      <h3 class="projects-title">
         Hora Grid
       </h3>
-      <p class="sa-projects__description">
+      <p class="projects-description">
         Vue 3 Grid component based on CSS Grid.
         Optimized for large amounts of data and data API's.
-        <a href="https://hora.studioalex.tech/" target="_blank" class="sa-projects__jump">Visit</a>
+        <a href="https://hora.studioalex.tech/" target="_blank" class="projects-jump">Visit</a>
       </p>
     </div>
-    <div class="sa-projects__item wip">
-      <div class="sa-projects__logo">
+    <div class="projects-item wip">
+      <div class="projects-logo">
       
       </div>
-      <h3 class="sa-projects__title">
+      <h3 class="projects-title">
         Kyiv Form
       </h3>
-      <p class="sa-projects__description">
+      <p class="projects-description">
         WIP: Vue 3 Form component.
       </p>
     </div>
-    <div class="sa-projects__item wip">
-      <div class="sa-projects__logo">
+    <div class="projects-item wip">
+      <div class="projects-logo">
       
       </div>
-      <h3 class="sa-projects__title">
+      <h3 class="projects-title">
         Aikon
       </h3>
-      <p class="sa-projects__description">
+      <p class="projects-description">
         WIP: Project is in progress.
       </p>
     </div>
@@ -56,10 +56,10 @@ import Headline from './atoms/Headline.astro'
 </div>
 
 <style>
-.sa-projects {
+.projects {
   padding: 2rem;
   
-  &__list {
+  &-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -69,7 +69,7 @@ import Headline from './atoms/Headline.astro'
     margin: 2rem -1rem;
   }
   
-  &__item {
+  &-item {
     position: relative;
     flex: 1 1 auto;
     align-self: auto;
@@ -87,21 +87,21 @@ import Headline from './atoms/Headline.astro'
     }
   }
   
-  &__title {
+  &-title {
     font-size: 1.3rem;
     font-weight: 500;
     color: var(--theme-color-text--highlight);
   }
   
-  &__description {
+  &-description {
     line-height: 1.6rem;
   }
   
-  &__logo {
+  &-logo {
     height: 40px;
   }
   
-  &__logo-background {
+  &-logo-background {
     position: absolute;
     height: 80px;
     top: 1.6rem;
@@ -110,7 +110,7 @@ import Headline from './atoms/Headline.astro'
     opacity: 0.8;
   }
   
-  &__jump {
+  &-jump {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
