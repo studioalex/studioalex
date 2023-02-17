@@ -2,7 +2,7 @@
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 import { contentfulClient } from "../../lib/contentful"
 import Layout from '../../layouts/Layout.astro'
-import Aboutme from '../../components/about/Aboutme.astro'
+import ProfileImage from '../../components/about/ProfileImage.astro'
 import Profile from '../../components/about/Profile.astro'
 import Social from '../../components/about/Social.astro'
 import Introduce from '../../components/about/Introduce.astro'
@@ -36,8 +36,8 @@ const path = `/${person.fields.nickname.toLowerCase()}/uses`
   title={`${metaData.title} - ${person.fields.nickname}`}
   styles="flex"
   backgroundClass="background--praha">
-  <Aboutme
-    image={`/images/person/${person.fields.nickname.toLowerCase()}.png`} />
+  <ProfileImage
+    path={`/images/person/${person.fields.nickname.toLowerCase()}.png`} />
   <Profile
     name={person.fields.name}
     description={documentToHtmlString(person.fields.about)}>

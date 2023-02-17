@@ -1,5 +1,6 @@
 ---
 import Headline from '../atoms/Headline.astro'
+import Ruler from '../atoms/Ruler.astro'
 import Icon from '../atoms/Icon.astro'
 
 export interface Technologies {
@@ -14,7 +15,7 @@ export interface Props {
 const { list } = Astro.props
 ---
 <div class="sa-technology">
-  <hr class="abc" />
+  <Ruler />
   <Headline>Tools & Technologies we use</Headline>
   <div class="sa-technology__grid">
     {
@@ -22,7 +23,8 @@ const { list } = Astro.props
         <div class="sa-technology__item">
           <Icon icon={item.svg} class="sa-technology__icon"/>
           <span class="sa-technology__name">{item.name}</span>
-        </div>))
+        </div>)
+      )
     }
   </div>
 </div>

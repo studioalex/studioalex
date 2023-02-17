@@ -1,0 +1,50 @@
+---
+export interface Props {
+	path: string;
+}
+
+const { path } = Astro.props
+const image_path = `url(${path})`
+---
+<div class="about">
+  <div class="about-center">
+    <div class="about-circle"></div>
+  </div>
+</div>
+
+<style define:vars={{ image_path }}>
+.about {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  padding: 0 var(--margin-sides);
+
+  &-center {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    text-align: left;
+    padding: 2rem;
+    transition: padding 0.1s;
+  }
+  
+  &-circle {
+    position: relative;
+    bottom: -8rem;
+    padding: 2rem;
+    border-radius: 999em;
+    border: 6px solid var(--theme-color-background--dark);
+    background-color: var(--theme-color-background);
+    background-image: var(--image_path);
+    background-repeat: no-repeat;
+		background-position: center;
+		background-size: 480px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+  }
+}
+</style>

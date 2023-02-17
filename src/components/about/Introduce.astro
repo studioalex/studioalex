@@ -1,5 +1,7 @@
 ---
 import Headline from '../atoms/Headline.astro'
+import Paragraph from '../atoms/Paragraph.astro'
+import Ruler from '../atoms/Ruler.astro'
 
 export interface ServiceType {
   title: string,
@@ -15,12 +17,12 @@ export interface Props {
 
 const { email, profile, services, usesPath } = Astro.props;
 ---
-<div class="sa-introduce">
-  <hr class="abc" />
+<div class="introduce">
+  <Ruler />
   <div set:html={profile}></div>
-  <p>
+  <Paragraph>
     I can help your team with:
-  </p>
+  </Paragraph>
   <ul>
     { services.map(service => (
       <li>
@@ -28,38 +30,30 @@ const { email, profile, services, usesPath } = Astro.props;
       </li>
     ))}
   </ul>
-  <p>
+  <Paragraph>
     If this sounds like something you're interested in, send me an
     <a href={`mailto:${email}`}>email</a>!
-  </p>
+  </Paragraph>
 
-  <hr class="abc" />
+  <Ruler />
   <Headline>Uses</Headline>
-  <p>
+  <Paragraph>
     I am often asked about the specifics of some piece of software or hardware I use,
     so <a href={usesPath}>this page</a> will serve as a living document and a place to point curious designers and developers
     to when I get asked.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     Also, take some time and check out <a href="https://uses.tech" target="_blank">//uses.tech</a> where many other great developers show what they are using.
-  </p>
+  </Paragraph>
 </div>
 
 <style is:global>
-.sa-introduce {
+.introduce {
   max-width: var(--screen-size--small);
   margin: 2rem auto;
   color: var(--theme-color-text--highlight);
 
-  p {
-    font-size: var(--font-size--h5);
-    font-weight: 300;
-    margin: 0 0 1.5rem;
-    line-height: 1.5;
-  }
-
   ul {
-    font-size: var(--font-size--h5);
     font-weight: 300;
     padding: 1rem 0;
 
