@@ -20,9 +20,11 @@ const { email, profile, services, usesPath } = Astro.props;
 <div class="introduce">
   <Ruler />
   <div set:html={profile}></div>
+
   <Paragraph>
     I can help your team with:
   </Paragraph>
+
   <ul>
     { services.map(service => (
       <li>
@@ -30,18 +32,22 @@ const { email, profile, services, usesPath } = Astro.props;
       </li>
     ))}
   </ul>
+
   <Paragraph>
     If this sounds like something you're interested in, send me an
     <a href={`mailto:${email}`}>email</a>!
   </Paragraph>
 
   <Ruler />
+
   <Headline>Uses</Headline>
+
   <Paragraph>
     I am often asked about the specifics of some piece of software or hardware I use,
     so <a href={usesPath}>this page</a> will serve as a living document and a place to point curious designers and developers
     to when I get asked.
   </Paragraph>
+  
   <Paragraph>
     Also, take some time and check out <a href="https://uses.tech" target="_blank">//uses.tech</a> where many other great developers show what they are using.
   </Paragraph>

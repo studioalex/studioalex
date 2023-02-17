@@ -2,17 +2,17 @@
 import Icon from '../atoms/Icon.astro'
 import Headline from '../atoms/Headline.astro'
 ---
-<div class="sa-hero">
-  <div class="sa-hero__left">
-    <div class="sa-hero__circle">
-      <div class="sa-hero__logo"></div>
+<div class="hero">
+  <div class="hero-image">
+    <div class="image-circle">
+      <div class="image-logo"></div>
     </div>
   </div>
-  <div class="sa-hero__right">
+  <div class="hero-content">
     <div>
-      <div class="sa-hero__headline">Studio Alex</div>
-      <div class="sa-indicator"></div>
-      <p class="sa-hero__text">
+      <h1 class="content-headline">Studio Alex</h1>
+      <div class="content-indicator"></div>
+      <p class="content-description">
         Alex Studio  provides custom software development <br>
         services backed by proven expertise in IT and considerable<br>
         portfolio of successfully completed international projects.<br><br>
@@ -24,8 +24,8 @@ import Headline from '../atoms/Headline.astro'
   <Icon icon="alex-clippingpath"></Icon>
 </div>
 
-<style lang="postcss">
-.sa-hero {
+<style>
+.hero {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -33,15 +33,34 @@ import Headline from '../atoms/Headline.astro'
   align-content: stretch;
   align-items: center;
   padding: 2rem var(--margin-sides);
+
+  &-image {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    text-align: left;
+    padding: 2rem;
+  }
   
-  &__circle {
+  &-content {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: flex-end;
+    text-align: left;
+    max-width: 500px;
+    padding: 2rem;
+  }
+}
+
+.image {
+  &-circle {
     display: inline-block;
     background-color: var(--theme-color-background);
     padding: 2rem;
     border-radius: 999em;
   }
   
-  &__logo {
+  &-logo {
     display: inline-block;
     background-image: linear-gradient(45deg, rgb(246,46,36), rgb(255,133,27), rgb(255,221,0), rgb(46,204,64), rgb(0,116,217), rgb(176,13,201));
     background-size: 800% 800%;
@@ -54,40 +73,25 @@ import Headline from '../atoms/Headline.astro'
     max-height: 350px;
     animation: rainbow 15s ease alternate infinite;
   }
-  
-  &__left {
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
-    text-align: left;
-    padding: 2rem;
-  }
-  
-  &__right {
-    order: 0;
-    flex: 0 1 auto;
-    align-self: flex-end;
-    text-align: left;
-    max-width: 500px;
-    padding: 2rem;
-  }
-  
-  &__text {
-    line-height: 2rem;
-  }
-  
-  &__headline {
+}
+
+.content {
+  &-headline {
     font-size: 2.3rem;
     font-weight: 700;
     color: var(--theme-color-text--highlight);
   }
-}
+  
+  &-indicator {
+    display: block;
+    height: 3px;
+    margin: 1.5rem 50% 1.5rem 0;
+    background-color: var(--theme-color-brand);
+  }
 
-.sa-indicator {
-  display: block;
-  height: 3px;
-  margin: 1.5rem 50% 1.5rem 0;
-  background-color: var(--theme-color-brand);
+  &-description {
+    line-height: 2rem;
+  }
 }
 
 @keyframes rainbow {

@@ -1,0 +1,13 @@
+<svg class="projects-logo-background" viewBox="0 0 432 375" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_405_2)">
+    <path d="M0 360L216 0L432 360H0Z" fill="#46BA84"/>
+    <path d="M215.5 18.5L296.5 153.5L215.5 76.36L134.5 153.5L215.5 18.5Z" fill="white"/>
+    <path d="M107.92 374.85L215.71 189.5L323.5 374.85H107.92Z" fill="#35485D"/>
+    <path d="M215.5 216.5L251.5 270.5L224.5 252.5L215.5 270.5L206.5 252.5L179.5 270.5" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_405_2">
+      <rect width="432" height="374.85" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>

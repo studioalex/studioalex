@@ -1,63 +1,47 @@
 ---
 import Headline from '../atoms/Headline.astro'
 import Ruler from '../atoms/Ruler.astro'
+import Icon from '../atoms/Icon.astro'
+
+export interface ProjectType {
+  title: string
+  description: string
+  image?: string
+  path?: string
+  wip?: boolean
+}
+
+export interface Props {
+  data: ProjectType[]
+}
+
+const { data } = Astro.props
 ---
-<div class="projects">
+<div class="project">
   <Ruler />
   <Headline>Projects</Headline>
-  <div class="projects-list">
-    <div class="projects-item">
-      <div class="projects-logo">
-         <svg class="projects-logo-background" viewBox="0 0 432 375" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_405_2)">
-            <path d="M0 360L216 0L432 360H0Z" fill="#46BA84"/>
-            <path d="M215.5 18.5L296.5 153.5L215.5 76.36L134.5 153.5L215.5 18.5Z" fill="white"/>
-            <path d="M107.92 374.85L215.71 189.5L323.5 374.85H107.92Z" fill="#35485D"/>
-            <path d="M215.5 216.5L251.5 270.5L224.5 252.5L215.5 270.5L206.5 252.5L179.5 270.5" fill="white"/>
-          </g>
-          <defs>
-            <clipPath id="clip0_405_2">
-              <rect width="432" height="374.85" fill="white"/>
-            </clipPath>
-          </defs>
-        </svg>
-      </div>
-      <h3 class="projects-title">
-        Hora Grid
-      </h3>
-      <p class="projects-description">
-        Vue 3 Grid component based on CSS Grid.
-        Optimized for large amounts of data and data API's.
-        <a href="https://hora.studioalex.tech/" target="_blank" class="projects-jump">Visit</a>
-      </p>
-    </div>
-    <div class="projects-item wip">
-      <div class="projects-logo">
-      
-      </div>
-      <h3 class="projects-title">
-        Kyiv Form
-      </h3>
-      <p class="projects-description">
-        WIP: Vue 3 Form component.
-      </p>
-    </div>
-    <div class="projects-item wip">
-      <div class="projects-logo">
-      
-      </div>
-      <h3 class="projects-title">
-        Aikon
-      </h3>
-      <p class="projects-description">
-        WIP: Project is in progress.
-      </p>
-    </div>
+  <div class="project-list">
+    {
+      data.map(project => (
+        <div class:list={[ 'project-item', { wip: project.wip === true }]}>
+          <header>
+            <h3>{project.title}</h3>
+            {project.image && <Icon icon={project.image} />}
+          </header>
+          <p class="project-description">
+            {project.description}
+          </p>
+          {project.path && <footer>
+            <a href={project.path} target="_blank" class="project-link">Visit</a>
+          </footer>}
+        </div>
+      ))
+    }
   </div>
 </div>
 
 <style>
-.projects {
+.project {
   padding: 2rem;
   
   &-list {
@@ -80,39 +64,46 @@ import Ruler from '../atoms/Ruler.astro'
     padding: 1rem 1rem 2rem 1rem;
     background-color: var(--theme-color-background--light);
     margin: 1rem;
-    border-radius: 4px;
+    border-radius: 6pt;
     box-sizing: border-box;
-    
+
     &.wip {
       opacity: 0.5;
     }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-content: stretch;
+      align-items: center;
+
+      h3 {
+        flex: 1 1 auto;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: var(--theme-color-text--highlight);
+        margin: 2rem 0;
+      }
+
+      svg {
+        height: 80px;
+        opacity: 0.8;
+      }
+    }
+
+    footer {
+      text-align: right;
+    }
   }
-  
-  &-title {
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: var(--theme-color-text--highlight);
-  }
-  
+
   &-description {
+    margin: 1rem 0;
     line-height: 1.6rem;
   }
-  
-  &-logo {
-    height: 40px;
-  }
-  
-  &-logo-background {
-    position: absolute;
-    height: 80px;
-    top: 1.6rem;
-    right: 2rem;
-    z-index: 0;
-    opacity: 0.8;
-  }
-  
-  &-jump {
-    position: absolute;
+
+  &-link {
     bottom: 1rem;
     right: 1rem;
     border: 1px solid var(--theme-color-brand);

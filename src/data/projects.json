@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Hora Grid",
+    "description": "Vue 3 Grid component based on CSS Grid. Optimized for large amounts of data and data API's.",
+    "image": "hora-grid",
+    "path": "https://hora.studioalex.tech/",
+    "wip": false
+  },
+  {
+    "title": "Kyiv Form ",
+    "description": "WIP: Project is in progress. ",
+    "wip": true
+  },
+  {
+    "title": "Aikon",
+    "description": "WIP: Project is in progress. ",
+    "wip": true
+  }
+]

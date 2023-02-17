@@ -1,0 +1,134 @@
+[
+  {
+      "svg": "vue",
+      "name": "Vue",
+      "url": "https://vuejs.org/",
+      "enabled": true
+  },
+  {
+      "svg": "vite",
+      "name": "Vite",
+      "url": "https://vitejs.dev/",
+      "enabled": true
+  },
+  {
+      "svg": "html5",
+      "name": "HTML5",
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary/HTML5",
+      "enabled": true
+  },
+  {
+      "svg": "css",
+      "name": "CSS",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "enabled": true
+  },
+  {
+      "svg": "javascript",
+      "name": "JavaScript",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "enabled": true
+  },
+  {
+      "svg": "typescript",
+      "name": "Typescript",
+      "url": "https://www.typescriptlang.org/",
+      "enabled": true
+  },
+  {
+      "svg": "vitest",
+      "name": "Vitest",
+      "url": "https://vitest.dev/",
+      "enabled": true
+  },
+  {
+      "svg": "graphql",
+      "name": "GraphQL",
+      "url": "https://graphql.org/",
+      "enabled": true
+  },
+  {
+      "svg": "figma",
+      "name": "Figma",
+      "url": "https://www.figma.com/",
+      "enabled": true
+  },
+  {
+      "svg": "github",
+      "name": "GitHub",
+      "url": "https://github.com/",
+      "enabled": true
+  },
+  {
+      "svg": "jira",
+      "name": "Jira",
+      "url": "https://www.atlassian.com/software/jira",
+      "enabled": true
+  },
+  {
+      "svg": "confluence",
+      "name": "Confluence",
+      "url": "https://www.atlassian.com/software/confluence",
+      "enabled": true
+  },
+  {
+      "svg": "docker",
+      "name": "Docker",
+      "url": "https://www.docker.com/",
+      "enabled": true
+  },
+  {
+      "svg": "git",
+      "name": "Git",
+      "url": "https://git-scm.com/",
+      "enabled": true
+  },
+  {
+      "svg": "bootstrap",
+      "name": "Bootstrap",
+      "url": "https://getbootstrap.com/",
+      "enabled": true
+  },
+  {
+      "svg": "gulp",
+      "name": "Gulp",
+      "url": "https://gulpjs.com/",
+      "enabled": true
+  },
+  {
+      "svg": "grunt",
+      "name": "Grunt",
+      "url": "https://gruntjs.com/",
+      "enabled": true
+  },
+  {
+      "svg": "react",
+      "name": "React",
+      "url": "https://reactjs.org/",
+      "enabled": true
+  },
+  {
+      "svg": "php",
+      "name": "PHP",
+      "url": "https://www.php.net/",
+      "enabled": true
+  },
+  {
+      "svg": "node-js",
+      "name": "Node JS",
+      "url": "https://nodejs.org/en/",
+      "enabled": true
+  },
+  {
+      "svg": "sass",
+      "name": "SASS",
+      "url": "https://sass-lang.com/",
+      "enabled": true
+  },
+  {
+      "svg": "webpack",
+      "name": "Webpack",
+      "url": "https://github.com/webpack/webpack",
+      "enabled": true
+  }
+]

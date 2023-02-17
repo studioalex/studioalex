@@ -9,20 +9,20 @@ export interface Technologies {
 }
 
 export interface Props {
-	list: Technologies[]
+	data: Technologies[]
 }
 
-const { list } = Astro.props
+const { data } = Astro.props
 ---
-<div class="sa-technology">
+<div class="technology">
   <Ruler />
   <Headline>Tools & Technologies we use</Headline>
-  <div class="sa-technology__grid">
+  <div class="technology-grid">
     {
-      list.map(item => (
-        <div class="sa-technology__item">
-          <Icon icon={item.svg} class="sa-technology__icon"/>
-          <span class="sa-technology__name">{item.name}</span>
+      data.map(technology => (
+        <div class="technology-item">
+          <Icon icon={technology.svg} class="technology-icon"/>
+          <span class="technology-name">{technology.name}</span>
         </div>)
       )
     }
@@ -30,37 +30,38 @@ const { list } = Astro.props
 </div>
 
 <style>
-  .sa-technology {
+  .technology {
     padding: 2rem;
 
-    &__grid {
+    &-grid {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-content: stretch;
       align-items: stretch;
     }
-    &__item {
-      order: 0;
-      flex: 1 1 auto;
+
+    &-item {
+      flex: 0 1 auto;
       align-self: auto;
-      min-width: 100px;
+      min-width: 140px;
       margin: 0.5rem;
       padding: 1rem;
       color: var(--theme-color-text);
       text-align: center;
     }
-    &__icon {
+
+    &-icon {
+      display: inline-block;
       width: 48px;
       height: 48px;
-      margin: 0.5rem;
     }
-    &__name {
+
+    &-name {
       display: block;
-      color: var(--theme-color-text--light);
-      font-size: 1rem;
-      margin: 0.5rem;
+      color: var(--theme-color-text);
+      margin-top: 1.3rem;
     }
   }
 </style>

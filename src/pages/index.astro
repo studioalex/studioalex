@@ -1,13 +1,15 @@
 ---
-import { site } from '../lib/getSiteInfo'
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/home/Hero.astro'
 import Projects from '../components/home/Projects.astro'
 import Technology from '../components/home/Technology.astro'
+
+import projectsData from '../data/projects.json'
+import technologyData from '../data/technology.json'
 ---
 
 <Layout styles="flex-distribute size-full" >
 	<Hero />
-	<Projects />
-	<Technology list={site.fields.technology} />
+	<Projects data={projectsData} />
+	<Technology data={technologyData} />
 </Layout>

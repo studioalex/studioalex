@@ -1,35 +1,38 @@
 ---
-import { site } from '../lib/getSiteInfo'
 import Icon from './atoms/Icon.astro'
+import siteData from '../data/site.json'
 ---
 
-<footer class="sa-footer">
-  <div class="sa-footer__copyright">{site.fields.copyright}</div>
-  <div class="sa-footer__social-links"> 
+<footer class="footer">
+  <div class="footer-copyright">{siteData.copyright}</div>
+  <div class="footer-social-links"> 
     <a
       href="https://astro.build"
-      class="sa-footer__social-link"
+      class="footer-social-link"
       target="_blank"
       id="astro">
-      <Icon
-        class="sa-footer__social-svg"
-        icon="astro-dark" />
+      <Icon icon="astro-dark" />
     </a>
   </div>
 </footer>
 
 <style lang="postcss">
-  .sa-footer {
+  .footer {
     background-color: var(--theme-color-background);
     padding: 2rem var(--margin-sides);
     text-align: center;
     transition: padding 1s;
     
-    &__social-links {
+    &-copyright {
+      font-size: 0.9em;
+      margin-bottom: 1rem;
+    }
+
+    &-socials {
       padding-top: 1rem;
     }
       
-    &__social-link {
+    &-social-link {
       display: inline-block;
       padding-right: 15px;
       color: var(--theme-color-text--highlight);
@@ -38,16 +41,6 @@ import Icon from './atoms/Icon.astro'
         width: 26px;
         height: 26px;
       }
-    }
-        
-    &__social-svg {
-      width: 26px;
-      height: 26px;
-    }
-
-    svg {
-      width: 26px;
-      height: 26px;
     }
   }
 </style>
