@@ -25,7 +25,7 @@ const { data } = Astro.props
       data.map(project => (
         <div class:list={[ 'project-item', { wip: project.wip === true }]}>
           <header>
-            <h3>{project.title}</h3>
+            <h2>{project.title}</h2>
             {project.image && <Icon name={project.image} />}
           </header>
           <p class="project-description">
@@ -84,7 +84,7 @@ const { data } = Astro.props
       align-content: stretch;
       align-items: center;
 
-      h3 {
+      h2 {
         flex: 1 1 auto;
         font-size: 1.6rem;
         font-weight: 500;
