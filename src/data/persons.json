@@ -1,0 +1,378 @@
+[
+  {
+    "path": "alexander",
+    "slug": "alexander-sedeke",
+    "name": "Alexander Sedeke",
+    "nickname": "Alexander",
+    "about": "I’m a  creative Full-Stack Developer from Prag, Czech Republic",
+    "profile": "I'm an experienced full-stack developer with a solid background in everything related to enterprise applications. It is my passion to build slick & well optimized websites and web apps and api's.",
+    "email": "alexander.sedeke@gmail.com",
+    "social": [
+        {
+            "url": "https://twitter.com/alexsedeke",
+            "icon": "twitter"
+        },
+        {
+            "url": "https://github.com/alexsedeke",
+            "icon": "github"
+        },
+        {
+            "url": "https://codepen.io/alexandersedeke",
+            "icon": "codepen"
+        },
+        {
+            "url": "https://stackoverflow.com/users/15551712/alex-sedeke",
+            "icon": "stackoverflow"
+        }
+    ],
+    "services": [
+        {
+            "title": "project scoping",
+            "description": "figure out and prioritize the core features of your application based on what your users actually need"
+        },
+        {
+            "title": "user experience design/research",
+            "description": "work with you to design interactions that are easy to use and intuitive for your users"
+        },
+        {
+            "title": "data visualizations",
+            "description": "tell a story through your data, in a way that is easy to understand, self explanatory and interesting"
+        },
+        {
+            "title": "debugging your team<",
+            "description": "help you figure out why your team might be stuck and have trouble focusing on features or delivering them"
+        },
+        {
+            "title": "engineering",
+            "description": "answer technical questions about web best practices (eg. the performance and accessibility of your product), do code reviews, or offer feedback and suggestions for improvement"
+        },
+        {
+            "title": "mentorship, guidance &amp; leadership",
+            "description": "I can help you brainstorm creative ideas, offer feedback on your written materials and presentations, and help you craft your key messaging"
+        }
+    ],
+    "uses": [
+        {
+            "items": [
+                {
+                    "link": "https://code.visualstudio.com",
+                    "image": "/images/vsc.png",
+                    "title": "Visual Studio Code",
+                    "description": "is my source code editor. I use it now for near everything."
+                },
+                {
+                    "link": "https://www.sketch.com",
+                    "image": "/images/sketch.png",
+                    "title": "Sketch",
+                    "description": "is one of my first design tools for XD and UI."
+                },
+                {
+                    "link": "https://www.figma.com/",
+                    "image": "/images/figma.png",
+                    "title": "Figma",
+                    "description": "is now my primary and first choice UI and XD tool. The advantage of Figma over XD is that the drafts take place in the browser. XD uses its own renderer, which means there are differences to the browser."
+                },
+                {
+                    "link": "",
+                    "image": "/images/affinity_photo.png",
+                    "title": "Affinity Photo",
+                    "description": "Powerful photo editing software used by professionals worldwide."
+                },
+                {
+                    "link": "",
+                    "image": "/images/affinity_designer.png",
+                    "title": "Affinity Designer",
+                    "description": "Affinity Designer is a vector graphics editor. It's not bad but a little awkward."
+                },
+                {
+                    "link": "https://www.adobe.com/",
+                    "image": "/images/adobe_xd.png",
+                    "title": "Adobe XD",
+                    "description": "is a powerful and but not easy-to-use vector-based experience design platform. Most of my customers use it, but I still prefer Figma."
+                },
+                {
+                    "link": "https://www.adobe.com/",
+                    "image": "/images/adobe_photoshop.png",
+                    "title": "Adobe Photoshop",
+                    "description": "I know Photoshop now since the version 5. It is still a powerful photo editing software and most used at my customers."
+                },
+                {
+                    "link": "https://www.adobe.com/",
+                    "image": "/images/adobe_illustrator.png",
+                    "title": "Adobe Illustrator",
+                    "description": "is a vector graphics editor. It is powerful and reliable. For me, his greatest strength lies in creating icons."
+                }
+            ],
+            "title": "Applications",
+            "description": ""
+        },
+        {
+            "items": [
+                {
+                    "link": "https://git-fork.com/",
+                    "image": "/images/fork.png",
+                    "title": "Fork",
+                    "description": "Fork is free git client application for MacOs, Windows and Linux."
+                },
+                {
+                    "link": "https://www.sublimetext.com/",
+                    "image": "/images/sublime.png",
+                    "title": "Sublime",
+                    "description": "Text Editing, Done Right"
+                },
+                {
+                    "link": "https://1password.com/",
+                    "image": "/images/1password.png",
+                    "title": "1Password",
+                    "description": "A password manager, digital vault, form filler and secure digital wallet. 1Password remembers all your passwords for you to help keep account information."
+                },
+                {
+                    "link": "https://discord.com",
+                    "image": "/images/discord.png",
+                    "title": "Discord",
+                    "description": "is my choice of instant messaging social platform."
+                },
+                {
+                    "link": "https://www.raycast.com/",
+                    "image": "/images/raycast.png",
+                    "title": "Raycast",
+                    "description": "I've always been a huge Alfred fan and have many workflows but have recently switched over to Raycast which is even better!"
+                },
+                {
+                    "link": "https://www.dropbox.com",
+                    "image": "/images/dropbox.png",
+                    "title": "Dropbox",
+                    "description": "is my cloud sync tool of choice. I tried other ones from Amazon and Microsoft, but the user experience on them were pretty bad. It support also restoring files I have accidentally deleted."
+                }
+            ],
+            "title": "Tools",
+            "description": ""
+        },
+        {
+            "items": [
+                {
+                    "link": "https://www.atlassian.com/de/software/jira",
+                    "image": "/images/atlassian_jira.png",
+                    "title": "Atlassian Jira",
+                    "description": "also for my private projects I use Jira, to plan and document my projects."
+                },
+                {
+                    "link": "https://github.com",
+                    "image": "/images/github.png",
+                    "title": "GitHub",
+                    "description": "I prefer GitHub still over GitLab or Bitbucket."
+                },
+                {
+                    "link": "https://www.digitalocean.com",
+                    "image": "/images/digitalocean.png",
+                    "title": "Digital Ocean",
+                    "description": "using DigitalOcean as my primary cloud infrastructure provider. It is more flexible, cheaper and much easier to manage."
+                }
+            ],
+            "title": "Services",
+            "description": ""
+        }
+    ],
+    "hardware": [
+        {
+            "title": "Primary Laptop",
+            "content": "Macbook Pro 16' 2021 with M1 Max, 64GB RAM, and 2TB hard drive"
+        },
+        {
+            "title": "Desktop Monitor",
+            "content": "LG 32UN88A 32 Inch, 3840 x 2160 (4K UHD), VESA DisplayHDR™ 400"
+        },
+        {
+            "title": "Portable Monitor",
+            "content": "iPad Pro 12.9'"
+        },
+        {
+            "title": "Additional Keyboard",
+            "content": "Apple Magic Keyboard"
+        },
+        {
+            "title": "Mouse",
+            "content": "Apple Magic Mouse"
+        },
+        {
+            "title": "Laptop Stand",
+            "content": "AlzaErgo Arm D65BN Essential"
+        }
+    ]
+  },
+  {
+    "path": "lea",
+    "slug": "lea-vu",
+    "name": "Lea Vu",
+    "nickname": "Lea",
+    "about": "Product designer specializing in UX and UI design and design systems from Prag, Czech Republic.",
+    "profile": "My UX/UI is based on  realization of your ideas. I'm ready to undertake all the work beginning from the analysis stage up to support of the released project. I will create wireframes, prototypes and Fine Fidelity Interfaces, coordinate stakeholder and user with experts knowlege and provide the right solutions for your ideas.",
+    "email": "lea.vu@gmail.com",
+    "social": [
+        {
+            "url": "https://www.behance.net/vulea",
+            "icon": "behance"
+        },
+        {
+            "url": "https://github.com/leavu",
+            "icon": "github"
+        }
+    ],
+    "services": [
+        {
+            "title": "project scoping",
+            "description": "figure out and prioritize the core features of your application based on what your users actually need"
+        },
+        {
+            "title": "user experience design/research",
+            "description": "work with you to design interactions that are easy to use and intuitive for your users"
+        },
+        {
+            "title": "data visualizations",
+            "description": "tell a story through your data, in a way that is easy to understand, self explanatory and interesting"
+        },
+        {
+            "title": "debugging your team<",
+            "description": "help you figure out why your team might be stuck and have trouble focusing on features or delivering them"
+        },
+        {
+            "title": "engineering",
+            "description": "answer technical questions about web best practices (eg. the performance and accessibility of your product), do code reviews, or offer feedback and suggestions for improvement"
+        },
+        {
+            "title": "mentorship, guidance &amp; leadership",
+            "description": "I can help you brainstorm creative ideas, offer feedback on your written materials and presentations, and help you craft your key messaging"
+        }
+    ],
+    "uses": [
+        {
+            "items": [
+                {
+                    "link": "https://www.sketch.com",
+                    "image": "/images/sketch.png",
+                    "title": "Sketch",
+                    "description": "is one of my first design tools for XD and UI."
+                },
+                {
+                    "link": "https://www.figma.com/",
+                    "image": "/images/figma.png",
+                    "title": "Figma",
+                    "description": "is now my primary and first choice UI and XD tool. The advantage of Figma over XD is that the drafts take place in the browser. XD uses its own renderer, which means there are differences to the browser."
+                },
+                {
+                    "link": "",
+                    "image": "/images/affinity_photo.png",
+                    "title": "Affinity Photo",
+                    "description": "Powerful photo editing software used by professionals worldwide."
+                },
+                {
+                    "link": "",
+                    "image": "/images/affinity_designer.png",
+                    "title": "Affinity Designer",
+                    "description": "Affinity Designer is a vector graphics editor. It's not bad but a little awkward."
+                },
+                {
+                    "link": "https://www.adobe.com/",
+                    "image": "/images/adobe_xd.png",
+                    "title": "Adobe XD",
+                    "description": "is a powerful and but not easy-to-use vector-based experience design platform. Most of my customers use it, but I still prefer Figma."
+                },
+                {
+                    "link": "https://www.adobe.com/",
+                    "image": "/images/adobe_photoshop.png",
+                    "title": "Adobe Photoshop",
+                    "description": "I know Photoshop now since the version 5. It is still a powerful photo editing software and most used at my customers."
+                },
+                {
+                    "link": "https://www.adobe.com/",
+                    "image": "/images/adobe_illustrator.png",
+                    "title": "Adobe Illustrator",
+                    "description": "is a vector graphics editor. It is powerful and reliable. For me, his greatest strength lies in creating icons."
+                }
+            ],
+            "title": "Applications",
+            "description": ""
+        },
+        {
+            "items": [
+                {
+                    "link": "https://git-fork.com/",
+                    "image": "/images/fork.png",
+                    "title": "Fork",
+                    "description": "Fork is free git client application for MacOs, Windows and Linux."
+                },
+                {
+                    "link": "https://1password.com/",
+                    "image": "/images/1password.png",
+                    "title": "1Password",
+                    "description": "A password manager, digital vault, form filler and secure digital wallet. 1Password remembers all your passwords for you to help keep account information."
+                },
+                {
+                    "link": "https://discord.com",
+                    "image": "/images/discord.png",
+                    "title": "Discord",
+                    "description": "is my choice of instant messaging social platform."
+                },
+                {
+                    "link": "https://www.raycast.com/",
+                    "image": "/images/raycast.png",
+                    "title": "Raycast",
+                    "description": "I've always been a huge Alfred fan and have many workflows but have recently switched over to Raycast which is even better!"
+                },
+                {
+                    "link": "https://www.dropbox.com",
+                    "image": "/images/dropbox.png",
+                    "title": "Dropbox",
+                    "description": "is my cloud sync tool of choice. I tried other ones from Amazon and Microsoft, but the user experience on them were pretty bad. It support also restoring files I have accidentally deleted."
+                }
+            ],
+            "title": "Tools",
+            "description": ""
+        },
+        {
+            "items": [
+                {
+                    "link": "https://www.atlassian.com/de/software/jira",
+                    "image": "/images/atlassian_jira.png",
+                    "title": "Atlassian Jira",
+                    "description": "also for my private projects I use Jira, to plan and document my projects."
+                },
+                {
+                    "link": "https://github.com",
+                    "image": "/images/github.png",
+                    "title": "GitHub",
+                    "description": "I prefer GitHub still over GitLab or Bitbucket."
+                }
+            ],
+            "title": "Services",
+            "description": ""
+        }
+    ],
+    "hardware": [
+        {
+            "title": "Primary Laptop",
+            "content": "Macbook Pro 16' 2021 with M1 Max, 64GB RAM, and 2TB hard drive"
+        },
+        {
+            "title": "Monitor",
+            "content": "Wacom"
+        },
+        {
+            "title": "Portable Monitor",
+            "content": "iPad Pro 12.9'"
+        },
+        {
+            "title": "Additional Keyboard",
+            "content": "Apple Magic Keyboard"
+        },
+        {
+            "title": "Mouse",
+            "content": "Apple Magic Mouse"
+        },
+        {
+            "title": "Laptop Stand",
+            "content": "AlzaErgo Arm D65BN Essential"
+        }
+    ]
+  }
+]

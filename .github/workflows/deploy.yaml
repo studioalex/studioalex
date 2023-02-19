@@ -28,10 +28,6 @@ jobs:
           npm ci
           npm run build --if-present
           npm run test --if-present
-        env:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_DELIVERY_TOKEN: ${{ secrets.CONTENTFUL_DELIVERY_TOKEN }}
-          CONTENTFUL_PREVIEW_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_TOKEN }}
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         with:

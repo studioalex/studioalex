@@ -1,5 +1,4 @@
 ---
-import { contentfulClient } from "../../lib/contentful"
 import Layout from '../../layouts/Layout.astro'
 import Headline from '../../components/atoms/Headline.astro'
 import Paragraph from '../../components/atoms/Paragraph.astro'
@@ -8,39 +7,20 @@ import Hardware from '../../components/uses/Hardware.astro'
 import ButtonLink from '../../components/atoms/ButtonLink.astro'
 import Ruler from '../../components/atoms/Ruler.astro'
 
-import type { HardwareType } from '../../components/uses/Hardware.astro'
 import metaData from '../../data/meta.json'
-
-interface UsesItemsType {
-  title: string,
-  description: string,
-  image: string,
-  link: string
-}
-
-interface UsesType {
-  title: string,
-  description: string,
-  items: UsesItemsType[]
-}
-
-interface StudioAlexUsers {
-  name: string,
-  nickname: string,
-  uses: UsesType[]
-  hardware: HardwareType[]
-}
+import personsData from '../../data/persons.json'
 
 export function getStaticPaths() {
-  return metaData.persons.staticPaths
+  return personsData.map(record => ({ params: { user: record.path } }))
 }
 
 const { user } = Astro.params
-const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons.idlist[user])
+const person = personsData.filter(record => record.path === user)[0]
+const path = `/${person.nickname.toLowerCase()}/about`
 ---
-<Layout title={`${metaData.title} - ${person.fields.nickname} uses`} styles="size-small">
+<Layout title={`${metaData.title} - ${person.nickname} uses`} styles="size-small">
 
-  <Headline>{`${person.fields.nickname} uses`}</Headline>
+  <Headline>{`${person.nickname} uses`}</Headline>
 
   <Paragraph>
     There are times where people ask me about what software or gear I am using.
@@ -48,14 +28,14 @@ const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons
   </Paragraph>
 
   <div class="text-center m-10">
-    <ButtonLink path={`/${person.fields.nickname.toLowerCase()}/about`} />
+    <ButtonLink path={path} />
   </div>
 
   <Ruler />
 
-  <Hardware list={person.fields.hardware} />
+  <Hardware list={person.hardware} />
 
-  {person.fields.uses.map(item => (
+  {person.uses.map(item => (
     <Uses title={item.title} data={item.items} />
   ))}
 

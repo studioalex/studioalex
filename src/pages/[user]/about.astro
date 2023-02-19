@@ -1,6 +1,4 @@
 ---
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
-import { contentfulClient } from "../../lib/contentful"
 import Layout from '../../layouts/Layout.astro'
 import ProfileImage from '../../components/about/ProfileImage.astro'
 import Profile from '../../components/about/Profile.astro'
@@ -8,47 +6,34 @@ import Social from '../../components/about/Social.astro'
 import Introduce from '../../components/about/Introduce.astro'
 import ButtonLink from '../../components/atoms/ButtonLink.astro'
 
-import type { Document } from "@contentful/rich-text-types"
-import type { ServiceType } from '../../components/about/Introduce.astro'
-import type { SocialType } from '../../components/about/Social.astro'
-
 import metaData from '../../data/meta.json'
-
-interface StudioAlexUsers {
-  name: string,
-  nickname: string,
-  about: Document,
-  profile: Document,
-  email: string,
-  social: SocialType[]
-  services: ServiceType[]
-}
+import personsData from '../../data/persons.json'
 
 export function getStaticPaths() {
-  return metaData.persons.staticPaths
+  return personsData.map(record => ({ params: { user: record.path } }))
 }
 
 const { user } = Astro.params
-const person = await contentfulClient.getEntry<StudioAlexUsers>(metaData.persons.idlist[user])
-const path = `/${person.fields.nickname.toLowerCase()}/uses`
+const person = personsData.filter(record => record.path === user)[0]
+const path = `/${person.nickname.toLowerCase()}/uses`
 ---
 <Layout
-  title={`${metaData.title} - ${person.fields.nickname}`}
+  title={`${metaData.title} - ${person.nickname}`}
   styles="flex"
   backgroundClass="background--praha">
   <ProfileImage
-    path={`/images/person/${person.fields.nickname.toLowerCase()}.png`} />
+    path={`/images/person/${person.nickname.toLowerCase()}.png`} />
   <Profile
-    name={person.fields.name}
-    description={documentToHtmlString(person.fields.about)}>
-    <Social list={person.fields.social} />
+    name={person.name}
+    description={person.about}>
+    <Social list={person.social} />
     <div class="text-center">
       <ButtonLink path={path} />
     </div>
     <Introduce
-      email={person.fields.email}
-      profile={documentToHtmlString(person.fields.profile)} 
-      services={person.fields.services}
+      email={person.email}
+      profile={person.profile} 
+      services={person.services}
       usesPath={path}/>
   </Profile>
 </Layout>
