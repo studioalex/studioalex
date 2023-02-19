@@ -2,6 +2,7 @@
 import Icon from '../atoms/Icon.astro'
 
 export interface SocialType {
+  label: string;
   icon: string;
   url: string;
 }
@@ -10,14 +11,14 @@ export interface Props {
 	list: SocialType[]
 }
 
-const { list, uses, usesLink } = Astro.props;
+const { list } = Astro.props;
 ---
 <div class="social">
   {list.map(social => (
-    <a
-      href={social.url}
+    <a href={social.url}
       class="social-link"
-      target="_blank">
+      target="_blank"
+      aria-label={`Link to our account at ${social.label}`}>
       <Icon
         class="social-svg"
         name={social.icon} />    

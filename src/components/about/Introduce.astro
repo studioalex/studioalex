@@ -35,7 +35,7 @@ const { email, profile, services, usesPath } = Astro.props;
 
   <Paragraph>
     If this sounds like something you're interested in, send me an
-    <a href={`mailto:${email}`}>email</a>!
+    <a aria-label="Send an email ti us" href={`mailto:${email}`}>email</a>!
   </Paragraph>
 
   <Ruler />
@@ -49,7 +49,7 @@ const { email, profile, services, usesPath } = Astro.props;
   </Paragraph>
   
   <Paragraph>
-    Also, take some time and check out <a href="https://uses.tech" target="_blank">//uses.tech</a> where many other great developers show what they are using.
+    Also, take some time and check out <a aria-label="Link to uses.tech at GitHub" href="https://uses.tech" target="_blank">//uses.tech</a> where many other great developers show what they are using.
   </Paragraph>
 </div>
 

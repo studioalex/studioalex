@@ -13,7 +13,10 @@ const {
   link
 } = Astro.props as Props
 ---
-<a href={link} target="_blank" class="application-link">
+<a href={link}
+  target="_blank"
+  class="application-link"
+  aria-label={`Link to ${title}`}>
   <div class="application">
     <div class="application-icon">
       <img src={image} />

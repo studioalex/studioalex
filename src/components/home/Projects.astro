@@ -32,7 +32,12 @@ const { data } = Astro.props
             {project.description}
           </p>
           {project.path && <footer>
-            <a href={project.path} target="_blank" class="project-link">Visit</a>
+            <a href={project.path}
+              target="_blank"
+              class="project-link"
+              aria-label={`Visit our project ${project.title}`}>
+              Visit
+            </a>
           </footer>}
         </div>
       ))

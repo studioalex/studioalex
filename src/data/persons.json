@@ -9,18 +9,22 @@
     "email": "alexander.sedeke@gmail.com",
     "social": [
         {
+            "label": "Twitter",
             "url": "https://twitter.com/alexsedeke",
             "icon": "twitter"
         },
         {
+            "label": "GitHub",
             "url": "https://github.com/alexsedeke",
             "icon": "github"
         },
         {
+            "label": "Codepen",
             "url": "https://codepen.io/alexandersedeke",
             "icon": "codepen"
         },
         {
+            "label": "Stackoverflow",
             "url": "https://stackoverflow.com/users/15551712/alex-sedeke",
             "icon": "stackoverflow"
         }
@@ -210,10 +214,12 @@
     "email": "lea.vu@gmail.com",
     "social": [
         {
+            "label": "Behance",
             "url": "https://www.behance.net/vulea",
             "icon": "behance"
         },
         {
+            "label": "GitHub",
             "url": "https://github.com/leavu",
             "icon": "github"
         }
