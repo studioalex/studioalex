@@ -26,7 +26,7 @@ const { data } = Astro.props
         <div class:list={[ 'project-item', { wip: project.wip === true }]}>
           <header>
             <h3>{project.title}</h3>
-            {project.image && <Icon icon={project.image} />}
+            {project.image && <Icon name={project.image} />}
           </header>
           <p class="project-description">
             {project.description}

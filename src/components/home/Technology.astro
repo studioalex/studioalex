@@ -23,7 +23,7 @@ const { data } = Astro.props
     {
       data.map(technology => (
         <div class="technology-item">
-          <Icon icon={technology.svg} class="technology-icon"/>
+          <Icon name={technology.svg} class="technology-icon"/>
           <span class="technology-name">{technology.name}</span>
         </div>)
       )
