@@ -15,20 +15,9 @@ export interface Props {
 
 const {
 	title = siteData.title,
-	styles = false,
-	backgroundClass = false
+	styles,
+	backgroundClass
 } = Astro.props
-
-const contentClass = ['layout-content']
-const backgroundClasses = ['layout']
-
-if (styles) {
-	contentClass.push(styles)
-}
-
-if (backgroundClass) {
-	backgroundClasses.push(backgroundClass)
-}
 ---
 
 <!DOCTYPE html>
@@ -110,9 +99,9 @@ if (backgroundClass) {
                       ─╙▀▀▀▀▀▀╙
   -->
 	<body>
-		<div class={backgroundClasses.join(' ')}>
+		<div class:list={[ 'layout', backgroundClass]}>
 			<Header title="&lt;studio-alex/&gt;" />
-			<main class={contentClass.join(' ')}>
+			<main class:list={[ 'layout-content', styles]}>
 		    <slot />
 		  </main>
 			<Footer />

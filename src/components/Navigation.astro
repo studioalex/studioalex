@@ -8,35 +8,37 @@ import MenuIcon from './MenuIcon.astro'
 <NavigationItem path="/lea/about" title="Lea" match="lea" />
 <NavigationItem path="https://github.com/studioalex" icon="github" target="_blank"/>
 <MenuIcon />
-<div class="menu-navigation">
-  <div class="menu-navigation-items">
-    <nav class="menu-navigation-list">
-      <NavigationItem path="/" title="Home" />
-      <NavigationItem path="/tips" title="Tips" match="tips" />
-      <NavigationItem path="/alexander/about" title="Alexander" match="alexander/about" />
-      <NavigationItem path="/lea/about" title="Lea" match="lea/about" />
-      <NavigationItem path="/alexander/uses" match="alexander/uses">
-        <span class="menu-subtitle">Alexander /</span> uses
-      </NavigationItem>
-      <NavigationItem path="/lea/uses" match="lea/uses">
-        <span class="menu-subtitle">Lea /</span> uses
-      </NavigationItem>
-      <NavigationItem path="https://github.com/studioalex" icon="github" target="_blank"/>
-    </nav>
-  </div>
+<div class="mobile-menu">
+  <nav class="mobile-navigation">
+    <NavigationItem path="/" title="Home" />
+    <NavigationItem path="/tips" title="Tips" match="tips" />
+    <NavigationItem path="/alexander/about" title="Alexander" match="alexander/about" />
+    <NavigationItem path="/lea/about" title="Lea" match="lea/about" />
+    <NavigationItem path="/alexander/uses" match="alexander/uses">
+      <span class="mobile-navigation-subtitle">Alexander /</span> uses
+    </NavigationItem>
+    <NavigationItem path="/lea/uses" match="lea/uses">
+      <span class="mobile-navigation-subtitle">Lea /</span> uses
+    </NavigationItem>
+    <NavigationItem path="https://github.com/studioalex" icon="github" target="_blank"/>
+  </nav>
 </div>
-<div class="menu-background"></div>
+<div class="mobile-menu-background"></div>
 
 <style is:global>
+  body:has(.mobile-menu) {
+    overflow: hidden;
+  }
+
   input.menu-checked {
-    &:checked ~ .menu-background {
+    &:checked ~ .mobile-menu-background {
       width: 100vmax;
       height: 100vmax;
       transform: translate3d(50vh, 50vh, 0) scale(5);
       transition-duration: 1s;
     }
 
-    &:checked ~ .menu-navigation {
+    &:checked ~ .mobile-menu {
       height: 100vh;
       width: 100vw;
       padding: 2rem var(--margin-sides);
@@ -45,27 +47,8 @@ import MenuIcon from './MenuIcon.astro'
     }
   }
 
-  .menu {
-    &-subtitle {
-      color: var(--theme-color-text--dark);
-    }
-
-    &-background {
-      position: fixed;
-      z-index: 900;
-      width: 0px;
-      height: 0px;
-      right: 0;
-      top: 0;
-      background-color: var(--theme-color-background--dark);
-      border-color: 3px solid white;
-      border-radius: 50%;
-      transition: transform .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
-        width .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
-        height .25s cubic-bezier(0.04, -0.1, 0.29, 0.98);
-    }
-
-    &-navigation {
+  .mobile {
+    &-menu {
       position: absolute;
       z-index: 910;
       top: 0;
@@ -84,29 +67,45 @@ import MenuIcon from './MenuIcon.astro'
       box-sizing: border-box;
       opacity: 0;
 
-      &-items {
-        order: 0;
-        flex: 1 1 auto;
-        align-self: auto;
-        min-width: 300px;
-        max-width: 450px;
-        padding: 5rem 0 0 0;
+      &-background {
+        position: fixed;
+        z-index: 900;
+        width: 0px;
+        height: 0px;
+        right: 0;
+        top: 0;
+        background-color: var(--theme-color-background--dark);
+        border-color: 3px solid white;
+        border-radius: 50%;
+        transition: transform .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
+          width .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
+          height .25s cubic-bezier(0.04, -0.1, 0.29, 0.98);
+      }
+    }
+
+    &-navigation {
+      order: 0;
+      flex: 1 1 auto;
+      align-self: auto;
+      min-width: 300px;
+      max-width: 450px;
+      font-size: 1rem;
+      padding: 5rem 0 0 0;
+
+      a {
+        display: block;
+        font-size: 1.3em;
+        color: var(--theme-color-link);
+        padding: 0.6em 1em;
+
+        &:hover {
+          background-color: var(--theme-color-background);
+          border-radius: 4pt;
+        }
       }
 
-      &-list {
-        font-size: 1rem;
-
-        a {
-          display: block;
-          font-size: 1.3em;
-          color: var(--theme-color-link);
-          padding: 0.6em 1em;
-
-          &:hover {
-            background-color: var(--theme-color-background);
-            border-radius: 4pt;
-          }
-        }
+      &-subtitle {
+        color: var(--theme-color-text--dark);
       }
     }
   }
