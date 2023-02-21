@@ -1,0 +1,68 @@
+---
+
+---
+<input type="checkbox" class="menu-checked" id="menu-checked">
+<label class="menu-checked" for="menu-checked">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
+
+<style is:global>
+  input.menu-checked {
+    display: none;
+
+    &:checked ~ label.menu-checked span:nth-of-type(1) {
+      transform-origin: bottom;
+      transform: rotatez(45deg) translate(0.4em, 0px);
+    }
+
+    &:checked ~ label.menu-checked span:nth-of-type(2) {
+      transform-origin: top;
+      transform: rotatez(-45deg)
+    }
+
+    &:checked ~ label.menu-checked span:nth-of-type(3) {
+      transform-origin: bottom;
+      width: 50%;
+      transform: translate(1.5em, -0.55em) rotatez(45deg);
+    }
+  }
+
+  label.menu-checked {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    font-size: 10px;
+    width: 3.5em;
+    height: 3.5em;
+    cursor: pointer;
+    position: relative;
+    margin-left: 2rem;
+    z-index: 920;
+
+    span {
+      background: var(--theme-color-link);
+      border-radius: 999em;
+      height: 0.35em;
+      margin: 0.33em 0;
+      transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+
+    span:nth-of-type(1){
+      width: 50%;
+    }
+
+    span:nth-of-type(2){
+      width: 100%;
+    }
+
+    span:nth-of-type(3){
+      width: 75%;
+    }
+
+    &:hover span {
+      background: var(--theme-color-link--highlight);
+    }
+  }
+</style>

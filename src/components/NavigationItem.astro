@@ -1,0 +1,72 @@
+---
+import Icon from './atoms/Icon.astro'
+
+export interface Props {
+	title?: string
+	path: string
+	icon?: string
+  description?: string
+  target?: string
+  match?: string
+}
+
+const {
+	title,
+	path,
+	icon,
+  description,
+  target,
+  match,
+} = Astro.props
+
+const pathname = new URL(Astro.request.url).pathname
+const isCurrentPath = () => {
+  const pathname = new URL(Astro.request.url).pathname
+  if (!match) {
+    return (pathname === path)
+  }
+  return (pathname.includes(match))
+}
+---
+<a href={path}
+  class:list={[{ link: !icon, 'link-icon': icon, active: isCurrentPath() }]}
+  aria-label={description || title}
+  target={target}>
+  {icon ? <Icon class="link-icon" name={icon} /> : {title}}
+  <slot />
+</a>
+
+<style>
+  .link {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    color: var(--theme-color-link);
+    transition: color 0.3s;
+    white-space: nowrap;
+    
+    &:hover {
+      color: var(--theme-color-link--highlight);
+    }
+    
+    &.active {
+      color: var(--theme-color-brand);
+      font-weight: 600;
+    }
+
+    &-icon {
+      display: inline-block;
+      margin-left: 2rem;
+      color: var(--theme-color-link);
+
+      &:hover {
+        color: var(--theme-color-link--highlight);
+      }
+
+      svg {
+        width: 32px;
+        height: 32px;
+        vertical-align: bottom;
+      }
+    }
+  }
+</style>
