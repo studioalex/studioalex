@@ -2,11 +2,13 @@
 import NavigationItem from './NavigationItem.astro'
 import MenuIcon from './MenuIcon.astro'
 ---
-<NavigationItem path="/" title="Home" />
-<NavigationItem path="/tips" title="Tips" match="tips" />
-<NavigationItem path="/alexander/about" title="Alexander" match="alexander" />
-<NavigationItem path="/lea/about" title="Lea" match="lea" />
-<NavigationItem path="https://github.com/studioalex" icon="github" target="_blank"/>
+<nav class="desktop-menu">
+  <NavigationItem path="/" title="Home" />
+  <NavigationItem path="/tips" title="Tips" match="tips" />
+  <NavigationItem path="/alexander/about" title="Alexander" match="alexander" />
+  <NavigationItem path="/lea/about" title="Lea" match="lea" />
+  <NavigationItem path="https://github.com/studioalex" icon="github" target="_blank"/>
+</nav>
 <MenuIcon />
 <div class="mobile-menu">
   <nav class="mobile-navigation">
@@ -26,7 +28,7 @@ import MenuIcon from './MenuIcon.astro'
 <div class="mobile-menu-background"></div>
 
 <style is:global>
-  body:has(.mobile-menu) {
+  body:has(input.menu-checked:checked) {
     overflow: hidden;
   }
 
@@ -94,9 +96,14 @@ import MenuIcon from './MenuIcon.astro'
 
       a {
         display: block;
+        margin: 0.3rem 0;
         font-size: 1.3em;
         color: var(--theme-color-link);
         padding: 0.6em 1em;
+
+        &.link-icon {
+          display: inline-block;
+        }
 
         &:hover {
           background-color: var(--theme-color-background);
@@ -107,6 +114,12 @@ import MenuIcon from './MenuIcon.astro'
       &-subtitle {
         color: var(--theme-color-text--dark);
       }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .desktop-menu {
+      display: none;
     }
   }
 </style>
