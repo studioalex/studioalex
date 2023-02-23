@@ -3,7 +3,7 @@ layout: blog
 title: CSS isolation
 description: Property isolation in CSS refers to the ability to apply styles to
   specific properties of an element without affecting other properties.
-image: /assets/general.jpg
+image: /assets/css_2.jpg
 date: 2023-02-23T11:08:33.722Z
 draft: false
 ---
