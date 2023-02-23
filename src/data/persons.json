@@ -31,28 +31,36 @@
     ],
     "services": [
         {
-            "title": "project scoping",
-            "description": "figure out and prioritize the core features of your application based on what your users actually need"
+            "title": "Web Development",
+            "description": "develop web applications from scratch, using the latest web technologies and frameworks. This includes developing the front-end (HTML, CSS, JavaScript), the back-end (server-side programming languages, databases), and integrating APIs."
         },
         {
-            "title": "user experience design/research",
-            "description": "work with you to design interactions that are easy to use and intuitive for your users"
+            "title": "Custom Software Development",
+            "description": "develop custom software solutions for clients. This includes creating desktop applications, mobile applications, and web applications that are tailored to the client's specific needs."
         },
         {
-            "title": "data visualizations",
-            "description": "tell a story through your data, in a way that is easy to understand, self explanatory and interesting"
+            "title": "Maintenance and Support",
+            "description": "provide maintenance and support services to clients to ensure that their applications are always up and running. This includes fixing bugs, updating software, and providing technical support to users."
         },
         {
-            "title": "debugging your team",
-            "description": "help you figure out why your team might be stuck and have trouble focusing on features or delivering them"
+            "title": "Cloud Deployment",
+            "description": "experience with cloud deployment and applications deployment on popular cloud platforms like Netlify, Heroku, Digital Ocean, AWS, Azure, and Google Cloud."
         },
         {
-            "title": "engineering",
-            "description": "answer technical questions about web best practices (eg. the performance and accessibility of your product), do code reviews, or offer feedback and suggestions for improvement"
+            "title": "Database Design and Development",
+            "description": "proficient in database design and development. This includes designing and implementing database schemas, optimizing database performance, and managing data migrations."
         },
         {
-            "title": "mentorship, guidance &amp; leadership",
-            "description": "I can help you brainstorm creative ideas, offer feedback on your written materials and presentations, and help you craft your key messaging"
+            "title": "Project Management",
+            "description": "manage projects from start to finish. This includes gathering requirements, creating project plans, coordinating with other developers and stakeholders, and delivering projects on time and within budget."
+        },
+        {
+            "title": "Code Reviews and Optimization",
+            "description": "review code written by other developers, identify areas for improvement, and optimize code for performance and scalability."
+        },
+        {
+            "title": "User Experience Design",
+            "description": "good understanding of user experience (UX) design principles and be able to design user interfaces that are intuitive and easy to use."
         }
     ],
     "uses": [
