@@ -18,6 +18,8 @@ const {
 	styles,
 	backgroundClass
 } = Astro.props
+
+const dev_mode = (import.meta.env.ASTRO_MODE === 'dev')
 ---
 
 <!DOCTYPE html>
@@ -53,15 +55,17 @@ const {
 		<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#2b5797">
 		<meta name="theme-color" content="#489442">
+    <meta name="version" content={`dev_mode`}>
+    {!dev_mode &&
+    <!-- Google tag (gtag.js) -->
+    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-2SF5PBDTJ3"></script>
+    <script defer>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2SF5PBDTJ3');
+    </script>}
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SF5PBDTJ3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2SF5PBDTJ3');
-  </script>
   <!--
                                             ,,╓,
                                           ╓████████▄
