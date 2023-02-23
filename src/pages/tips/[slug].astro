@@ -6,7 +6,7 @@ import { Image } from '@astrojs/image/components'
 import Layout from '../../layouts/Layout.astro'
 import Tag from '../../components/atoms/Tag.astro'
 import ButtonLink from '../../components/atoms/ButtonLink.astro'
-import { formatDate, imagePath } from '../../lib/helper'
+import { formatDate } from '../../lib/helper'
 
 export async function getStaticPaths() {
   const allTips = await getCollection('tips')
@@ -31,7 +31,7 @@ const { Content } = await post.render()
       <div class="date">{formatDate(date)} - { tags.map(tag => (<Tag>{tag}</Tag>))}</div>
     </header>
     <Image
-      src={imagePath(image)}
+      src={image}
       alt={image}
       height={400}
       width={1400}

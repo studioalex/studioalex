@@ -1,7 +1,7 @@
 ---
 import Tag from '../../components/atoms/Tag.astro'
 import { Image } from '@astrojs/image/components'
-import { imagePath, formatDate } from '../../lib/helper'
+import { formatDate } from '../../lib/helper'
 
 export interface Props {
   path: string
@@ -18,7 +18,7 @@ const { path, title, description, image, date, tags } = Astro.props as Props
   <div class="tip-thumbnail-wrap">
     <a href={path}>
       <Image
-        src={imagePath(image)}
+        src={image}
         alt={image}
         height={400}
         width={700}

@@ -1,7 +1,7 @@
 ---
 title: :has() feature detection
 description: :has() feature detection with @supports(selector(…))
-image: general.jpg
+image: /assets/general.jpg
 date: 2023-01-02
 draft: false
 tags: ['CSS']
