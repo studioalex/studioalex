@@ -56,6 +56,7 @@ const dev_mode = (import.meta.env.ASTRO_MODE === 'dev')
 		<meta name="msapplication-TileColor" content="#2b5797">
 		<meta name="theme-color" content="#489442">
     <meta name="version" content={`dev_mode`}>
+
     {!dev_mode &&
     <!-- Google tag (gtag.js) -->
     <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-2SF5PBDTJ3"></script>
@@ -65,6 +66,7 @@ const dev_mode = (import.meta.env.ASTRO_MODE === 'dev')
       gtag('js', new Date());
       gtag('config', 'G-2SF5PBDTJ3');
     </script>}
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <!--
                                             ,,╓,
