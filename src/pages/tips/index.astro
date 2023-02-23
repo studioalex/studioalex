@@ -1,7 +1,42 @@
 ---
+import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import Headline from '../../components/atoms/Headline.astro'
+import TipCard from '../../components/tips/TipCard.astro'
+
+const tips = await getCollection('tips')
 ---
-<Layout title="Studio Alex - Tips" styles="size-small">
-  <Headline>Tips</Headline>
+<Layout title="Studio Alex - Tips" styles="size-wide">
+  <div class="tip-wrap">
+    <Headline>Tips</Headline>
+    <div class="tip-grid">
+      {
+        tips.map(tip => 
+          <TipCard
+            path={`/tips/${tip.slug}`}
+            title={tip.data.title}
+            description={tip.data.description}
+            image={tip.data.image}
+            tags={tip.data.tags}
+            date={tip.data.date} />
+        )
+      }
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .tip {
+    &-wrap {
+      max-width: var(--screen-size--base);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--theme-grid-gap);
+      margin: 0 0 var(--theme-grid-gap) 0;
+    }
+  }
+</style>

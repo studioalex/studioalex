@@ -1,18 +1,19 @@
 ---
 export interface Props {
 	path: string
+  title?: string
 }
 
-const { path } = Astro.props
+const { path, title } = Astro.props
 
 const parts = path.slice(1).split('/') // remove the first "/"
 ---
 <a href={path}
   class="link"
   aria-label={`Link to ${parts.join(' ')}`}>
-  {parts.map((part, index) => (
+  { title || parts.map((part, index) => (
     <span>{part}{(index !== (parts.length-1)) && ' / '}</span>
-  ))}
+  )) }
 </a>
 
 <style>

@@ -1,8 +1,108 @@
 ---
-const { slug } = Astro.params
+import { getCollection, CollectionEntry } from 'astro:content'
+import { Image } from '@astrojs/image/components'
 
-export function getStaticPaths() {
-  return []
+// component import
+import Layout from '../../layouts/Layout.astro'
+import Tag from '../../components/atoms/Tag.astro'
+import ButtonLink from '../../components/atoms/ButtonLink.astro'
+import { formatDate, imagePath } from '../../lib/helper'
+
+export async function getStaticPaths() {
+  const allTips = await getCollection('tips')
+
+  return allTips.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }))
 }
----
 
+interface Props {
+  post: CollectionEntry<"tips">
+}
+const { post } = Astro.props
+const { title, tags, date, image } = post.data;
+const { Content } = await post.render()
+---
+<Layout title={`Studio Alex - ${title}`} styles="size-wide">
+  <article class="tip">
+    <header>
+      <h1>{title}</h1>
+      <div class="date">{formatDate(date)} - { tags.map(tag => (<Tag>{tag}</Tag>))}</div>
+    </header>
+    <Image
+      src={imagePath(image)}
+      alt={image}
+      height={400}
+      width={1400}
+      format="webp"
+      fit="cover"
+      quality={80}
+      aspectRatio="2:1" />
+    <Content />
+    <footer>
+      <ButtonLink path="/tips" title="back to Tips" />
+    </footer>
+  </article>
+</Layout>
+
+<style is:global>
+  article.tip {
+    max-width: var(--screen-size--base);
+    padding: 2rem;
+    margin: 0 auto;
+
+    header {
+      margin: 2rem 0 4rem 0;
+      text-align: center;
+
+      .date {
+        margin: 1rem 0 0 0;
+        font-size: .8em;
+        color: var(--theme-color-text);
+      }
+    }
+
+    img, p, pre {
+      margin: 2rem 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 500;
+      color: var(--theme-color-text--highlight);
+    }
+
+    h1 {
+      font-size: var(--font-size--h1);
+    }
+
+    h2 {
+      font-size: var(--font-size--h2);
+    }
+
+    h3 {
+      font-size: var(--font-size--h3);
+    }
+
+    h4 {
+      font-size: var(--font-size--h4);
+    }
+
+    h5 {
+      font-size: var(--font-size--h5);
+    }
+
+    h6 {
+      font-size: var(--font-size--h6);
+    }
+
+    p {
+      color: var(--theme-color-text--light);
+    }
+
+    pre {
+      padding: 1rem;
+      border-radius: 4pt;
+    }
+  }
+</style>
