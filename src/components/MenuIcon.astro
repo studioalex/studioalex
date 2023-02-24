@@ -3,66 +3,73 @@
 ---
 <input type="checkbox" class="menu-checked" id="menu-checked">
 <label class="menu-checked" for="menu-checked">
-  <span></span>
-  <span></span>
-  <span></span>
+  <span class="menu-checked line-left"></span>
+  <span class="menu-checked line"></span>
+  <span class="menu-checked line-right"></span>
 </label>
 
-<style is:global>
+<style>
   input.menu-checked {
     display: none;
+    
+    &:checked ~ label {
+      span.menu-checked {
+        background-color: var(--theme-color-link);
+        transform: translate(0, 0) rotate(-45deg);
+      }
+      
+      span.line-left {
+        width: 15em;
+        transform: translate(2em, 4em) rotate(45deg);
+      }
 
-    &:checked ~ label.menu-checked span:nth-of-type(1) {
-      transform-origin: bottom;
-      transform: rotatez(45deg) translate(0.4em, 0px);
-    }
+      span.line-right {
+        width: 15em;
+        float: right;
+        transform: translate(-3em, -3.5em) rotate(45deg);
+      }
 
-    &:checked ~ label.menu-checked span:nth-of-type(2) {
-      transform-origin: top;
-      transform: rotatez(-45deg)
-    }
-
-    &:checked ~ label.menu-checked span:nth-of-type(3) {
-      transform-origin: bottom;
-      width: 50%;
-      transform: translate(1.5em, -0.55em) rotatez(45deg);
+      &:hover span {
+        background-color: var(--theme-color-link--highlight);
+      }
     }
   }
 
   label.menu-checked {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    font-size: 10px;
-    width: 3.5em;
-    height: 3.5em;
-    cursor: pointer;
+    display: inline-block;
+    font-size: 1.22px;
+    height: 30em;
+    width: 30em;
     position: relative;
     margin-left: 2rem;
+    padding: 4em 0 0 0;
     z-index: 920;
+    cursor: pointer;
+    
+    span.menu-checked {
+      height: 2em;
+      width: 30em;
+      display: block;
+      background-color: var(--theme-color-link);
+      margin-bottom: 7em;
+      cursor: pointer;
+      transition: transform .2s ease, background-color .5s ease;
 
-    span {
-      background: var(--theme-color-link);
-      border-radius: 999em;
-      height: 0.35em;
-      margin: 0.33em 0;
-      transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      &.line-left {
+        width: 16.5em;
+        transition: all 200ms linear;
+      }
+
+      &.line-right {
+        width: 16.5em;
+        float: right;
+        transition: all 200ms linear;
+      }
     }
-
-    span:nth-of-type(1){
-      width: 50%;
-    }
-
-    span:nth-of-type(2){
-      width: 100%;
-    }
-
-    span:nth-of-type(3){
-      width: 75%;
-    }
-
-    &:hover span {
-      background: var(--theme-color-link--highlight);
+    
+    &:hover span.menu-checked {
+      background-color: var(--theme-color-link--highlight);
+      width: 30em;
     }
   }
 </style>
