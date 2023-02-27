@@ -127,6 +127,19 @@ const dev_mode = (import.meta.env.ASTRO_MODE === 'dev')
           }
         })
       }
+      // We set in current state the dark mode as only visible one.
+      if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+        // Check if the browser supports `prefers-color-scheme` media query
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          // Browser is in dark mode, do nothing
+        } else {
+          // Browser is in light mode, set to dark mode
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } else {
+        // `prefers-color-scheme` media query is not supported, set to dark mode
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
     </script>
 	</body>
 </html>
