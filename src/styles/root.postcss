@@ -4,6 +4,12 @@
   --color-signal--green: hsl(116 38.2% 42.5%);
   --color-signal--blue: hsl(214 82.5% 55.1%);
 
+  --color-green--base: 116;
+  --color-green--saturation: 38.2%;
+
+  --color-blue--base: 214;
+  --color-blue--saturation: 82.5%;
+
   --color-grey--base: 240;
   --color-grey--saturation: 10%;
   @each $value in 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95 {
@@ -27,6 +33,8 @@
 
   --theme-font-family: 'Montserrat', sans-serif;
   --theme-grid-gap: 3rem;
+  --theme-color-brand--base: var(--color-green--base);
+  --theme-color-brand--saturation: var(--color-green--saturation);
   --theme-color-brand: var(--color-signal--green);
   --theme-color-background: var(--color-grey--25);
   --theme-color-background--light: var(--color-grey--30);
@@ -42,7 +50,9 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --theme-color-brand: var(--color-signal--green);
+    --theme-color-brand--base: var(--color-blue--base);
+    --theme-color-brand--saturation: var(--color-blue--saturation);
+    --theme-color-brand: var(--color-signal--blue);
     --theme-color-background: var(--color-grey--85);
     --theme-color-background--light: var(--color-grey--80);
     --theme-color-background--dark: var(--color-grey--95);
@@ -58,6 +68,8 @@
 
 @media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
   :root {
+    --theme-color-brand--base: var(--color-green--base);
+    --theme-color-brand--saturation: var(--color-green--saturation);
     --theme-color-brand: var(--color-signal--green);
     --theme-color-background: var(--color-grey--25);
     --theme-color-background--light: var(--color-grey--30);
@@ -73,7 +85,9 @@
 }
 
 [data-theme="light"] {
-  --theme-color-brand: var(--color-signal--green);
+  --theme-color-brand--base: var(--color-blue--base);
+  --theme-color-brand--saturation: var(--color-blue--saturation);
+  --theme-color-brand: var(--color-signal--blue);
   --theme-color-background: var(--color-grey--85);
   --theme-color-background--light: var(--color-grey--80);
   --theme-color-background--dark: var(--color-grey--95);
@@ -87,6 +101,8 @@
 }
 
 [data-theme="dark"] {
+  --theme-color-brand--base: var(--color-green--base);
+  --theme-color-brand--saturation: var(--color-green--saturation);
   --theme-color-brand: var(--color-signal--green);
   --theme-color-background: var(--color-grey--25);
   --theme-color-background--light: var(--color-grey--30);

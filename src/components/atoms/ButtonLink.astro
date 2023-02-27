@@ -28,11 +28,11 @@ const parts = path.slice(1).split('/') // remove the first "/"
 
   span {
     text-transform: lowercase;
-    font-weight: 300;
+    font-weight: 600;
 
     &:first-child {
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 300;
     }
   }
 
@@ -42,7 +42,11 @@ const parts = path.slice(1).split('/') // remove the first "/"
     inset: 0;
     border-radius: 0.6em; 
     padding: 3px; 
-    background: linear-gradient(-45deg, hsl(116 32.2% 22.5%), hsl(116 32.2% 32.5%), hsl(116 32.2% 42.5%), hsl(116 32.2% 52.5%));
+    background: linear-gradient(-45deg,
+      hsl(var(--theme-color-brand--base) var(--theme-color-brand--saturation) 32.5%),
+      hsl(var(--theme-color-brand--base) var(--theme-color-brand--saturation) 42.5%),
+      hsl(var(--theme-color-brand--base) var(--theme-color-brand--saturation) 52.5%),
+      hsl(var(--theme-color-brand--base) var(--theme-color-brand--saturation) 62.5%));
     background-size: 400% 400%;
     animation: ButtonGradientAnimation 6s ease infinite;
     -webkit-mask: 
