@@ -319,6 +319,7 @@
   font-style: italic;
   src: url("/fonts/Montserrat/MontserratAlternates-BoldItalic.woff2") format("woff2"),
    url("/fonts/Montserrat/MontserratAlternates-BoldItalic.woff") format("woff");
+  font-display: swap;
 }
 
 /** Montserrat Alternates ExtraBold **/
