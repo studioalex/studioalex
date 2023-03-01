@@ -23,7 +23,7 @@ const { data } = Astro.props
   <div class="project-list">
     {
       data.map(project => (
-        <a href={project.path}
+        <a href={project.path || '#'}
           target="_blank"
           class:list={[ 'project-item', { wip: project.wip === true }]}
           aria-label={`Visit our ${project.title} project.`}>
@@ -100,7 +100,7 @@ const { data } = Astro.props
       border: 2pt dashed var(--theme-color-background--intense);
 
       h2, p {
-        opacity: 0.6;
+        color: var(--theme-color-text--soft);
       }
     }
   }
