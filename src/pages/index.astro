@@ -3,13 +3,16 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/home/Hero.astro'
 import Projects from '../components/home/Projects.astro'
 import Technology from '../components/home/Technology.astro'
+import Codepen from '../components/home/Codepen.astro'
 
 import projectsData from '../data/projects.json'
 import technologyData from '../data/technology.json'
+import codepenData from '../data/codepen.json'
 ---
 
 <Layout styles="flex-distribute size-full" >
 	<Hero />
 	<Projects data={projectsData} />
+	<Codepen data={codepenData} />
 	<Technology data={technologyData} />
 </Layout>

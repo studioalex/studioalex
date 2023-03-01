@@ -1,8 +1,65 @@
 ---
-import Headline from './atoms/Headline.astro'
-import Ruler from './atoms/Ruler.astro'
+import Headline from '../atoms/Headline.astro'
+import Paragraph from '../atoms/Paragraph.astro'
+import Ruler from '../atoms/Ruler.astro'
+
+export interface Codepen {
+  name: string
+  theme: string
+  slug: string
+  user: string
+}
+
+export interface Props {
+	data: Codepen[]
+}
+
+const { data } = Astro.props
 ---
-<div class="sa-">
+<div class="codepen">
   <Ruler />
-  <Headline>Codepen</Headline>
+  <Headline>CodePen</Headline>
+  <div class="codepen-list">
+    {
+      data.map(pen => (
+        <div class="codepen-item">
+          <p class="codepen" data-height="420" data-theme-id={pen.theme} data-slug-hash={pen.slug} data-user={pen.user} style="height: 380px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href={`https://codepen.io/${pen.user}/pen/${pen.slug}`}>
+            Animate Bubble</a> by {pen.name} (<a href={`https://codepen.io/${pen.user}`}>@{pen.user}</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+        </div>
+      ))
+    }
+
+    <script defer src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+  </div>
+  <Paragraph>Click on any showcase to visit us on CodePen for more showcases of our creativity, skills, and passion for web development.</Paragraph>
 </div>
+
+<style>
+  .codepen {
+    padding: 2rem;
+  
+    &-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: stretch;
+      align-content: stretch;
+      align-items: stretch;
+      margin: 2rem -1rem;
+    }
+
+    &-item {
+      flex: 1 1 auto;
+      align-self: auto;
+      min-height: 200px;
+      width: clamp(380px, 45%, 100%);
+      margin: 1rem;
+      border-radius: 6pt;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+  }
+</style>
