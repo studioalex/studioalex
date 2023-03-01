@@ -1,17 +1,30 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection, CollectionEntry } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import Headline from '../../components/atoms/Headline.astro'
 import TipCard from '../../components/tips/TipCard.astro'
+import Pagination from '../../components/atoms/Pagination.astro'
+import { formatTipPosts } from '../../lib/helper'
 
 const tips = await getCollection('tips')
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('tips')
+  const filteredtips: CollectionEntry<'tips'> = formatTipPosts(allPosts)
+  
+  return paginate(filteredtips, {
+    pageSize: 3
+  })
+}
+
+const { page } = Astro.props
 ---
 <Layout title="Studio Alex - Tips" styles="size-wide">
   <div class="tip-wrap">
     <Headline>Tips</Headline>
     <div class="tip-grid">
       {
-        tips.map(tip => 
+        page.data.map(tip => 
           <TipCard
             path={`/tips/${tip.slug}`}
             title={tip.data.title}
@@ -21,6 +34,9 @@ const tips = await getCollection('tips')
             date={tip.data.date} />
         )
       }
+    </div>
+    <div class="text-center m-8">
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     </div>
   </div>
 </Layout>
