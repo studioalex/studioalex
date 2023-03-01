@@ -28,3 +28,8 @@ export function formatTipPosts(tips, {
   return filteredPosts
 
 }
+
+export function createBuildDate () {
+  const date = new Date()
+  return `${date.getFullYear()}${date.getMonth()}${date.getDate()}${date.getHours()}${date.getMinutes()}`
+}

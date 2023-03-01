@@ -1,10 +1,11 @@
 ---
 import Icon from './atoms/Icon.astro'
 import siteData from '../data/site.json'
+import { createBuildDate } from '../lib/helper'
 ---
 
 <footer class="footer">
-  <div class="footer-copyright">{siteData.copyright}</div>
+  <div class="footer-copyright">{siteData.copyright} <span>({createBuildDate()})</span></div>
   <div class="footer-social-links"> 
     <a href="https://astro.build"
       class="footer-social-link"
@@ -25,6 +26,10 @@ import siteData from '../data/site.json'
     &-copyright {
       font-size: 0.9em;
       margin-bottom: 1rem;
+      
+      span {
+        color: var(--theme-color-text--softer);
+      }
     }
 
     &-socials {
