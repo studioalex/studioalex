@@ -23,7 +23,10 @@ const { data } = Astro.props
   <div class="project-list">
     {
       data.map(project => (
-        <div class:list={[ 'project-item', { wip: project.wip === true }]}>
+        <a href={project.path}
+          target="_blank"
+          class:list={[ 'project-item', { wip: project.wip === true }]}
+          aria-label={`Visit our ${project.title} project.`}>
           <header>
             <h2>{project.title}</h2>
             {project.image && <Icon name={project.image} />}
@@ -31,15 +34,7 @@ const { data } = Astro.props
           <p class="project-description">
             {project.description}
           </p>
-          {project.path && <footer>
-            <a href={project.path}
-              target="_blank"
-              class="project-link"
-              aria-label={`Visit our project ${project.title}`}>
-              Visit
-            </a>
-          </footer>}
-        </div>
+        </a>
       ))
     }
   </div>
@@ -60,6 +55,7 @@ const { data } = Astro.props
   }
   
   &-item {
+    display: block;
     position: relative;
     flex: 1 1 auto;
     align-self: auto;
@@ -71,10 +67,7 @@ const { data } = Astro.props
     margin: 1rem;
     border-radius: 6pt;
     box-sizing: border-box;
-
-    &.wip {
-      opacity: 0.5;
-    }
+    color: var(--theme-color-text);
 
     header {
       display: flex;
@@ -101,23 +94,20 @@ const { data } = Astro.props
     footer {
       text-align: right;
     }
+
+    &.wip {
+      background-color: transparent;
+      border: 2pt dashed var(--theme-color-background--intense);
+
+      h2, p {
+        opacity: 0.6;
+      }
+    }
   }
 
   &-description {
     margin: 1rem 0;
     line-height: 1.6rem;
-  }
-
-  &-link {
-    bottom: 1rem;
-    right: 1rem;
-    border: 1px solid var(--theme-color-brand);
-    border-radius: 999em;
-    padding: 0.1rem 1rem;
-    &:hover {
-      background-color: var(--theme-color-brand);
-      color: var(--theme-color-background--intense);
-    }
   }
 }
 </style>
