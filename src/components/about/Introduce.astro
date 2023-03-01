@@ -28,14 +28,14 @@ const { email, profile, services, usesPath } = Astro.props;
   <ul>
     { services.map(service => (
       <li>
-        <strong>{service.title}</strong>: {service.description}
+        <h3>{service.title}</h3>{service.description}
       </li>
     ))}
   </ul>
 
   <Paragraph>
     If this sounds like something you're interested in, send me an
-    <a aria-label="Send an email ti us" href={`mailto:${email}`}>email</a>!
+    <a aria-label="Send an email to us" href={`mailto:${email}`}>email</a>!
   </Paragraph>
 
   <Ruler />
@@ -57,22 +57,23 @@ const { email, profile, services, usesPath } = Astro.props;
 .introduce {
   max-width: var(--screen-size--narrow);
   margin: 2rem auto;
-  color: var(--theme-color-text--highlight);
+  color: var(--theme-color-text);
 
   ul {
-    font-weight: 300;
-    padding: 1rem 0;
+    font-weight: 400;
+    margin: 6rem 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       margin-left: 1rem;
       line-height: 1.5;
       color: var(--theme-color-text);
     }
 
-    strong {
-      font-weight: 400;
-      color: var(--theme-color-text--highlight);
+    h3 {
+      margin-left: -1rem;
+      font-weight: 600;
+      color: var(--theme-color-text--intense);
     }
   }
 }
