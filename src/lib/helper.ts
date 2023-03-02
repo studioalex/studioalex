@@ -14,7 +14,15 @@ export function imagePath (name) {
 
 export function createBuildDate () {
   const date = new Date()
-  return `${date.getFullYear()}${date.getMonth()}${date.getDate()}${date.getHours()}${date.getMinutes()}`
+  const env = import.meta.env.ASTRO_MODE
+  return [
+    env,
+    date.getFullYear(),
+    String(date.getMonth() + 1).padStart(2, '0'),
+    String(date.getDate()).padStart(2, '0'),
+    date.getHours(),
+    date.getMinutes()
+  ].join('')
 }
 
 export function slugify(text) {
