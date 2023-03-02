@@ -1,0 +1,47 @@
+---
+import Seo from '../components/atoms/Seo.astro'
+
+import type { ImageData, PostData } from '../components/atoms/Seo.astro'
+
+export interface Props {
+	title: string
+  description: string
+  image?: ImageData
+  data?: PostData
+  robots: boolean
+}
+
+const { title, description, image, data, robots } = Astro.props
+
+const dev_mode = (import.meta.env.ASTRO_MODE === 'dev')
+---
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <Seo {title} {description} url={Astro.url} {image} {data} {robots} />
+ 
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="theme-color" content="#489442">
+  <meta name="version" content={`dev_mode`}>
+
+  {!dev_mode &&
+  <!-- Google tag (gtag.js) -->
+  <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-2SF5PBDTJ3"></script>
+  <script defer>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2SF5PBDTJ3');
+  </script>}
+  <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>

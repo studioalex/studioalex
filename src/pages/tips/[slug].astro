@@ -21,18 +21,22 @@ interface Props {
   post: CollectionEntry<"tips">
 }
 const { post } = Astro.props
-const { title, tags, date, image } = post.data;
+const { title, description, tags, date, image } = post.data;
 const { Content } = await post.render()
 ---
-<Layout title={`Studio Alex - ${title}`} styles="size-wide">
+<Layout title={title}
+  description={description} 
+  image={image}
+  data={post.data} 
+  styles="size-wide">
   <article class="tip">
     <header>
       <h1>{title}</h1>
       <div class="date">{formatDate(date)} - { tags.map(tag => (<Tag>{tag}</Tag>))}</div>
     </header>
     <Image
-      src={image}
-      alt={image}
+      src={image.src}
+      alt={image.alt}
       height={400}
       width={1400}
       format="webp"

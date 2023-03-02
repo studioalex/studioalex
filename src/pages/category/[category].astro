@@ -37,7 +37,7 @@ const { name } = Astro.props
 const allPosts = await getCollection('tips')
 const formattedPosts: CollectionEntry<'tips'>[] = formatTipPosts(allPosts, { categoryFilter: name })
 ---
-<Layout title="Studio Alex - Tips by category" styles="size-wide">
+<Layout title="Tips by category" styles="size-wide">
   <div class="tip-wrap">
     <Headline>Tips by {name} category</Headline>
     <div>

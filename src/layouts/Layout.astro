@@ -1,73 +1,44 @@
 ---
+import Head from './Head.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-
-import metaData from '../data/meta.json'
 import siteData from '../data/site.json'
+
+import type { ImageData, PostData } from '../components/atoms/Seo.astro'
 
 import '../styles/styles.postcss'
 
 export interface Props {
-	title?: string;
-	styles?: string;
-	backgroundClass?: string;
+	title?: string
+  description?: string
+  image?: ImageData
+  data?: PostData
+  robots?: boolean
+	styles?: string
+	backgroundClass?: string
 }
 
 const {
-	title = siteData.title,
+	title,
+  description = siteData.meta.description,
+  image = siteData.meta.image,
+  data,
+  robots,
 	styles,
 	backgroundClass
 } = Astro.props
 
-const dev_mode = (import.meta.env.ASTRO_MODE === 'dev')
+function getTitle () {
+  if (title) {
+    return `${siteData.title} - ${title}`
+  }
+  return siteData.title
+}
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-    <meta name="description" content={metaData.description}>
-
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://www.studioalex.dev">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content={metaData.title}>
-    <meta property="og:description" content={metaData.description}>
-    <meta property="og:image" content={metaData.image}>
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content={metaData.domain}>
-    <meta property="twitter:url" content={metaData.url}>
-    <meta name="twitter:title" content={metaData.title}>
-    <meta name="twitter:description" content={metaData.description}>
-    <meta name="twitter:image" content={metaData.image}>
-
-    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="site.webmanifest">
-		<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
-		<meta name="msapplication-TileColor" content="#2b5797">
-		<meta name="theme-color" content="#489442">
-    <meta name="version" content={`dev_mode`}>
-
-    {!dev_mode &&
-    <!-- Google tag (gtag.js) -->
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-2SF5PBDTJ3"></script>
-    <script defer>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2SF5PBDTJ3');
-    </script>}
-    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
+	<Head title={getTitle()} description={description} image={image} data={data} robots={robots}/>
   <!--
                                             ,,╓,
                                           ╓████████▄

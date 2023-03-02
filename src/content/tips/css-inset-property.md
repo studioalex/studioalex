@@ -2,7 +2,10 @@
 title: CSS inset property
 description: The inset property is a shorthand for the top, right, bottom, and
   left properties.
-image: /assets/css_3.png
+image: {
+  src: "/assets/css_3.png",
+  alt: "A picture of a CSS"
+}
 date: 2023-02-23T20:16:42.600Z
 draft: false
 tags:
