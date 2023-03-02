@@ -230,6 +230,16 @@
             "label": "GitHub",
             "url": "https://github.com/leavu",
             "icon": "github"
+        },
+        {
+            "label": "YouTube Ch1",
+            "url": "https://www.youtube.com/@bilavila7957",
+            "icon": "youtube"
+        },
+        {
+            "label": "YouTube Ch2",
+            "url": "https://www.youtube.com/@chillwalks",
+            "icon": "youtube"
         }
     ],
     "services": [
