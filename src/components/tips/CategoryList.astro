@@ -1,0 +1,70 @@
+---
+import { getCollection, CollectionEntry } from 'astro:content'
+import { formatTipPosts, slugify } from '../../lib/helper'
+
+const { showCount } = Astro.props
+const { reduceBy } = Astro.props
+
+const allPosts = await getCollection('tips')
+const formattedPosts: CollectionEntry<'tips'>[] = formatTipPosts(allPosts)
+const allCategories = formattedPosts.map((cat) => cat.data.tags).flat()
+const processedCats = allCategories.reduce((acc, category) => {
+  // do use the category in reduceBy
+  if (reduceBy && reduceBy === category) {
+    return { ...acc }
+  }
+  // check if the category exists in the acc
+  const value = acc[category] || 0
+  return {
+    ...acc,
+    [category]: value + 1
+  }
+}, {})
+
+---
+
+<ul class="categories">
+  {
+    Object.entries(processedCats).map(([key, val]) => (
+      <li class="category-item">
+        <a class="category-item-link" href={`/category/${slugify(key)}/`}>
+          <span class="key">{key}</span> {showCount && <span class="count">{val}</span>}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+.categories {
+  list-style: none;
+  margin: 2rem 0;
+}
+
+.category-item {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--theme-color-text--soft);
+  background-color: var(--theme-color-background--intense);
+  border-radius: 4pt;
+  overflow: hidden;
+
+  &-link {
+    display: inline-block;
+    color: var(--theme-color-text--intense);
+    
+    span {
+      display: inline-block;
+      padding: 0 0.7rem;
+    }
+
+    span.count {
+      padding: 0 0.7rem;
+      color: var(--theme-color-background);
+      background-color: var(--theme-color-text--softer);
+    }
+  }
+}
+</style>

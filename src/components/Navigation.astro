@@ -1,6 +1,7 @@
 ---
 import NavigationItem from './NavigationItem.astro'
 import MenuIcon from './MenuIcon.astro'
+import { createBuildDate } from '../lib/helper'
 ---
 <nav class="desktop-menu">
   <NavigationItem path="/" title="Home" />
@@ -23,6 +24,7 @@ import MenuIcon from './MenuIcon.astro'
       <span class="mobile-navigation-subtitle">Lea /</span> uses
     </NavigationItem>
     <NavigationItem path="https://github.com/studioalex" icon="github" target="_blank"/>
+    <div class="build">({createBuildDate()})</div>
   </nav>
 </div>
 <div class="mobile-menu-background"></div>
@@ -115,6 +117,12 @@ import MenuIcon from './MenuIcon.astro'
         color: var(--theme-color-text--softer);
       }
     }
+  }
+
+  .build {
+    color: var(--theme-color-text--softer);
+    text-align: right;
+    padding: 2rem 1rem;
   }
 
   @media screen and (max-width: 1024px) {

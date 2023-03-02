@@ -1,32 +1,51 @@
 ---
 import { getCollection, CollectionEntry } from 'astro:content'
+
+// component imports
 import Layout from '../../layouts/Layout.astro'
 import Headline from '../../components/atoms/Headline.astro'
 import TipCard from '../../components/tips/TipCard.astro'
-import Pagination from '../../components/atoms/Pagination.astro'
 import CategoryList from '../../components/tips/CategoryList.astro'
-import { formatTipPosts } from '../../lib/helper'
+
+// utils
+import { slugify, formatTipPosts } from '../../lib/helper'
 
 export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection('tips')
-  const filteredtips: CollectionEntry<'tips'> = formatTipPosts(allPosts)
-  
-  return paginate(filteredtips, {
-    pageSize: 30
-  })
+  const formattedPosts: CollectionEntry<'tips'>[] = formatTipPosts(allPosts)
+  const allCategories = formattedPosts.map((category) => category.data.tags).flat()
+  const processedCategories = allCategories.reduce((acc, category) => {
+    // check if the category exists in the acc
+    const value = acc[category] || 0
+    return {
+      ...acc,
+      [category]: value + 1
+    }
+  }, {})
+
+  return Object.keys(processedCategories).map(key => (
+    {
+      params: { category: slugify(key) },
+      props: { name: key }
+    }
+  ))
 }
 
-const { page } = Astro.props
+const { category } = Astro.params
+const { name } = Astro.props
+
+const allPosts = await getCollection('tips')
+const formattedPosts: CollectionEntry<'tips'>[] = formatTipPosts(allPosts, { categoryFilter: name })
 ---
-<Layout title="Studio Alex - Tips" styles="size-wide">
+<Layout title="Studio Alex - Tips by category" styles="size-wide">
   <div class="tip-wrap">
-    <Headline>Tips</Headline>
+    <Headline>Tips by {name} category</Headline>
     <div>
-      <CategoryList showCount={true} />
+      <CategoryList showCount={true} reduceBy={name}/>
     </div>
     <div class="tip-grid">
       {
-        page.data.map(tip => 
+        formattedPosts.map(tip => 
           <TipCard
             path={`/tips/${tip.slug}`}
             title={tip.data.title}
@@ -37,9 +56,9 @@ const { page } = Astro.props
         )
       }
     </div>
-    <div class="text-center m-8">
+    <!-- div class="text-center m-8">
       <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-    </div>
+    </div -->
   </div>
 </Layout>
 

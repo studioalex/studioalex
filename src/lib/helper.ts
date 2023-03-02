@@ -12,11 +12,32 @@ export function imagePath (name) {
   return `/assets/${name}`
 }
 
+export function createBuildDate () {
+  const date = new Date()
+  return `${date.getFullYear()}${date.getMonth()}${date.getDate()}${date.getHours()}${date.getMinutes()}`
+}
+
+export function slugify(text) {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
+}
+
 export function formatTipPosts(tips, {
-  sortByDate = true
+  sortByDate = true,
+  categoryFilter = ''
 } = {}) {
-  // filter for future use
-  const filteredPosts = tips.filter(() => true)
+  let filteredPosts = tips.filter(() => true)
+  // filter by category
+  if (categoryFilter.length) {
+    filteredPosts = tips.filter((record) => record.data.tags.includes(categoryFilter))
+  }
+
 
   // sortByDate or randomize
   if (sortByDate) {
@@ -27,9 +48,4 @@ export function formatTipPosts(tips, {
 
   return filteredPosts
 
-}
-
-export function createBuildDate () {
-  const date = new Date()
-  return `${date.getFullYear()}${date.getMonth()}${date.getDate()}${date.getHours()}${date.getMinutes()}`
 }
