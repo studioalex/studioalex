@@ -2,7 +2,7 @@
 title: :has() feature detection
 description: :has() feature detection with @supports(selector(…))
 image: {
-  src: "/assets/general.png",
+  src: "/assets/general.jpg",
   alt: "A picture of a Coding"
 }
 date: 2023-01-02
