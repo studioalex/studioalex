@@ -3,6 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "license": "MIT",
+  "homepage": "https://www.studioalex.dex/",
+  "author": "Alexander Sedeke <alexander.sedeke+github@gmail.com> (https://www.studioalex.dex/)",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
