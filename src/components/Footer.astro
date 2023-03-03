@@ -10,8 +10,8 @@ import siteData from '../data/site.json'
       class="footer-social-link"
       target="_blank"
       aria-label="astro">
-      <Icon name="astro-dark" data-theme="dark"/>
-      <Icon name="astro-light" data-theme="light"/>
+      <Icon name="astro-dark" data-theme-visibility="dark"/>
+      <Icon name="astro-light" data-theme-visibility="light"/>
     </a>
   </div>
 </footer>
@@ -41,5 +41,25 @@ import siteData from '../data/site.json'
         height: 26px;
       }
     }
+  }
+
+  @media (prefers-color-scheme: light) {
+    html:not([data-theme]) [data-theme-visibility="dark"] {
+      display: none;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme]) [data-theme-visibility="light"] {
+      display: none;
+    }
+  }
+
+  html[data-theme="dark"] [data-theme-visibility="light"] {
+    display: none;
+  }
+
+  html[data-theme="light"] [data-theme-visibility="dark"] {
+    display: none;
   }
 </style>

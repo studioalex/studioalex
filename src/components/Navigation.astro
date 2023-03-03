@@ -1,4 +1,5 @@
 ---
+import ThemeToggle from './atoms/ThemeToggle.astro'
 import NavigationItem from './NavigationItem.astro'
 import MenuIcon from './MenuIcon.astro'
 import { createBuildDate } from '../lib/helper'
@@ -9,6 +10,7 @@ import { createBuildDate } from '../lib/helper'
   <NavigationItem path="/alexander/about" title="Alexander" match="alexander" />
   <NavigationItem path="/lea/about" title="Lea" match="lea" />
   <NavigationItem path="https://github.com/studioalex" icon="github" target="_blank"/>
+  <ThemeToggle />
 </nav>
 <MenuIcon />
 <div class="mobile-menu">

@@ -54,10 +54,6 @@
     --theme-color-link: var(--color-grey--5);
     --theme-color-link--highlight: var(--color-grey--5);
   }
-
-  [data-theme="dark"] {
-    display: none;
-  }
 }
 
 @media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
@@ -79,10 +75,44 @@
     --theme-color-link: var(--color-grey--70);
     --theme-color-link--highlight: var(--color-grey--95);
   }
+}
 
-  [data-theme="light"] {
-    display: none;
-  }
+[data-theme="light"] {
+  --theme-color-brand--base: var(--color-blue--base);
+  --theme-color-brand--saturation: var(--color-blue--saturation);
+  --theme-color-brand: var(--color-signal--blue);
+
+  --theme-color-background: var(--color-white);
+  --theme-color-background--soft: var(--color-grey--95);
+  --theme-color-background--intense: var(--color-grey--80);
+  --theme-color-background--transparent: hsl(var(--color-grey--base) var(--color-grey--saturation) 100% / 0.75);
+  
+  --theme-color-text: var(--color-grey--30);
+  --theme-color-text--intense: var(--color-grey--5);
+  --theme-color-text--soft: var(--color-grey--15);
+  --theme-color-text--softer: var(--color-grey--60);
+
+  --theme-color-link: var(--color-grey--5);
+  --theme-color-link--highlight: var(--color-grey--5);
+}
+
+[data-theme="dark"] {
+  --theme-color-brand--base: var(--color-green--base);
+  --theme-color-brand--saturation: var(--color-green--saturation);
+  --theme-color-brand: var(--color-signal--green);
+
+  --theme-color-background: var(--color-grey--20);
+  --theme-color-background--soft: var(--color-grey--25);
+  --theme-color-background--intense: var(--color-grey--30);
+  --theme-color-background--transparent: hsl(var(--color-grey--base) var(--color-grey--saturation) 20% / 0.8);
+  
+  --theme-color-text: var(--color-grey--85);
+  --theme-color-text--intense: var(--color-grey--95);
+  --theme-color-text--soft: var(--color-grey--70);
+  --theme-color-text--softer: var(--color-grey--40);
+
+  --theme-color-link: var(--color-grey--70);
+  --theme-color-link--highlight: var(--color-grey--95);
 }
 
 @media only screen and (max-width: 1280px) {
