@@ -6,7 +6,7 @@ import Social from '../../components/about/Social.astro'
 import Introduce from '../../components/about/Introduce.astro'
 import ButtonLink from '../../components/atoms/ButtonLink.astro'
 
-import metaData from '../../data/meta.json'
+import siteData from '../../data/site.json'
 import personsData from '../../data/persons.json'
 
 export function getStaticPaths() {
@@ -18,7 +18,7 @@ const person = personsData.filter(record => record.path === user)[0]
 const path = `/${person.nickname.toLowerCase()}/uses`
 ---
 <Layout
-  title={`${metaData.title} - ${person.nickname}`}
+  title={`${siteData.meta.title} - ${person.nickname}`}
   styles="flex"
   backgroundClass="background--praha">
   <ProfileImage

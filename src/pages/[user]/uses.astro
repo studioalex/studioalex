@@ -7,7 +7,7 @@ import Hardware from '../../components/uses/Hardware.astro'
 import ButtonLink from '../../components/atoms/ButtonLink.astro'
 import Ruler from '../../components/atoms/Ruler.astro'
 
-import metaData from '../../data/meta.json'
+import siteData from '../../data/site.json'
 import personsData from '../../data/persons.json'
 
 export function getStaticPaths() {
@@ -18,7 +18,7 @@ const { user } = Astro.params
 const person = personsData.filter(record => record.path === user)[0]
 const path = `/${person.nickname.toLowerCase()}/about`
 ---
-<Layout title={`${metaData.title} - ${person.nickname} uses`} styles="size-small">
+<Layout title={`${siteData.meta.title} - ${person.nickname} uses`} styles="size-small">
 
   <Headline>{`${person.nickname} uses`}</Headline>
 
