@@ -1,25 +1,22 @@
 # Welcome to [StudioAlex](https://www.studioalex.dev/)
 
-This is the code base for our web presence based on [Astro](https://astro.build) and [Netlify CMS](https://www.netlifycms.org/). While Astro is one of the best decisions we've made, Netlify CMS is currently the best choise to stay independent from other services. We are always open to suggestions.
-You are also welcome to use this project as a base for your presentation.
+This is the code base for our web presence, built using [Astro](https://astro.build) and [Netlify CMS](https://www.netlifycms.org/). [Astro](https://astro.build) was the perfect choice for us because it offers a simpler approach than other frameworks like 11ty or Hugo. [Netlify CMS](https://www.netlifycms.org/) allows us to easily manage our content without relying on a database or third-party service. We're always open to suggestions for improving our setup.
 
-## 🚀 Why
+## Why we chose Astro and Netlify CMS
 
-We wanted to have a simpler approach to our web presence than current frameworks such as 11ty or Hugo have. Astro JS offers exactly that. In the second step we separate the content to facilitate adjustments. We have achieved this with Netlify CMS. The advantage of Netlify CMS is that no database or third party service is needed to maintain or enter the content. Netlify CMS creates the content as Markdown files, which remain in the project repository. It simply provides an intuitive and easily configurable interface for entering and maintaining content. These are transferred into the system via merge requests.
+Astro is a lightweight framework that allows us to create a simple and fast website. Netlify CMS is an intuitive and easily configurable content management system that creates content as Markdown files, which are stored in the project repository. This allows us to easily make adjustments to our content without needing a separate database or third-party service.
 
-## Actually this template can provide
+## Features of our template
 
--  Startpage with hero, project / showcases and technology overview section.
--  A blog service where every post has the correct meta information.
-- A personal page
-- and a page about your personal hardware and application you use.
-- Dark and Light mode
-- Easy to configure throw json data files.
+Our template includes the following features:
+
+- Startpage with hero, project/showcases, and technology overview sections
+- Blog service with proper meta information for each post
+- Personal page
+- Page about personal hardware and applications used
+- Dark and light mode
+- Easy configuration via JSON data files
 
 ![screenshot](./assets/Screenshot.png)
 
-We are open for any ideas or improvement.
-
-## 👀 Want to learn more about Astro JS?
-
-Feel free to check [Astro documentation](https://docs.astro.build) or jump into Astro [Discord server](https://astro.build/chat).
+We're always looking for ways to improve our template, so feel free to share your ideas with us! You're also welcome to use this project as a base for your own website.
