@@ -1,6 +1,6 @@
 import { z, defineCollection } from 'astro:content'
 
-const tags = ['CSS', 'TS', 'JS', 'VUE', 'GENERAL'] as const;
+const tags = ['CSS', 'TS', 'JS', 'VUE', 'NODE', 'GENERAL'] as const;
 const tips = defineCollection({
   schema: z.object({
     title: z.string().max(60, 'For optimize SEO, please provide a title of 60 characters or less.'),

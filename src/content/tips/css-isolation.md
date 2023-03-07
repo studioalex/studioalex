@@ -1,14 +1,14 @@
 ---
 title: CSS isolation
-description: Property isolation in CSS refers to the ability to apply styles to
-  specific properties of an element without affecting other properties.
-image: {
-  src: "/assets/css_2.jpg",
-  alt: "A picture of a CSS"
-}
+description: Property isolation in CSS refers to the ability to apply styles to specific
+  properties of an element without affecting other properties.
+image:
+  src: /media/css_2.jpg
+  alt: A picture of a CSS
 date: 2023-02-23T11:08:33.722Z
 draft: false
-tags: ['CSS']
+tags:
+  - CSS
 ---
 Property isolation in CSS refers to the ability to apply styles to specific properties of an element without affecting other properties. This is useful for cases where you want to modify the appearance or behavior of one aspect of an element without changing its other properties.
 
@@ -20,7 +20,6 @@ button:hover {
 }
 ```
 
-\
 However, this would also affect other properties of the button element, such as its border and text color. To isolate the hover effect to just the background color, you can use the `isolation` property in CSS:
 
 ```css
@@ -30,10 +29,10 @@ button:hover {
 }
 ```
 
-\
-This will ensure that only the background color of the button changes on hover, and that other properties remain unaffected.\
-\
-T﻿he Isolation property is extreme helpful when handling stacking context. Using the `before` pseudo-class to create a decorative element in front of an existing element, and then use the `z-index` property to move the existing element behind the new element, not only move it behind the parent element, but moves it behind all elements. 
+
+This will ensure that only the background color of the button changes on hover, and that other properties remain unaffected.
+
+The Isolation property is extreme helpful when handling stacking context. Using the `before` pseudo-class to create a decorative element in front of an existing element, and then use the `z-index` property to move the existing element behind the new element, not only move it behind the parent element, but moves it behind all elements. This is because the `before` pseudo-class creates a new stacking context, and the `z-index` property only works within the same stacking context.
 
 U﻿sing `isolation` property is set to `isolate`, the element and its contents are completely separated from other elements on the page, and its styles are not affected by any other styles defined outside of its parent container. This way the `before` pseudo-class container can be moved only behind the parent container. Here is an example:
 

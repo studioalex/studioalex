@@ -1,0 +1,26 @@
+{
+  "frontMatter.taxonomy.tags": [
+    "CSS",
+    "TS",
+    "VUE"
+  ],
+  "frontMatter.taxonomy.categories": [],
+  "frontMatter.framework.id": "other",
+  "frontMatter.content.publicFolder": "",
+  "frontMatter.framework.startCommand": "npm run dev",
+  "frontMatter.preview.host": "http://localhost:3000/tips/",
+  "frontMatter.content.fmHighlight": false,
+  "[markdown]": {
+    "editor.fontSize": 14,
+    "editor.lineHeight": 26,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 64,
+    "editor.lineNumbers": "off",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.minimap.enabled": false
+  }
+}
