@@ -7,7 +7,7 @@ tags:
   - JS
   - NODE
 image:
-  src: /public/media/placeholder.jpg
+  src: /media/placeholder.jpg
   alt: alternate text
 ---
 

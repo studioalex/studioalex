@@ -1,8 +1,5 @@
 {
-  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
-  "frontMatter.media.supportedMimeTypes": [
-    "image/*"
-  ],
+  "$schema": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
@@ -60,10 +57,21 @@
       ]
     }
   ],
+  "frontMatter.framework.id": "astro",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.preview.host": "http://localhost:3000/tips/",
   "frontMatter.content.pageFolders": [
     {
       "title": "tips",
-      "path": "[[workspace]]/src/content/tips"
+      "path": "[[workspace]]/src/content/tips",
     }
-  ]
+  ],
+  "frontMatter.taxonomy.tags": [
+    "CSS",
+    "JS",
+    "NODE",
+    "TS",
+    "VUE"
+  ],
+  "frontMatter.taxonomy.categories": []
 }
