@@ -8,7 +8,7 @@ import CategoryList from '../../components/tips/CategoryList.astro'
 import { formatTipPosts } from '../../lib/helper'
 
 export async function getStaticPaths({ paginate }) {
-  const allPosts = await getCollection('tips')
+  const allPosts = await getCollection('tips', ({ data }) => (data.draft === false))
   const filteredtips: CollectionEntry<'tips'> = formatTipPosts(allPosts)
   
   return paginate(filteredtips, {
