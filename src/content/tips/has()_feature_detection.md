@@ -1,4 +1,5 @@
 ---
+type: tips
 title: :has() feature detection
 description: :has() feature detection with @supports(selector(…))
 image:

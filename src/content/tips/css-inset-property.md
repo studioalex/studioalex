@@ -1,4 +1,5 @@
 ---
+type: tips
 title: CSS inset property
 description: The inset property is a shorthand for the top, right, bottom, and left
   properties.

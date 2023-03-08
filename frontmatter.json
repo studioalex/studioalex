@@ -24,6 +24,45 @@
           "isPublishDate": true
         },
         {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        }
+      ]
+    },
+    {
+      "name": "tips",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
           "name": "divider",
           "type": "divider"
         },
@@ -59,11 +98,15 @@
   ],
   "frontMatter.framework.id": "astro",
   "frontMatter.content.publicFolder": "public",
-  "frontMatter.preview.host": "http://localhost:3000/tips/",
+  "frontMatter.preview.host": "http://localhost:3000/",
   "frontMatter.content.pageFolders": [
     {
       "title": "tips",
       "path": "[[workspace]]/src/content/tips",
+      "previewPath": "/'tips'/",
+      "contentTypes": [
+        "tips"
+      ]
     }
   ],
   "frontMatter.taxonomy.tags": [
@@ -73,5 +116,7 @@
     "TS",
     "VUE"
   ],
-  "frontMatter.taxonomy.categories": []
+  "frontMatter.taxonomy.categories": [
+    "TIPS"
+  ]
 }

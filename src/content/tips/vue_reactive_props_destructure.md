@@ -1,4 +1,5 @@
 ---
+type: tips
 title: Vue 3.4 reactive props destructure
 description: Easier setting of default values for Vue component properties.
 image: {
