@@ -1,6 +1,6 @@
 ---
 type: tips
-title: Native replacement for nodemon.
+title: Node.js make Nodemon abundant
 description: Since Node 18.11 you don't need Nodemon anymore.
 date: 2023-03-07T16:57:02.885Z
 draft: false
