@@ -1,13 +1,15 @@
 ---
+type: tips
 title: :has() feature detection
 description: :has() feature detection with @supports(selector(…))
-image: {
-  src: "/assets/general.jpg",
-  alt: "A picture of a Coding"
-}
+image:
+  src: /media/general.jpg
+  alt: A picture of a Coding
 date: 2023-01-02
 draft: false
-tags: ['CSS']
+tags:
+  - CSS
+preview: /media/general.jpg
 ---
 
 Detecting a CSS browser support for some features can be done inside CSS with `@supports`.

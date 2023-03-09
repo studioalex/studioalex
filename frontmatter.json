@@ -1,0 +1,142 @@
+{
+  "$schema": "https://beta.frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Preview image",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Content image",
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        }
+      ]
+    },
+    {
+      "name": "tips",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "type",
+          "name": "type",
+          "type": "choice",
+          "choices": [
+            "default",
+            "tips"
+          ],
+          "default": "tips"
+        },
+        {
+          "title": "Preview image",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "name": "divider",
+          "type": "divider"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Content image",
+          "name": "image",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "Content image",
+              "name": "src",
+              "type": "image"
+            },
+            {
+              "title": "Content image alternate text",
+              "name": "alt",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "astro",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.preview.host": "http://localhost:3000/",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "tips",
+      "path": "[[workspace]]/src/content/tips",
+      "previewPath": "/'tips'/",
+      "contentTypes": [
+        "tips"
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.tags": [
+    "CSS",
+    "JS",
+    "NODE",
+    "TS",
+    "VUE"
+  ],
+  "frontMatter.taxonomy.categories": [
+    "TIPS"
+  ]
+}
