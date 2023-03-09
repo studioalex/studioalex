@@ -2,15 +2,15 @@
 type: tips
 title: Vue 3.4 reactive props destructure
 description: Easier setting of default values for Vue component properties.
-image: {
-  src: /media/vue_1.jpg,
+image:
+  src: /media/vue_1.jpg
   alt: A picture of a Vue wallpaper
-}
 date: 2023-01-02
 draft: false
 tags:
   - VUE
   - TS
+preview: /media/vue_1.jpg
 ---
 
 ## Vue reactive props destructure

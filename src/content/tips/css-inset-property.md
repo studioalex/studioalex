@@ -1,8 +1,7 @@
 ---
 type: tips
 title: CSS inset property
-description: The inset property is a shorthand for the top, right, bottom, and left
-  properties.
+description: The inset property is a shorthand for the top, right, bottom, and left properties.
 image:
   src: /media/css_3.png
   alt: A picture of a CSS
@@ -10,6 +9,7 @@ date: 2023-02-23T20:16:42.600Z
 draft: false
 tags:
   - CSS
+preview: /media/css_3.png
 ---
 The CSS property `inset` is used to specify the position of an element's box within its containing element, by specifying the distance of the box from the edges of the containing element.
 

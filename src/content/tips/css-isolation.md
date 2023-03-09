@@ -1,8 +1,7 @@
 ---
 type: tips
 title: CSS isolation
-description: Property isolation in CSS refers to the ability to apply styles to specific
-  properties of an element without affecting other properties.
+description: Property isolation in CSS refers to the ability to apply styles to specific properties of an element without affecting other properties.
 image:
   src: /media/css_2.jpg
   alt: A picture of a CSS
@@ -10,6 +9,7 @@ date: 2023-02-23T11:08:33.722Z
 draft: false
 tags:
   - CSS
+preview: /media/css_2.jpg
 ---
 Property isolation in CSS refers to the ability to apply styles to specific properties of an element without affecting other properties. This is useful for cases where you want to modify the appearance or behavior of one aspect of an element without changing its other properties.
 

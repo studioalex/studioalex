@@ -9,6 +9,7 @@ date: 2023-01-02
 draft: false
 tags:
   - CSS
+preview: /media/general.jpg
 ---
 
 Detecting a CSS browser support for some features can be done inside CSS with `@supports`.

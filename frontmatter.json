@@ -24,6 +24,16 @@
           "isPublishDate": true
         },
         {
+          "title": "Preview image",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Content image",
+          "name": "image",
+          "type": "image"
+        },
+        {
           "title": "Is in draft",
           "name": "draft",
           "type": "draft"
@@ -43,7 +53,17 @@
         {
           "title": "type",
           "name": "type",
-          "type": "string"
+          "type": "choice",
+          "choices": [
+            "default",
+            "tips"
+          ],
+          "default": "tips"
+        },
+        {
+          "title": "Preview image",
+          "name": "preview",
+          "type": "image"
         },
         {
           "title": "Title",
