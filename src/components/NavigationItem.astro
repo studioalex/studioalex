@@ -32,7 +32,7 @@ const isCurrentPath = () => {
   class:list={[{ link: !icon, 'link-icon': icon, active: isCurrentPath() }]}
   aria-label={description || title}
   target={target}>
-  {icon ? <Icon class="link-icon" name={icon} /> : {title}}
+  {icon ? <Icon class="link-icon" name={icon} /> : title}
   <slot />
 </a>
 
