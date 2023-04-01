@@ -3,8 +3,11 @@ module.exports = {
     require('postcss-import'),
     require('tailwindcss/nesting'),
     require('postcss-each'),
-    require('postcss-discard-comments'),
     require('autoprefixer'),
-    require('cssnano')
+    require('cssnano'),
+    require('postcss-fontify')({
+      fontsDir: './public/fonts/',
+      fontPath: '/fonts/'
+    })
   ]
 }
