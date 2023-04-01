@@ -1,5 +1,12 @@
 [
   {
+    "title": "PostCSS Fontify ",
+    "description": "Fontify is a lightweight PostCSS plugin that generates font-related CSS properties and declarations, saving you time and effort. ",
+    "image": "postcss-logo",
+    "path": "https://github.com/studioalex/postcss-fontify",
+    "wip": false
+  },
+  {
     "title": "Hora Grid",
     "description": "Vue 3 Grid component based on CSS Grid. Optimized for large amounts of data and data API's.",
     "image": "hora-grid",
@@ -8,11 +15,6 @@
   },
   {
     "title": "Kyiv Form ",
-    "description": "Project in progress. ",
-    "wip": true
-  },
-  {
-    "title": "Aikon",
     "description": "Project in progress. ",
     "wip": true
   }
