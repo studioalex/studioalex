@@ -128,15 +128,5 @@
         "tips"
       ]
     }
-  ],
-  "frontMatter.taxonomy.tags": [
-    "CSS",
-    "JS",
-    "NODE",
-    "TS",
-    "VUE"
-  ],
-  "frontMatter.taxonomy.categories": [
-    "TIPS"
   ]
 }
